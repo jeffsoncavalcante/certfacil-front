@@ -1,1 +1,28 @@
-<p>Teste</p>
+<div>
+    <h1>Acesse Sua Conta</h1>
+</div>
+
+<form (submit)="onSubmit()">
+
+    <div>
+      <label for="user">
+        Usuario
+      </label>
+      <input id="user" type="text" formControlName="user">
+    </div>
+  
+    <div>
+      <label for="password">
+        Senha
+      </label>
+      <input id="password" type="password" formControlName="password">
+    </div>
+    <button class="button" type="submit">Entrar</button>
+  
+  </form>
+  <div>
+      <h5>Esqueceu sua senha? <a class="button-register" href="/recover">Recuperar</a><br>
+        Não tem uma conta? <a class="button-register" href="/register">Cadastra-se</a>
+    </h5>
+  </div>
+
