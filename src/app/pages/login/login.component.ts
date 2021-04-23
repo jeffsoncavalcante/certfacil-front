@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   ) { 
     
   }
+  onSubmi
   onSubmit(): void{
     alert("foi")
   }
