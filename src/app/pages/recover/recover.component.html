@@ -1,1 +1,22 @@
-<p>recover works!</p>
+<div>
+    <h1>Recuperar Senha</h1>
+</div>
+
+<form (submit)="onSubmit()">
+
+    <div>
+      <label for="email">
+        E-mail
+      </label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+  
+    <button class="button" type="submit">Entrar</button>
+  
+  </form>
+  <div>
+      <h5>Esqueceu sua senha? <a class="button-register" href="/login">Login</a><br>
+        Não tem uma conta? <a class="button-register" href="/register">Cadastra-se</a>
+    </h5>
+  </div>
+
