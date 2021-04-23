@@ -94,3 +94,8 @@ body {
   width: 750px;
   object-fit: cover;
 }
+
+::selection {
+  background-color: black;
+  color: white;
+}
