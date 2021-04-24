@@ -92,3 +92,7 @@ form input{
 .button-register{
     color:#000000;
 }
+
+input:focus {
+    outline: 0;
+  }
