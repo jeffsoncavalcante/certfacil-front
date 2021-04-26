@@ -7,6 +7,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { IndexComponent } from './pages/index/index.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoverComponent } from './pages/recover/recover.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomemasterComponent } from './pages/homemaster/homemaster.component';
 
 
 @NgModule({
@@ -15,11 +18,14 @@ import { RecoverComponent } from './pages/recover/recover.component';
     LoginComponent,
     IndexComponent,
     RegisterComponent,
-    RecoverComponent
+    RecoverComponent,
+    HomemasterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     
