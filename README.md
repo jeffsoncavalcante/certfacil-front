@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="src/assets/images/logo-certfacil.png" alt="Logo">
+  <img src="src/assets/images/certfacil.png" alt="Logo">
 </h1>
 
 <h3 align="center">
