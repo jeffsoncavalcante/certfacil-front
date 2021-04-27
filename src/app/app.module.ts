@@ -9,14 +9,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { RecoverComponent } from './pages/recover/recover.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomemasterComponent } from './pages/homemaster/homemaster.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CertificateComponent } from './pages/home/certificate.component';
 import { CreateeventComponent } from './pages/createevent/createevent.component';
 import { EventComponent } from './pages/event/event.component';
 import { AttendancelistComponent } from './pages/attendancelist/attendancelist.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyeventsComponent } from './pages/myevents/myevents.component';
+import { CertificateComponent } from './pages/certificate/certificate.component';
 
 
 @NgModule({
@@ -26,14 +25,13 @@ import { MyeventsComponent } from './pages/myevents/myevents.component';
     IndexComponent,
     RegisterComponent,
     RecoverComponent,
-    HomemasterComponent,
     HomeComponent,
-	CertificateComponent,
- CreateeventComponent,
- EventComponent,
- AttendancelistComponent,
- MyprofileComponent,
- MyeventsComponent,
+    EventComponent,
+    CreateeventComponent,
+    AttendancelistComponent,
+    MyprofileComponent,
+    MyeventsComponent,
+    CertificateComponent
   ],
   imports: [
     BrowserModule,
