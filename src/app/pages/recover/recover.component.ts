@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class RecoverComponent implements OnInit {
 
   constructor() { }
-
+  onSubmit(): void {}
   ngOnInit(): void {
   }
 

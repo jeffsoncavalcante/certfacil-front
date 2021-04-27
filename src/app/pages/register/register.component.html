@@ -1,1 +1,130 @@
-<p>register works!</p>
+<body>
+  <div class="container">
+    <div class="content">
+      <img
+        class="logo"
+        src="../../../assets/images/logo-certfacil.png"
+        alt="Logo Certfacil"
+      />
+      <h2>
+        “Investir em <br />
+        conhecimento <br />
+        rende sempre os <br />
+        melhores juros.”
+      </h2>
+      <img
+        class="ftc"
+        src="../../../assets/images/uniftc.png"
+        alt="CertFacil"
+      />
+    </div>
+
+    <div class="cadastro">
+      <div class="cadastro-content">
+        <h1>Cadastre-se</h1>
+        <form (submit)="onSubmit()">
+          <div>
+            <input
+              class="input"
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Nome completo*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="cpf"
+              type="text"
+              formControlName="cpf"
+              placeholder="CPF*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="email"
+              type="text"
+              formControlName="email"
+              placeholder="Email*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="phone"
+              type="text"
+              formControlName="phone"
+              placeholder="Telefone*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="Unidade"
+              type="text"
+              formControlName="Unidade"
+              placeholder="Unidade*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="Semestre"
+              type="text"
+              formControlName="Semestre"
+              placeholder="Semestre*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="Senha*"
+            />
+          </div>
+
+          <div class="checkbox">
+            <div>
+              <input type="checkbox" id="scales" name="scales" />
+              <label for="scales">Participantes</label>
+            </div>
+            <div>
+              <input type="checkbox" id="scales" name="scales" />
+              <label for="scales">Palestrante</label>
+            </div>
+          </div>
+
+          <div class="checkbox-termo">
+            <input type="checkbox" id="scales" name="scales" class="checkbox" />
+            <label for="scales"
+              >Concordo com os
+              <a
+                href="https://s3-sa-east-1.amazonaws.com/raizen-prod/items-files/item-189-tcg.pdf"
+                target="_blank"
+                >Termos e Condições</a
+              ></label
+            >
+          </div>
+
+          <button class="button" type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
