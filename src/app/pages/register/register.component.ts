@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     nome:[null],
     apelido: [null],
     tipo_usuario:[null],
-    document: [null],
+    documento: [null],
     campus: [null],
     celular: [null]
     })
