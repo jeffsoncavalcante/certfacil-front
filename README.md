@@ -1,15 +1,3 @@
-# Certfacil
-
-Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) verssão 11.2.9.
-
-
-
-## Para rodar o projeto 
-Abra o terminal, na pasta do projeto e execute o comando `ng serve`. No seu navergador vá para `http://localhost/` e o projeto já estara rodando.
-
-
-
-
 <h1 align="center">
   <img src="src/assets/images/logo-certfacil.png" alt="Logo">
 </h1>
@@ -139,7 +127,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
     </td>
         <td align="center">
       <a href="https://www.linkedin.com/in/">
-        <img src="https://avatars.githubusercontent.com/u/82421878?v=4" alt="Rodrigo"/>
+        <img src="https://avatars.githubusercontent.com/u/82421878?v=4" width="100px;" alt="Rodrigo"/>
         <br />
         <sub>
           <b>@Rodrigo da Hora</b>
