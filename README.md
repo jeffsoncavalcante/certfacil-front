@@ -1,27 +1,154 @@
 # Certfacil
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) verssão 11.2.9.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Para rodar o projeto 
+Abra o terminal, na pasta do projeto e execute o comando `ng serve`. No seu navergador vá para `http://localhost/` e o projeto já estara rodando.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+<h1 align="center">
+  <img src="src/assets/images/logo-certfacil.png" alt="Logo">
+</h1>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h3 align="center">
+Web application for event management.
+</h3>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Índice
 
-## Further help
+- [Sobre](#sobre)
+- [Screenshots](#screenshots)
+- [Stack](#tecnologias-utilizadas)
+- [Configurando o Ambiente de Desenvolvimento](#como-usar)
+- [Contribua](#como-contribuir)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<a id="sobre"></a>
+
+## :bookmark:  Sobre
+
+O <strong>[CertFacil]📲</strong> é uma aplicação Web, onde é possível realizar todo o gerenciamento de eventos, online ou presencial.
+
+</details>
+
+<a id="screenshots"></a>
+
+## :heart_eyes: Screenshots
+<details>
+  <summary>
+    Visualizar layout
+  </summary>
+  <img src="src/assets/images/lp.png" alt="Home">
+  <img src="src/assets/images/cadastro.png" alt="Challenge">
+  <img src="src/assets/images/login.png" alt="Level up">
+</details>
+
+<a id="tecnologias-utilizadas"></a>
+
+## :rocket: Stack
+
+Esta aplicação foi desenolvida com as seguintes tecnologias:
+
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+<a id="como-usar"></a>
+
+## :fire:  Configurando o Ambiente de Desenvolvimento
+
+- ### **Pré-requisitos**
+
+  - É **necessário** possuir o **[Node.js](https://TheOnlyRealDevLanguage.org/en/)** instalado na máquina
+  - Também, é **preciso** ter um gerenciador de pacotes, se você já tem o Node.js, então o **[NPM](https://www.npmjs.com/)** já vai estar disponível.
+
+1. Faça um clone :
+
+```sh
+  $ git clone https://github.com/beatrizalvesfel/moveit-reactJS.git
+```
+
+2. iNstalando o Angular:
+
+```sh
+  # Execute o comando abaixo para instalar o Angular globalmente
+  $ npm install -g @angular/cli
+
+```
+
+3. Executando a Aplicação:
+
+```sh
+  # Execute o comando abaixo para instalar as dependencias do projeto
+  $ npm
+
+  # Inciciar o servidor de desenvolvimento
+  $ ng serve
+
+```
+
+<a id="como-contribuir"></a>
+
+## :heavy_check_mark: Como Contribuir
+
+- Faça um Fork desse repositório
+
+- Clone o repositório
+```sh
+  $ git clone https://github.com/<SEU_USUARIO_GIT>/little-friend.git
+```
+- Crie um branch com sua feature: `git checkout -b nome-da-feature`
+
+- Comite suas mudanças: `git commit -m 'feat: Breve descrição da feature'`
+
+- Envie a feature: `git push origin nome-da-feature`
+
+## :computer: Author
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/beatrizalvesfel/">
+        <img src="https://avatars.githubusercontent.com/u/44619862?v=4" width="100px;" alt="Beatriz Alves"/>
+        <br />
+        <sub>
+          <b>@Beatriz Alves</b>
+        </sub>
+       </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/jeffson-vitor-dos-santos-cavalcante-24aa91192/">
+        <img src="https://avatars.githubusercontent.com/u/63271061?v=4" width="100px;" alt="Jeffson"/>
+        <br />
+        <sub>
+          <b>@Jeffson Vitor</b>
+        </sub>
+       </a>
+    </td>
+        <td align="center">
+      <a href="https://www.linkedin.com/in/natalia-cardoso-64ba661b9/">
+        <img src="https://avatars.githubusercontent.com/u/82422603?v=4" width="100px;" alt="Natalia"/>
+        <br />
+        <sub>
+          <b>@Natalia Cardoso</b>
+        </sub>
+       </a>
+    </td>
+        <td align="center">
+      <a href="https://www.linkedin.com/in/">
+        <img src="https://avatars.githubusercontent.com/u/82421878?v=4" alt="Rodrigo"/>
+        <br />
+        <sub>
+          <b>@Rodrigo da Hora</b>
+        </sub>
+       </a>
+    </td>
+  </tr>
+</table>
+
+## :memo:  License
+
+Esse projeto está sob a licença MIT. Acesse o arquivo [LICENSE](LICENSE) para mais detalhes.
