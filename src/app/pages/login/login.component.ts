@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private service: LoginService) { 
     
   }
-
+  id
   objeto: any=[]
 
   ngOnInit(): void { 
@@ -34,11 +34,13 @@ export class LoginComponent implements OnInit {
          this.objeto = data
          if (this.objeto.token.length != null){
           window.localStorage.setItem("token",this.objeto.token)
-          window.location.href='/homemaster'
+          window.localStorage.setItem("id",this.objeto.id)
+          window.location.href='/home'
          }
        },
        error => alert("Usuario e Senha Invalido")
      )
    }
+   
   }
 }
