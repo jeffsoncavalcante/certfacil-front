@@ -56,7 +56,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 1. Faça um clone :
 
 ```sh
-  $ git clone gh repo clone jeffsoncavalcante/certfacil-front
+  $ git clone https://github.com/jeffsoncavalcante/certfacil-front.git
 ```
 
 2. iNstalando o Angular:
