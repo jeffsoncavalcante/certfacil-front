@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="src/assets/images/certifacil.png"  width="100px;" alt="Logo">
+  <img src="src/assets/images/certifacil.png"  width="200px;" alt="Logo">
 </h1>
 
 <h3 align="center">
