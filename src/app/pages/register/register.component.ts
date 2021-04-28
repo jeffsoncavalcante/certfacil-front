@@ -1,6 +1,9 @@
+import { AlertModalService } from './../../shared/alert-modal.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { RegisterService } from './register.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { AlertModalComponent } from './../../shared/alert-modal/alert-modal.component';
 
 @Component({
   selector: 'app-register',
@@ -10,13 +13,16 @@ import { RegisterService } from './register.service';
 export class RegisterComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: RegisterService) { }
+  constructor(private fb: FormBuilder,
+    private service: RegisterService,
+    private alertservice: AlertModalService
+    ) { }
 
   ngOnInit(): void {
      this.form = this.fb.group({
     email:[null],
     password: [null],
-    confirm: [null], 
+    confirm: [null],
     nome:[null],
     apelido: [null],
     tipo_usuario:[null],
@@ -29,12 +35,11 @@ export class RegisterComponent implements OnInit {
    if(this.form.valid){
       this.service.create(this.form.value).subscribe(
         data => {
-          alert("Cadastro Eftuado com sucesso"),
+          this.alertservice.showAlertSuccess('Cadastro efetuado com Sucesso'),
           window.location.href='/login'
         },
-        error =>  alert("Erro ao efetuar o cadastro")
+        error => this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
       )
     }
   }
-
 }

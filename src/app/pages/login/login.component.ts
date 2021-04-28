@@ -1,3 +1,4 @@
+import { AlertModalService } from './../../shared/alert-modal.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoginService } from './login.service';
@@ -13,13 +14,13 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: LoginService) { 
-    
+  constructor(private fb: FormBuilder, private service: LoginService,private alertservice: AlertModalService) {
+
   }
   id
   objeto: any=[]
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.form = this.fb.group({
       email: [null],
       password: [null]
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
    if(this.form.valid){
      console.log('submit')
-     
+
      this.service.create(this.form.value).subscribe(
        data =>{
          this.objeto = data
@@ -38,9 +39,9 @@ export class LoginComponent implements OnInit {
           window.location.href='/home'
          }
        },
-       error => alert("Usuario e Senha Invalido")
+       error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
      )
    }
-   
+
   }
 }
