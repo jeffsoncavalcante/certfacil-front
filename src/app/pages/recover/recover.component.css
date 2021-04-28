@@ -28,7 +28,7 @@
 }
 
 .form-box {
-  margin: 75px auto;
+  margin: 80px auto;
   width: 468px;
   height: 398px;
   background: #ffd1e5;
@@ -50,6 +50,12 @@
   color: #ffd1e5;
   border: none;
   padding: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.button:hover {
+  background: linear-gradient(90deg,  #544e9e -5.82%,  #f05198 100.09%);
+  color: #ffd1e5;
 }
 
 form input {
@@ -69,18 +75,19 @@ form input:focus {
   outline: 0;
 }
 
-.input-group {
-  width: 158px;
-  height: 15px;
+.recover h5 {
+
+  text-align: center;
   display: block;
   font-family: "Nunito";
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
-  line-height: 15px;
+  line-height: 18px;
   align-items: center;
   margin: 0 auto 30px auto;
-  text-align: center;
+  
+
 }
 
 .button-register{
@@ -92,4 +99,17 @@ input:focus {
   }
 .button-register {
   color: #000000;
+}
+
+.recover{
+
+  color: #666666;
+
+}
+
+
+
+.recover a{
+  color: #666666;
+  text-decoration: underline;
 }

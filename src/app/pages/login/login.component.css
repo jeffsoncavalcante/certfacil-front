@@ -31,7 +31,7 @@ body {
   color: #000000;
 }
 .form-box {
-  margin: 40px auto;
+  margin: 80px auto;
   width: 468px;
   height: 470px;
   left: 486px;
@@ -58,7 +58,15 @@ body {
   font-family: "Nunito";
   font-style: normal;
   color: #ffd1e5;
+  cursor: pointer;
+  transition: all 0.3s;
 }
+
+.button:hover {
+  background: linear-gradient(90deg,  #544e9e -5.82%,  #f05198 100.09%);
+  color: #ffd1e5;
+}
+
 
 form input {
   border: none;
@@ -86,6 +94,8 @@ form input {
   line-height: 18px;
   align-items: center;
   margin: 0 auto 30px auto;
+  
+
 }
 
 form input:focus {
@@ -95,6 +105,14 @@ form input:focus {
 input:focus {
     outline: 0;
   }
-.button-register {
-  color: #000000;
+
+ .recover{
+
+  color: #666666;
+
+}
+
+.recover a{
+  color: #666666;
+  text-decoration: underline;
 }
