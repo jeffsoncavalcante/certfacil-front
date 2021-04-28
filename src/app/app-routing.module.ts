@@ -1,17 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AttendancelistComponent } from './pages/attendancelist/attendancelist.component';
+import { CertificateComponent } from './pages/certificate/certificate.component';
+import { CreateeventComponent } from './pages/createevent/createevent.component';
+import { EventComponent } from './pages/event/event.component';
+import { HomeComponent } from './pages/home/home.component';
 import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MyeventsComponent } from './pages/myevents/myevents.component';
+import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { RecoverComponent } from './pages/recover/recover.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
-
  { path: 'login', component: LoginComponent},
+ { path: 'homem', component: HomeComponent},
  { path: 'index', component: IndexComponent},
  { path: 'register', component: RegisterComponent},
  { path: 'recover', component: RecoverComponent},
- { path: '', redirectTo: '/index', pathMatch: 'full' }
+ { path: 'certifcate', component: CertificateComponent},
+ { path: 'attendancelist', component: AttendancelistComponent},
+ { path: 'createevent', component: CreateeventComponent},
+ { path: 'event', component: EventComponent},
+ { path: 'myevents', component: MyeventsComponent},
+ { path: 'myprofile', component: MyprofileComponent},
+ { path: '', redirectTo: '/index', pathMatch: 'full'}
 ];
 
 @NgModule({

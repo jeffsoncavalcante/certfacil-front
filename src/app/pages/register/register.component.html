@@ -22,13 +22,13 @@
     <div class="cadastro">
       <div class="cadastro-content">
         <h1>Cadastre-se</h1>
-        <form (submit)="onSubmit()">
+        <form novalidate [formGroup]="form">
           <div>
             <input
               class="input"
-              id="name"
+              id="nome"
               type="text"
-              formControlName="name"
+              formControlName="nome"
               placeholder="Nome completo*"
               required
             />
@@ -37,9 +37,20 @@
           <div>
             <input
               class="input"
-              id="cpf"
+              id="apelido"
               type="text"
-              formControlName="cpf"
+              formControlName="apelido"
+              placeholder="Apelido*"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              class="input"
+              id="documento"
+              type="text"
+              formControlName="documento"
               placeholder="CPF*"
               required
             />
@@ -59,9 +70,9 @@
           <div>
             <input
               class="input"
-              id="phone"
+              id="celular"
               type="text"
-              formControlName="phone"
+              formControlName="celular"
               placeholder="Telefone*"
               required
             />
@@ -70,21 +81,10 @@
           <div>
             <input
               class="input"
-              id="Unidade"
+              id="campus"
               type="text"
-              formControlName="Unidade"
+              formControlName="campus"
               placeholder="Unidade*"
-              required
-            />
-          </div>
-
-          <div>
-            <input
-              class="input"
-              id="Semestre"
-              type="text"
-              formControlName="Semestre"
-              placeholder="Semestre*"
               required
             />
           </div>
@@ -99,13 +99,23 @@
             />
           </div>
 
+          <div>
+            <input
+              class="input"
+              id="confirm"
+              type="password"
+              formControlName="confirm"
+              placeholder="Confirme a Senha*"
+            />
+          </div>
+
           <div class="checkbox">
             <div>
-              <input type="checkbox" id="scales" name="scales" />
+              <input type="radio" id="tipo_usuario" name="tipo_usuario"  formControlName="tipo_usuario" value="participante" />
               <label for="scales">Participantes</label>
             </div>
             <div>
-              <input type="checkbox" id="scales" name="scales" />
+              <input type="radio" id="tipo_usuario1" name="tipo_usuario" formControlName="tipo_usuario" value="palestrante" />
               <label for="scales">Palestrante</label>
             </div>
           </div>
@@ -122,8 +132,12 @@
             >
           </div>
 
-          <button class="button" type="submit">Cadastrar</button>
+          <button class="button" type="submit" (click)="register()">Cadastrar</button>
         </form>
+        <div class= "recover">
+          <h5>Já tem uma conta?<a class="button-register" href="/login">Fazer login</a><br>
+        </h5>
+      </div>
       </div>
     </div>
   </div>

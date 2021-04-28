@@ -75,12 +75,9 @@ form input {
   margin: 0 auto 30px auto;
 }
 
-.input-group {
+.recover h5 {
+
   text-align: center;
-  width: 158px;
-  height: 15px;
-  left: 641px;
-  top: 577px;
   display: block;
   font-family: "Nunito";
   font-style: normal;
