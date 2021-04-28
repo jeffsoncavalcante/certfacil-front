@@ -27,12 +27,12 @@ export class RegisterComponent implements OnInit {
   }
   register(){
    if(this.form.valid){
-     // console.log('submit')
-      console.log(this.form.value)
-      
       this.service.create(this.form.value).subscribe(
-        data => console.log(data),
-        error => console.log(error)
+        data => {
+          alert("Cadastro Eftuado com sucesso"),
+          window.location.href='/login'
+        },
+        error =>  alert("Erro ao efetuar o cadastro")
       )
     }
   }

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-  private readonly APIBASE = 'http://localhost:8082'
+  private readonly APIBASE = 'http://186.195.8.9:8000'
   constructor(private httpcliente:HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({ 
