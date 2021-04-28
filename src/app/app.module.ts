@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,7 +17,7 @@ import { AttendancelistComponent } from './pages/attendancelist/attendancelist.c
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyeventsComponent } from './pages/myevents/myevents.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
-
+import { ModalModule} from 'ngx-bootstrap/modal'
 
 @NgModule({
   declarations: [
@@ -37,10 +38,12 @@ import { CertificateComponent } from './pages/certificate/certificate.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
+    SharedModule
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })
