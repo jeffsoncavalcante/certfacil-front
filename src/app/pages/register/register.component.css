@@ -138,3 +138,16 @@ body {
 .cadastro .cadastro-content button:hover {
   transform: scale(1.1);
 }
+
+.recover h5 {
+
+  text-align: center;
+  display: block;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 18px;
+  align-items: center;
+  margin: 0 auto 30px auto;
+}
