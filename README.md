@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="src/assets/images/logo-certfacil.png" alt="Logo">
+  <img src="src/assets/images/certifacil.png"  width="200px;" alt="Logo">
 </h1>
 
 <h3 align="center">
@@ -56,7 +56,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 1. Faça um clone :
 
 ```sh
-  $ git clone https://github.com/beatrizalvesfel/moveit-reactJS.git
+  $ git clone https://github.com/jeffsoncavalcante/certfacil-front.git
 ```
 
 2. iNstalando o Angular:
