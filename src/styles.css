@@ -2,3 +2,10 @@
 body {
   margin: 0;
 }
+
+:root {
+  --pink: #f05198;
+  --purple: #514d9e;
+  --grey: #e2e2e2;
+  --light-pink: #ffd1e5;
+}
