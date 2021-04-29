@@ -76,7 +76,8 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
   # Inciciar o servidor de desenvolvimento
   $ ng serve
   
-  # Digite em seu navegador http://localhost:8082
+  # Digite em seu navegador
+  http://localhost:8082
 
 ```
 
