@@ -1,11 +1,13 @@
 <body>
   <div class="container">
     <div class="content">
-      <img
-        class="logo"
-        src="../../../assets/images/logo-certfacil.png"
-        alt="Logo Certfacil"
-      />
+      <a href="/">
+        <img
+          class="logo"
+          src="../../../assets/images/logo-certfacil.png"
+          alt="Logo Certfacil"
+        />
+      </a>
       <h2>
         “Investir em <br />
         conhecimento <br />
@@ -111,11 +113,23 @@
 
           <div class="checkbox">
             <div>
-              <input type="radio" id="tipo_usuario" name="tipo_usuario"  formControlName="tipo_usuario" value="participante" />
+              <input
+                type="radio"
+                id="tipo_usuario"
+                name="tipo_usuario"
+                formControlName="tipo_usuario"
+                value="participante"
+              />
               <label for="scales">Participantes</label>
             </div>
             <div>
-              <input type="radio" id="tipo_usuario1" name="tipo_usuario" formControlName="tipo_usuario" value="palestrante" />
+              <input
+                type="radio"
+                id="tipo_usuario1"
+                name="tipo_usuario"
+                formControlName="tipo_usuario"
+                value="palestrante"
+              />
               <label for="scales">Palestrante</label>
             </div>
           </div>
@@ -132,12 +146,17 @@
             >
           </div>
 
-          <button class="button" type="submit" (click)="register()">Cadastrar</button>
+          <button class="button" type="submit" (click)="register()">
+            Cadastrar
+          </button>
         </form>
-        <div class= "recover">
-          <h5>Já tem uma conta?<a class="button-register" href="/login">Fazer login</a><br>
-        </h5>
-      </div>
+        <div class="recover">
+          <h5>
+            Já tem uma conta?<a class="button-register" href="/login"
+              >Fazer login</a
+            ><br />
+          </h5>
+        </div>
       </div>
     </div>
   </div>

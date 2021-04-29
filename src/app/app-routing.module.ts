@@ -13,22 +13,22 @@ import { RecoverComponent } from './pages/recover/recover.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
- { path: 'login', component: LoginComponent},
- { path: 'homem', component: HomeComponent},
- { path: 'index', component: IndexComponent},
- { path: 'register', component: RegisterComponent},
- { path: 'recover', component: RecoverComponent},
- { path: 'certifcate', component: CertificateComponent},
- { path: 'attendancelist', component: AttendancelistComponent},
- { path: 'createevent', component: CreateeventComponent},
- { path: 'event', component: EventComponent},
- { path: 'myevents', component: MyeventsComponent},
- { path: 'myprofile', component: MyprofileComponent},
- { path: '', redirectTo: '/index', pathMatch: 'full'}
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'index', component: IndexComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'recover', component: RecoverComponent },
+  { path: 'certifcate', component: CertificateComponent },
+  { path: 'attendancelist', component: AttendancelistComponent },
+  { path: 'createevent', component: CreateeventComponent },
+  { path: 'event', component: EventComponent },
+  { path: 'myevents', component: MyeventsComponent },
+  { path: 'myprofile', component: MyprofileComponent },
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
 ];
 
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

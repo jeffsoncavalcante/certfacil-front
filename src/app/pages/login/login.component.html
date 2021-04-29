@@ -1,32 +1,49 @@
-<header  class= "cabecalho">
-  <img  class= "logo" src="../../../assets/images/logo-certfacil.png" alt="Logo Certfacil">
-
+<header class="cabecalho">
+  <a href="/">
+    <img
+      class="logo"
+      src="../../../assets/images/logo-certfacil.png"
+      alt="Logo Certfacil"
+    />
+  </a>
 </header>
 
-<body >
+<body>
+  <div class="form-box">
+    <div>
+      <h1 class="name">Acesse sua conta</h1>
+    </div>
 
-
-  <div class= "form-box">
-<div>
-    <h1 class= "name">Acesse sua conta </h1>
-</div>
-
-<form novalidate [formGroup]="form">
-
-      <input id="email"
-      type="text"
-      formControlName="email"
-      placeholder="Usuário"
-      formControlName="email"
-      >
-      <input id="password" type="password" formControlName="password" placeholder="Senha" formControlName="password">
+    <form novalidate [formGroup]="form">
+      <input
+        id="email"
+        type="text"
+        formControlName="email"
+        placeholder="Usuário"
+        formControlName="email"
+      />
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Senha"
+        formControlName="password"
+      />
       <button class="button" type="submit" (click)="onSubmit()">Entrar</button>
+    </form>
+    <div class="recover">
+      <h5>
+        Esqueceu sua senha?
+        <a class="button-register" href="/recover">Recuperar</a><br />
+        Não tem uma conta?
+        <a class="button-register" href="/register">Cadastra-se</a>
+      </h5>
+    </div>
   </form>
-  
+
   <div class= "recover">
       <h5>Esqueceu sua senha? <a   class="button-register" href="/recover">Recuperar</a><br>
         Não tem uma conta? <a   class="button-register" href="/register">Cadastra-se</a>
     </h5>
   </div>
-</div>
 </body>
