@@ -1,6 +1,6 @@
 <header  class= "cabecalho">
   <img  class= "logo" src="../../../assets/images/logo-certfacil.png" alt="Logo Certfacil">
-  
+
 </header>
 
 <body>
@@ -9,15 +9,15 @@
     <h1 class= "name">Recuperar sua senha</h1>
 </div>
 
-<form (submit)="onSubmit()">
+<form novalidate [formGroup]="form">
 
     <div>
-     
+
       <input id="email" type="text" formControlName="email" placeholder="Email">
     </div>
-  
-    <button class="button" type="submit">Enviar</button>
-  
+
+    <button class="button" type="submit" (click)="onSubmit()">Enviar</button>
+
   </form>
   <div class= "recover">
       <h5>Esqueceu sua senha? <a class="button-register" href="/login">Login</a><br>
