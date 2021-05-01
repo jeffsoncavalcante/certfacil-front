@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-  private readonly APIBASE = 'http://186.195.8.9:8000'
+  private readonly APIBASE = 'http://certapi.redetuxnet.com.br:8000'
   constructor(private httpcliente:HttpClient) { }
   httpOptions = {
-    headers: new HttpHeaders({ 
+    headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': ''
    })
   }
- 
+
   create(register){
     console.log(register)
     return this.httpcliente.post(this.APIBASE+'/api/user/store', register, this.httpOptions).pipe(take(1));
