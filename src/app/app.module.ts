@@ -1,3 +1,4 @@
+import { HeaderComponent } from './pages/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,7 +33,8 @@ import { ModalModule} from 'ngx-bootstrap/modal'
     AttendancelistComponent,
     MyprofileComponent,
     MyeventsComponent,
-    CertificateComponent
+    CertificateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

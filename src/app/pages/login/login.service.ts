@@ -7,7 +7,7 @@ import { catchError, retry, take } from 'rxjs/operators';
 })
 
 export class LoginService {
-  private readonly API = 'http://186.195.8.9:8000'
+  private readonly API = 'http://certapi.redetuxnet.com.br:8000'
   constructor(private http:HttpClient) {}
 
 
