@@ -1,3 +1,4 @@
+import { HeadermenuComponent } from './pages/headermenu/headermenu.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -34,7 +35,8 @@ import { ModalModule} from 'ngx-bootstrap/modal'
     MyprofileComponent,
     MyeventsComponent,
     CertificateComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeadermenuComponent
   ],
   imports: [
     BrowserModule,
