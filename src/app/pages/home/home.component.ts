@@ -19,23 +19,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if(this.typeuser==="master"){
-      this.home=true,
-      this.createevent=true,
-      this.listpresent=true,
-      this.profile=true
-    }
-    if(this.typeuser==="palestrante"){
-      this.home=true,
-      this.certificate=true,
-      this.profile=true
-    }
-    if(this.typeuser==="participante"){
-      this.home=true,
-      this.event=true,
-      this.myevents=true,
-      this.profile=true
-    }
   }
 
 }
