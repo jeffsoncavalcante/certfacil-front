@@ -4,20 +4,21 @@
     <app-headermenu></app-headermenu>
     <div class="content">
       <ng-container class="conteudo" *ngFor="let event of evento">
-      <div class="item">
-        <a href="#">
-          <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
-          </div>
-            <h3 class="titulo">{{event.descricao}}</h3>
-            <h4 class="local">
-              Data:{{event.data_inicio}}
-              Horario: {{event.inicio}} Horas
-            </h4>
-            <h4 class="descricao"></h4>
-        </a>
-      </div>
-    </ng-container>
+        <div class="item">
+          <a href="#">
+            <div class="conteudo-img">
+              <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+            </div>
+            <div class="conteudo-textos">
+              <h3 class="titulo">{{ event.descricao }}</h3>
+              <h4 class="local">
+                Data:{{ event.data_inicio }} Horario: {{ event.inicio }} Horas
+              </h4>
+              <h4 class="descricao"></h4>
+            </div>
+          </a>
+        </div>
+      </ng-container>
     </div>
   </div>
 </body>
