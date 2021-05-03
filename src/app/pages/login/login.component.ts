@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   id
   objeto: any=[]
 
+
   ngOnInit(): void {
     this.form = this.fb.group({
       email: [null],
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
          if (this.objeto.token.length != null){
           window.localStorage.setItem("token",this.objeto.token)
           window.localStorage.setItem("id",this.objeto.id)
+          window.localStorage.setItem("usertype","master")
           window.location.href='/home'
          }
        },

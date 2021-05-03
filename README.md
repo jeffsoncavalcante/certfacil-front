@@ -93,11 +93,11 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 ```
 - Crie um branch com sua feature: `git checkout -b nome-da-feature`
 
-- Comite suas mudanças: `git commit -m 'feat: Breve descrição da feature'`
+- Comite suas mudanças: `git commit -m 'Feature: Breve descrição da feature'`
 
 - Envie a feature: `git push origin nome-da-feature`
 
-## :computer: Author
+## :computer: Authors
 
 <table>
   <tr>
