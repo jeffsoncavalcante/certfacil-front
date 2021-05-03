@@ -1,5 +1,5 @@
-import { HeadermenuComponent } from './pages/headermenu/headermenu.component';
-import { HeaderComponent } from './pages/header/header.component';
+import { HeadermenuComponent } from './shared/headermenu/headermenu.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
