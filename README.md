@@ -30,9 +30,11 @@ O <strong>[CertFacil]📲</strong> é uma aplicação Web, onde é possível rea
   <summary>
     Visualizar layout
   </summary>
-  <img src="src/assets/images/lp.png" alt="Home">
-  <img src="src/assets/images/cadastro.png" alt="Challenge">
-  <img src="src/assets/images/login.png" alt="Level up">
+  <img src="src/assets/images/lp.png" alt="Landing Page">
+  <img src="src/assets/images/cadastro.png" alt="Cadastro">
+  <img src="src/assets/images/login.png" alt="Login">
+  <img src="src/assets/images/home.png" alt="Home">
+
 </details>
 
 <a id="tecnologias-utilizadas"></a>
@@ -93,11 +95,11 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 ```
 - Crie um branch com sua feature: `git checkout -b nome-da-feature`
 
-- Comite suas mudanças: `git commit -m 'feat: Breve descrição da feature'`
+- Comite suas mudanças: `git commit -m 'Feature: Breve descrição da feature'`
 
 - Envie a feature: `git push origin nome-da-feature`
 
-## :computer: Author
+## :computer: Authors
 
 <table>
   <tr>

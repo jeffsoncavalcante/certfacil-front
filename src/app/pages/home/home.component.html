@@ -1,13 +1,4 @@
-<header class="cabecalho">
-  <a href="/">
-    <img
-      class="logo"
-      src="../../../assets/images/logo-certfacil.png"
-      alt="Logo Certfacil"
-    />
-  </a>
-</header>
-
+<app-header></app-header>
 <body>
   <div class="container">
     <div class="menu">
@@ -76,67 +67,26 @@
         </li>
       </ul>
     </div>
+    <app-headermenu></app-headermenu>
     <div class="content">
-      <div class="item">
-        <a href="#">
-          <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
-          </div>
-          <div class="conteudo">
-            <h3 class="titulo">TECH WEEK 2018</h3>
-            <h4 class="local">
-              Cidade: Feira de Santana / Bahia <br />
-              Local: UNIFTC - Universidade de Tecnologia e Ciências <br />
-              Data: quarta-feira, 15 de maio de 2019
-            </h4>
-            <h4 class="descricao">
-              Evento realizado na Universidade de Tecnologia e Ciências -
-              UNIFTC, c om tema (Gamification - Movimentando a Aprendizagem) na
-              área de Tecnologia de Informação e no ambiente acadêmico.
-            </h4>
-          </div>
-        </a>
-      </div>
-      <div class="item">
-        <a href="#">
-          <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
-          </div>
-          <div class="conteudo">
-            <h3 class="titulo">TECH WEEK 2018</h3>
-            <h4 class="local">
-              Cidade: Feira de Santana / Bahia <br />
-              Local: UNIFTC - Universidade de Tecnologia e Ciências <br />
-              Data: quarta-feira, 15 de maio de 2019
-            </h4>
-            <h4 class="descricao">
-              Evento realizado na Universidade de Tecnologia e Ciências -
-              UNIFTC, c om tema (Gamification - Movimentando a Aprendizagem) na
-              área de Tecnologia de Informação e no ambiente acadêmico.
-            </h4>
-          </div>
-        </a>
-      </div>
-      <div class="item">
-        <a href="#">
-          <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
-          </div>
-          <div class="conteudo">
-            <h3 class="titulo">TECH WEEK 2018</h3>
-            <h4 class="local">
-              Cidade: Feira de Santana / Bahia <br />
-              Local: UNIFTC - Universidade de Tecnologia e Ciências <br />
-              Data: quarta-feira, 15 de maio de 2019
-            </h4>
-            <h4 class="descricao">
-              Evento realizado na Universidade de Tecnologia e Ciências -
-              UNIFTC, c om tema (Gamification - Movimentando a Aprendizagem) na
-              área de Tecnologia de Informação e no ambiente acadêmico.
-            </h4>
-          </div>
-        </a>
-      </div>
+      <ng-container class="conteudo" *ngFor="let event of evento">
+        <div class="item">
+          <a href="#">
+            <div class="conteudo-img">
+              <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+            </div>
+            <div class="conteudo-textos">
+              <h3 class="titulo">{{ event.descricao }}</h3>
+              <h4 class="local">
+                Cidade: ?? <br />
+                Local: ??<br />
+                Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
+              </h4>
+              <h5 class="descricao">?????</h5>
+            </div>
+          </a>
+        </div>
+      </ng-container>
     </div>
   </div>
 </body>

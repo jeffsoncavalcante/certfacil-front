@@ -62,7 +62,7 @@
             <input
               class="input"
               id="email"
-              type="text"
+              type="email"
               formControlName="email"
               placeholder="Email*"
               required
@@ -73,9 +73,11 @@
             <input
               class="input"
               id="celular"
-              type="text"
+              pattern="^\d{4}-\d{3}-\d{4}$"
+              type="tel"
               formControlName="celular"
               placeholder="Telefone*"
+              ngModel
               required
             />
           </div>
@@ -120,7 +122,7 @@
                 formControlName="tipo_usuario"
                 value="participante"
               />
-              <label for="scales">Participantes</label>
+              <label>Participante</label>
             </div>
             <div>
               <input
@@ -130,7 +132,7 @@
                 formControlName="tipo_usuario"
                 value="palestrante"
               />
-              <label for="scales">Palestrante</label>
+              <label>Palestrante</label>
             </div>
           </div>
 
