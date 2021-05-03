@@ -97,7 +97,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 
 - Envie a feature: `git push origin nome-da-feature`
 
-## :computer: Author
+## :computer: Authors
 
 <table>
   <tr>
