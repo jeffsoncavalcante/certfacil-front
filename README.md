@@ -30,9 +30,11 @@ O <strong>[CertFacil]📲</strong> é uma aplicação Web, onde é possível rea
   <summary>
     Visualizar layout
   </summary>
-  <img src="src/assets/images/lp.png" alt="Home">
-  <img src="src/assets/images/cadastro.png" alt="Challenge">
-  <img src="src/assets/images/login.png" alt="Level up">
+  <img src="src/assets/images/lp.png" alt="Landing Page">
+  <img src="src/assets/images/cadastro.png" alt="Cadastro">
+  <img src="src/assets/images/login.png" alt="Login">
+  <img src="src/assets/images/home.png" alt="Home">
+
 </details>
 
 <a id="tecnologias-utilizadas"></a>
