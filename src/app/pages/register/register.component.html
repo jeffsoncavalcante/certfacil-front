@@ -77,7 +77,6 @@
               type="tel"
               formControlName="celular"
               placeholder="Telefone*"
-              ngModel
               required
             />
           </div>
@@ -148,7 +147,7 @@
             >
           </div>
 
-          <button class="button" type="submit" (click)="register()">
+          <button class="button" type="submit" (click)="onSubmit()">
             Cadastrar
           </button>
         </form>

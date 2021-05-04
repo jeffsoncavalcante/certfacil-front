@@ -5,6 +5,7 @@ import { LoginService } from './login.service';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,11 +15,13 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: LoginService,private alertservice: AlertModalService) {
 
-  }
+  constructor(private fb: FormBuilder, private service: LoginService,private alertservice: AlertModalService
+
+    ) {}
   id
   objeto: any=[]
+  dados: any=[]
 
 
   ngOnInit(): void {
@@ -27,6 +30,7 @@ export class LoginComponent implements OnInit {
       password: [null]
     })
   }
+
   onSubmit(){
    if(this.form.valid){
      console.log('submit')
@@ -36,14 +40,27 @@ export class LoginComponent implements OnInit {
          this.objeto = data
          if (this.objeto.token.length != null){
           window.localStorage.setItem("token",this.objeto.token)
-          window.localStorage.setItem("id",this.objeto.id)
-          window.localStorage.setItem("usertype","master")
-          window.location.href='/home'
+          window.localStorage.setItem("id",this.objeto.id_user)
+          this.getprofile()
          }
        },
        error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
      )
    }
+
+  }
+
+
+  getprofile(){
+
+    this.service.listprofile('/api/user/perfil/').subscribe(
+      data => {
+        this.dados = data.user,
+        window.localStorage.setItem("usertype",this.dados.tipo_usuario)
+        window.location.href='/home'
+      },
+      error => console.log(error)
+    )
 
   }
 }
