@@ -1,4 +1,6 @@
+import { HeadermenuService } from './headermenu.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-headermenu',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeadermenuComponent implements OnInit {
 
   typeuser = window.localStorage.getItem('usertype')
+  token = window.localStorage.getItem('token')
   profile = false
   createevent = false
   home = false
@@ -15,10 +18,18 @@ export class HeadermenuComponent implements OnInit {
   event = false
   certificate =false
   listpresent= false
+  form: any;
 
-  constructor() { }
+
+  constructor(private service: HeadermenuService, private fb: FormBuilder) { }
+
 
   ngOnInit() {
+
+    this.form = this.fb.group({
+      id_token: this.token
+    })
+
     if(this.typeuser==="master"){
       this.home=true,
       this.createevent=true,
@@ -36,6 +47,15 @@ export class HeadermenuComponent implements OnInit {
       this.myevents=true,
       this.profile=true
     }
+  }
+
+  logout(){
+    this.service.logout(this.form.value).subscribe(
+      data => {
+        window.location.href="/index"
+      },
+      error => console.log(error)
+    )
   }
 
 }
