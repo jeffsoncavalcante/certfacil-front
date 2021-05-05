@@ -53,6 +53,7 @@ export class HeadermenuComponent implements OnInit {
     this.service.logout(this.form.value).subscribe(
       data => {
         window.location.href="/index"
+        window.localStorage.clear()
       },
       error => console.log(error)
     )

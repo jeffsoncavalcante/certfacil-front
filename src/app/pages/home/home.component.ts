@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     this.service.list('/api/eventos/').subscribe(
       data =>{
         this.evento = data.eventos;
-        console.log(this.evento)
       }
 
     )}
