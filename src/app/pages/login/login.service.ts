@@ -1,9 +1,10 @@
-import { Listuser } from '../../shared/listprofile/listprofle';
+
 import { AlertTypes } from './../../shared/alert-modal.service';
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, retry, take } from 'rxjs/operators';
 import { Observable } from 'rxjs'
+import { List } from 'src/app/shared/listprofile/list';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,8 @@ export class LoginService {
     return this.http.post(this.API+'/api/user/login',login).pipe(take(1));
   }
 
-  listprofile(flag: string):Observable<Listuser>{
-    return this.http.get<Listuser>(this.API+flag, this.httpOptions)
+  listprofile(flag: string):Observable<List>{
+    return this.http.get<List>(this.API+flag, this.httpOptions)
   }
 
 }
