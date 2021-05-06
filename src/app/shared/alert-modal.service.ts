@@ -25,11 +25,11 @@ export class AlertModalService {
   }
 
   showAlertDanger(message: string) {
-    this.showAlert(message, AlertTypes.DANGER, 3000);
+    this.showAlert(message, AlertTypes.DANGER);
   }
 
   showAlertSuccess(message: string) {
-    this.showAlert(message, AlertTypes.SUCCESS, 3000);
+    this.showAlert(message, AlertTypes.SUCCESS);
   }
   showPresenca() {
     const bsModalRef: BsModalRef = this.modalService.show(ConfirmpresencaComponent);
