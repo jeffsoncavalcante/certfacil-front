@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
     ) {}
   id
+  teste
   objeto: any=[]
   dados: any=[]
 
@@ -34,10 +35,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
    if(this.form.valid){
-     console.log('submit')
 
      this.service.create(this.form.value).subscribe(
-       data =>{
+       async data =>{
          this.objeto = data
          if (this.objeto.token.length != null){
           window.localStorage.setItem("token",this.objeto.token)
@@ -60,7 +60,9 @@ export class LoginComponent implements OnInit {
         window.localStorage.setItem("usertype",this.dados.tipo_usuario)
         window.location.href='/home'
       },
-      error => console.log(error)
+      error => {
+        window.location.href='/login'
+      }
     )
 
   }

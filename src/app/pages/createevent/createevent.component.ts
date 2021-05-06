@@ -15,6 +15,8 @@ export class CreateeventComponent implements OnInit {
     private alertservice: AlertModalService
     ) { }
     form: FormGroup;
+    files: Set<File>;
+
   ngOnInit(): void {
     this.form = this.fb.group({
       descricao:[null],
@@ -35,6 +37,14 @@ export class CreateeventComponent implements OnInit {
         this.alertservice.showAlertDanger("Erro ao Cadastrar o Evento")
       }
     )
+  }
+
+  onChange(event){
+    console.log(event)
+    this.files = new Set()
+    const SelectFiles = <FileList>event.srcElement.files;
+    document.getElementById('upload').innerHTML = SelectFiles[0].name
+    this.files.add(SelectFiles[0])
   }
 
 }

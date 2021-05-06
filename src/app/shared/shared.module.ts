@@ -1,3 +1,4 @@
+import { ConfirmpresencaComponent } from './confirm-presenca/confirmpresenca/confirmpresenca.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
@@ -7,9 +8,9 @@ import { AlertModalComponent } from './alert-modal/alert-modal.component';
   imports: [
     CommonModule
   ],
-  declarations: [AlertModalComponent],
+  declarations: [AlertModalComponent, ConfirmpresencaComponent],
   exports: [AlertModalComponent],
   // entryComponents não é necessário a partir do angular v9
-  entryComponents: [AlertModalComponent]
+  entryComponents: [AlertModalComponent, ConfirmpresencaComponent]
 })
 export class SharedModule { }

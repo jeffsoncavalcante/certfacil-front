@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
+import { ConfirmpresencaComponent } from './confirm-presenca/confirmpresenca/confirmpresenca.component';
 
 export enum AlertTypes {
   DANGER = 'danger',
@@ -24,10 +25,14 @@ export class AlertModalService {
   }
 
   showAlertDanger(message: string) {
-    this.showAlert(message, AlertTypes.DANGER);
+    this.showAlert(message, AlertTypes.DANGER, 3000);
   }
 
   showAlertSuccess(message: string) {
     this.showAlert(message, AlertTypes.SUCCESS, 3000);
+  }
+  showPresenca() {
+    const bsModalRef: BsModalRef = this.modalService.show(ConfirmpresencaComponent);
+
   }
 }

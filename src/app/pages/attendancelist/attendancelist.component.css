@@ -1,5 +1,114 @@
+body {
+  height: 100vh;
+  background-color: var(--grey);
+}
 .container {
-  display: flex;
   margin: 0;
   padding: 0;
+  display: flex;
+}
+.content {
+  padding-left: 150px;
+  padding-top: 90px;
+  width: 100%;
+}
+
+.content .item {
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.content .item a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+}
+
+.content .item a .conteudo-img {
+  display: flex;
+  margin-right: 50px;
+  width: 256px;
+  height: 166px;
+  min-height: 166px;
+  min-width: 256px;
+}
+
+.content .item a .conteudo-img img {
+  margin: auto 0;
+  display: block;
+  object-fit: cover;
+}
+
+.content .item a .conteudo-textos .titulo {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  align-items: center;
+  letter-spacing: 0.002em;
+  text-transform: uppercase;
+  color: black;
+  margin: 0;
+}
+
+.content .item a .conteudo-textos .local {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 16px;
+  align-items: center;
+  letter-spacing: 0.002em;
+  text-transform: capitalize;
+  color: black;
+}
+
+.content .item a .conteudo-textos .descricao {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.002em;
+  text-transform: capitalize;
+  color: #777777;
+}
+
+.content .item a .video {
+  background: transparent;
+  top: -166px;
+  position: absolute;
+  transition: linear 0.3s;
+  width: 100%;
+  height: 166px;
+  opacity: 0;
+  display: flex;
+  align-items: end;
+}
+
+.content .item a {
+  text-decoration: none;
+  color: white;
+}
+
+.content .item a .video:hover {
+  opacity: 1;
+}
+
+.content .item a .video h3 {
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #f05097 0%, #514d9e 100%);
 }

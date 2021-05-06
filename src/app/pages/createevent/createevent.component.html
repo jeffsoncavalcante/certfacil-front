@@ -14,6 +14,7 @@
           <input type="time" formControlName="inicio" id="especial" placeholder="Horário" />
           <input type="text" formControlName="id_usuario" placeholder="Palestrante" required />
           <input type="number" placeholder="Carga horária" />
+          <input type="file" placeholder="Imagem do curso" id="upload" (change)="onChange($event)" />
 
           <button class="button" type="submit" (click)="onSubmit()">Criar evento</button>
 
