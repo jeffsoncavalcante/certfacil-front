@@ -19,7 +19,8 @@ import { AttendancelistComponent } from './pages/attendancelist/attendancelist.c
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyeventsComponent } from './pages/myevents/myevents.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
-import { ModalModule} from 'ngx-bootstrap/modal'
+import { ModalModule} from 'ngx-bootstrap/modal';
+import { PdfComponent } from './pages/pdf/pdf.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ModalModule} from 'ngx-bootstrap/modal'
     MyeventsComponent,
     CertificateComponent,
     HeaderComponent,
-    HeadermenuComponent
+    HeadermenuComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,
