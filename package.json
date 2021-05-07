@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@21epub/use-rxjs-subject": "^0.1.4",
     "@angular/animations": "~11.2.10",
     "@angular/common": "~11.2.10",
     "@angular/compiler": "~11.2.10",
@@ -26,7 +27,7 @@
     "g": "^2.0.1",
     "jspdf": "^2.3.1",
     "ngx-bootstrap": "^6.2.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
