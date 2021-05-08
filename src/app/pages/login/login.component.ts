@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
          if (this.objeto.token.length != null){
           window.localStorage.setItem("token",this.objeto.token)
           window.localStorage.setItem("id",this.objeto.id_user)
+
           this.getprofile()
          }
        },
@@ -58,6 +59,8 @@ export class LoginComponent implements OnInit {
       data => {
         this.dados = data.user,
         window.localStorage.setItem("usertype",this.dados.tipo_usuario)
+        window.localStorage.setItem("campus",this.dados.campus)
+        window.localStorage.setItem("semestre",this.dados.semestre)
         window.location.href='/home'
       },
       error => {
