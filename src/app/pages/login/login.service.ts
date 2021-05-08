@@ -16,18 +16,20 @@ export class LoginService {
   constructor(private http:HttpClient) {}
   usertype = new EventEmitter<boolean>()
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer '+this.token
-   })
-  }
+  httpOptions = {}
 
   create(login){
     return this.http.post(this.API+'/api/user/login',login).pipe(take(1));
   }
 
-  listprofile(flag: string):Observable<List>{
+  listprofile(flag: string, dados):Observable<List>{
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '+dados
+     })
+    }
+
     return this.http.get<List>(this.API+flag, this.httpOptions)
   }
 

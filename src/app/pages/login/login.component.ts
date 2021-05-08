@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   teste
   objeto: any=[]
   dados: any=[]
+  token
 
 
   ngOnInit(): void {
@@ -33,16 +34,25 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  onSubmit(){
+  private delay(ms: number): Promise<boolean> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(true);
+      }, ms);
+    });
+  }
+
+  async onSubmit(){
    if(this.form.valid){
 
      this.service.create(this.form.value).subscribe(
        async data =>{
          this.objeto = data
          if (this.objeto.token.length != null){
+          this.token = this.objeto.token
           window.localStorage.setItem("token",this.objeto.token)
           window.localStorage.setItem("id",this.objeto.id_user)
-
+          await this.delay(1000);
           this.getprofile()
          }
        },
@@ -53,20 +63,19 @@ export class LoginComponent implements OnInit {
   }
 
 
-  getprofile(){
+ getprofile(){
 
-    this.service.listprofile('/api/user/perfil/').subscribe(
-      data => {
-        this.dados = data.user,
-        window.localStorage.setItem("usertype",this.dados.tipo_usuario)
-        window.localStorage.setItem("campus",this.dados.campus)
-        window.localStorage.setItem("semestre",this.dados.semestre)
-        window.location.href='/home'
-      },
-      error => {
-        window.location.href='/login'
-      }
-    )
-
-  }
+      this.service.listprofile('/api/user/perfil/', this.token).subscribe(
+        data => {
+          this.dados = data.user,
+          window.localStorage.setItem("usertype",this.dados.tipo_usuario)
+          window.localStorage.setItem("campus",this.dados.campus)
+          window.localStorage.setItem("semestre",this.dados.semestre)
+          window.location.href='/home'
+        },
+        error => {
+          this.alertservice.showAlertDanger('Usuario e Senha Invalido')
+        }
+      )
+    }
 }
