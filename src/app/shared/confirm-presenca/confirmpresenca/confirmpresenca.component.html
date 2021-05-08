@@ -2,14 +2,25 @@
   <div class="modal-header">
     <h5 class="modal-title">Lista de Presença</h5>
   </div>
-  <div class="modal-body">
-    <div>
-    <p>Presença 1</p>
-    <button type="button" class="btn btn-secondary" (click)="Confirmone()">Confirmar</button>
+  <div class="modal-body" >
+    <div *ngIf="buttonactivepresencaone">
+      <p>Ativar Presencça 1</p>
+      <button type="button" class="btn btn-secondary" (click)="Ativeone()">Confirmar</button>
+    </div >
+
+    <div *ngIf="buttonactivepresencatwo">
+      <p>Ativar Presença 2</p>
+      <button type="button" class="btn btn-secondary" (click)="Ativetwo()">Confirmar</button>
     </div>
-    <div>
-    <p>Presença 2</p>
-    <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">Confirmar</button>
+
+    <div *ngIf="buttonpresencaone">
+      <p> Confirma Presença 1</p>
+      <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">Confirmar</button>
+    </div>
+
+    <div *ngIf="buttonpresncatwo">
+      <p>Confirma Presença 2</p>
+      <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">Confirmar</button>
     </div>
   </div>
   <div class="modal-footer">

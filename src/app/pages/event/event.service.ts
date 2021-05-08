@@ -20,4 +20,8 @@ export class EventService {
   list(flag: string): Observable<Curso> {
     return this.http.get<Curso>(this.API + flag, this.httpOptions);
   }
+
+  crete(flag:String,data){
+    return this.http.post(this.API+flag,data,this.httpOptions)
+  }
 }
