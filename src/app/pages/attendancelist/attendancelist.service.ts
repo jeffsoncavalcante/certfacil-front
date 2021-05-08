@@ -21,4 +21,6 @@ httpOptions = {
   list (flag: string): Observable<Listpresenca>{
     return this.http.get<Listpresenca>(this.API+flag, this.httpOptions)
   }
+
+
 }

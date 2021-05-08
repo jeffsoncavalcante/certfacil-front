@@ -1,3 +1,4 @@
+import { ConfirmpresencaService } from './confirmpresenca.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -8,9 +9,11 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class ConfirmpresencaComponent implements OnInit {
 
-  constructor(public bsModalRef: BsModalRef) { }
+  id_presenca = window.localStorage.getItem('id_eventos')
+  constructor(public bsModalRef: BsModalRef, private service: ConfirmpresencaService) { }
 
-
+  idjson = {"id": this.id_presenca}
+  id = JSON.stringify(this.idjson)
   ngOnInit() {
   }
 
@@ -20,5 +23,18 @@ export class ConfirmpresencaComponent implements OnInit {
 
   private confirmAndClose(value: boolean) {
     this.bsModalRef.hide();
+  }
+
+  Confirmone(){
+
+    this.service.create('/api/inscricao/activeattendanceone',this.id).subscribe(
+      data =>{
+        console.log(data)
+      }
+    )
+  }
+
+  Confirmtwo(){
+    this.service.create('/api/inscricao/attendancetwo',this.id).subscribe()
   }
 }
