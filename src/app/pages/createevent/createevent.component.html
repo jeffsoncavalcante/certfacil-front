@@ -8,30 +8,50 @@
           <h1 class="name">Vamos criar seu evento</h1>
         </div>
         <form novalidate [formGroup]="form">
-          <input type="text" formControlName="descricao" placeholder="Nome do Evento" required />
-          <input type="text" formControlName="nota" placeholder="Descrição do evento" />
-          <input type="date" formControlName="data_inicio" id="especial" placeholder="Data" />
-          <input type="time" formControlName="inicio" id="especial" placeholder="Horário" />
-          <input type="text" formControlName="id_usuario" placeholder="Palestrante" required (keydown)="search($event)"/>
-           <div *ngFor="let palestrante of palestrantes">
-              <p>
-              {{palestrante.id_usuario}}  
-              </p>
-              <p>
-              {{palestrante.name}}
-              </p>
-            </div>
-          <input type="number" placeholder="Carga horária" />
-          <input type="file" placeholder="Imagem do curso" id="upload" (change)="onChange($event)" />
-            
-          <button class="button" type="submit" (click)="onSubmit()">Criar evento</button>
+          <input
+            type="text"
+            formControlName="descricao"
+            placeholder="Nome do Evento"
+            required
+          />
+          <input
+            type="text"
+            formControlName="nota"
+            placeholder="Descrição do evento"
+          />
+          <input
+            type="date"
+            formControlName="data_inicio"
+            id="especial"
+            placeholder="Data"
+          />
+          <input
+            type="time"
+            formControlName="inicio"
+            id="especial"
+            placeholder="Horário"
+          />
+          <input
+            type="text"
+            formControlName="id_usuario"
+            placeholder="Palestrante"
+            required
+            (keydown)="search($event)"
+          />
 
+          <input type="number" placeholder="Carga horária" />
+          <input
+            type="file"
+            placeholder="Imagem do curso"
+            id="upload"
+            (change)="onChange($event)"
+          />
+
+          <button class="button" type="submit" (click)="onSubmit()">
+            Criar evento
+          </button>
         </form>
       </div>
-
     </div>
   </div>
 </body>
-
-
-
