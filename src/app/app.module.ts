@@ -19,8 +19,8 @@ import { AttendancelistComponent } from './pages/attendancelist/attendancelist.c
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyeventsComponent } from './pages/myevents/myevents.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
-import { ModalModule} from 'ngx-bootstrap/modal';
-import { PdfComponent } from './pages/pdf/pdf.component'
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PdfComponent } from './pages/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { PdfComponent } from './pages/pdf/pdf.component'
     CertificateComponent,
     HeaderComponent,
     HeadermenuComponent,
-    PdfComponent
+    PdfComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,11 +46,9 @@ import { PdfComponent } from './pages/pdf/pdf.component'
     HttpClientModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    SharedModule
+    SharedModule,
   ],
-  providers: [
-
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

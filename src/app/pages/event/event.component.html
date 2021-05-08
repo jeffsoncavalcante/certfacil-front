@@ -1,32 +1,37 @@
 <app-header></app-header>
 
 <body>
-
-<div id="container">
-  <app-headermenu></app-headermenu>
-<div id="contents1">
-	<h3>TECH WEEK 2018</h3>
-Cidade:<br>
-Local:<br>
-Data:	<br>
-<input type="submit" class="button" value="Inscreva-se"><br>
-	</div>
-
-<div id="contents2">
-	<h3>TECH WEEK 2019</h3>
-Cidade:<br>
-Local:<br>
-Data:	<br>
-<input type="submit" class="button" value="Inscreva-se"><br>
-	</div>
-
-<div id="contents3">
-	<h3>TECH WEEK 2020</h3>
-Cidade:<br>
-Local:<br>
-Data:	<br>
-<input type="submit" class="button" value="Inscreva-se"><br>
-</div>
-
-</div>
-	</body>
+  <div class="container">
+    <app-headermenu></app-headermenu>
+    <div class="content">
+      <ng-container class="conteudo" *ngFor="let event of evento">
+        <div class="item">
+          <a href="#">
+            <div class="conteudo-img">
+              <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+            </div>
+            <div class="conteudo-textos">
+              <h3 class="titulo">{{ event.descricao }}</h3>
+              <h4 class="local">
+                Cidade: ?? <br />
+                Local: ??<br />
+                Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
+              </h4>
+              <h5 class="descricao">
+                Evento realizado na Universidade de Tecnologia e Ciências -
+                UNIFTC, com tema (Gamification - Movimentando a Aprendizagem) na
+                área de Tecnologia de Informação e no ambiente acadêmico.
+              </h5>
+            </div>
+            <a class="btn-sign-up" href="#">Inscreva-se</a>
+          </a>
+          <a href="#">
+            <div class="video">
+              <h3>Ver vídeo</h3>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</body>
