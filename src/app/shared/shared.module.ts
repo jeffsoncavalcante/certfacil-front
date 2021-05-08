@@ -9,7 +9,7 @@ import { AlertModalComponent } from './alert-modal/alert-modal.component';
     CommonModule
   ],
   declarations: [AlertModalComponent, ConfirmpresencaComponent],
-  exports: [AlertModalComponent],
+  exports: [AlertModalComponent, ConfirmpresencaComponent],
   // entryComponents não é necessário a partir do angular v9
   entryComponents: [AlertModalComponent, ConfirmpresencaComponent]
 })
