@@ -2,7 +2,7 @@ import { CreateeventService } from './createevent.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
-import { Subject } from 'rxjs';
+
 @Component({
   selector: 'app-createevent',
   templateUrl: './createevent.component.html',
@@ -26,7 +26,7 @@ export class CreateeventComponent implements OnInit {
       id_usuario: [null],
       ativo: '0',
       carga_horaria: [null],
-      img: [null],
+      img: '123',
     });
   }
 
@@ -49,7 +49,7 @@ export class CreateeventComponent implements OnInit {
     this.files.add(SelectFiles[0]);
   }
 
-  search($event) {
-    let q = $event.target.value
-  }
+  search($event){
+    let q= $event.target.value;
+
 }

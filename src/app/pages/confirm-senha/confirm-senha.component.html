@@ -1,0 +1,41 @@
+<header class="cabecalho">
+  <a href="/">
+    <img
+      class="logo"
+      src="../../../assets/images/logo-certfacil.png"
+      alt="Logo Certfacil"
+    />
+  </a>
+</header>
+
+<body>
+  <div class="form-box">
+    <div>
+      <h1 class="name">Nova Senha</h1>
+    </div>
+
+    <form [formGroup]="form" >
+      <input
+        type="password"
+        placeholder="Nova Senha"
+        formControlName="password"
+        required
+      />
+      <input
+        type="password"
+        placeholder="Confime a nova Senha"
+        formControlName="confirm"
+        required
+      />
+      <button class="button" type="submit" (click)="valid()">Recuperar</button>
+    </form>
+    <div class="recover">
+      <h5>
+        Já tem uma Conta?
+        <a class="button-register" href="/login">Login</a><br />
+        Não tem uma conta?
+        <a class="button-register" href="/register">Cadastra-se</a>
+      </h5>
+    </div>
+  </div>
+</body>

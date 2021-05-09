@@ -12,7 +12,6 @@ import { List } from 'src/app/shared/listprofile/list';
 
 export class LoginService {
   private readonly API = 'http://certapi.redetuxnet.com.br:8000'
-  private token = window.localStorage.getItem('token')
   constructor(private http:HttpClient) {}
   usertype = new EventEmitter<boolean>()
 
