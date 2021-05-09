@@ -49,9 +49,7 @@ export class CreateeventComponent implements OnInit {
     this.files.add(SelectFiles[0]);
   }
 
-
   search($event){
     let q= $event.target.value;
 
-  }
 }
