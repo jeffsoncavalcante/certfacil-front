@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AttendancelistComponent } from './pages/attendancelist/attendancelist.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
+import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
 import { CreateeventComponent } from './pages/createevent/createevent.component';
 import { EventComponent } from './pages/event/event.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,6 +13,7 @@ import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { PdfComponent } from './pages/pdf/pdf.component';
 import { RecoverComponent } from './pages/recover/recover.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'myevents', component: MyeventsComponent },
   { path: 'myprofile', component: MyprofileComponent },
   { path: 'pdf', component: PdfComponent },
+  { path: 'validpassword', component: ValidaPasswordComponent },
+  { path: 'newpassword', component: ConfirmSenhaComponent },
   { path: '', redirectTo: '/index', pathMatch: 'full' },
 ];
 

@@ -21,6 +21,8 @@ import { MyeventsComponent } from './pages/myevents/myevents.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PdfComponent } from './pages/pdf/pdf.component';
+import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
+import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { PdfComponent } from './pages/pdf/pdf.component';
     HeaderComponent,
     HeadermenuComponent,
     PdfComponent,
+    ValidaPasswordComponent,
+    ConfirmSenhaComponent
   ],
   imports: [
     BrowserModule,

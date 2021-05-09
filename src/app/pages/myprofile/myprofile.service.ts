@@ -22,7 +22,7 @@ list(flag: string):Observable<List>{
   return this.http.get<List>(this.API+flag, this.httpOptions)
 }
 
-update(update,flag: string){
-  return this.http.post(this.API+flag,update, this.httpOptions)
+update(dados,flag: string){
+  return this.http.post(this.API+flag,dados, this.httpOptions)
 }
 }

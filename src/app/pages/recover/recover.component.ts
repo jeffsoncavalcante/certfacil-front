@@ -24,8 +24,16 @@ export class RecoverComponent implements OnInit {
       console.log('submit')
 
       this.service.recover(this.form.value).subscribe(
-        data => this.alertservice.showAlertSuccess('Senha enviada para o E-mail'),
-        error => this.alertservice.showAlertDanger('Falha ao Recuperar senha')
+        data => {
+          this.alertservice.showAlertSuccess('Senha enviada para o E-mail')
+
+          window.location.href='/validpassword'
+        },
+        error => {
+          this.alertservice.showAlertDanger('Falha ao Recuperar senha')
+        console.log(error)
+
+        }
       )
     }
 

@@ -12,7 +12,9 @@ export class MyprofileComponent implements OnInit {
   users: any=[]
   apelido
   email
-  id
+  campus
+  semestre
+  id = window.localStorage.getItem('id')
   dados: any=[]
 
 
@@ -20,8 +22,9 @@ export class MyprofileComponent implements OnInit {
   form: FormGroup
   ngOnInit(): void {
     this.form = this.fb.group({
-      Confirm: [null],
-      Password: [null]
+      id: this.id,
+      campus: [null],
+      semestre: [null]
     })
     this.list()
   }
@@ -33,17 +36,17 @@ export class MyprofileComponent implements OnInit {
         this.users = data.user
         this.apelido = Array.of(this.users.apelido)
         this.email = Array.of(this.users.email)
-
-
+        this.campus = Array.of(this.users.campus)
+        this.semestre = Array.of(this.users.semestre)
       },
       error => console.log(error)
     )
   }
 
   update(){
-    this.serviceprofile.update(this.form.value,'/api/user/resetPassword').subscribe(
+    this.serviceprofile.update(this.form.value,'/api/user/update').subscribe(
       data =>{
-        this.alertservice.showAlertSuccess('Usuario e Senha Invalido')
+        this.alertservice.showAlertSuccess('Dados Alterados com Sucesso!')
       },
       error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
     )

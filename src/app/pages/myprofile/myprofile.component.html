@@ -14,10 +14,10 @@
        		 <input type="text" value={{apelido}} disabled>
 			<label for="email"></label>
         	<input type="email"value={{email}} disabled>
-        	<label for="novaSenha"></label><br>
-        	<input type="password"formControlName="Password" placeholder="Nova senha">
-			<label for="confirmeSenha"></label>
-        	<input type="password" formControlName="Confirm" placeholder="Confirme a senha">
+      <label for="campus"></label><br>
+        	<input type="text"formControlName="campus" placeholder="Unidade: {{campus}}">
+			<label for="semestre"></label>
+        	<input type="text" formControlName="semestre" placeholder="Semestre: {{semestre}}">
 			<button class="button" type="submit" (click)='update()' >Atualizar perfil</button>
 
 		  </form>
