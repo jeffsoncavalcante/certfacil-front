@@ -1,29 +1,44 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title">Lista de Presença</h5>
+    <h2 class="modal-title">Lista de Presença</h2>
   </div>
-  <div class="modal-body" >
-    <div *ngIf="buttonactivepresencaone">
+  <div class="modal-body">
+    <div class="modal-content" *ngIf="buttonactivepresencaone">
       <p>Ativar Presencça 1</p>
-      <button type="button" class="btn btn-secondary" (click)="Ativeone()">Confirmar</button>
-    </div >
+      <button type="button" class="btn btn-secondary" (click)="Ativeone()">
+        Confirmar
+      </button>
+    </div>
 
     <div *ngIf="buttonactivepresencatwo">
       <p>Ativar Presença 2</p>
-      <button type="button" class="btn btn-secondary" (click)="Ativetwo()">Confirmar</button>
+      <button type="button" class="btn btn-secondary" (click)="Ativetwo()">
+        Confirmar
+      </button>
     </div>
 
     <div *ngIf="buttonpresencaone">
-      <p> Confirma Presença 1</p>
-      <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">Confirmar</button>
+      <p>Confirma Presença 1</p>
+      <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">
+        Confirmar
+      </button>
     </div>
 
     <div *ngIf="buttonpresncatwo">
       <p>Confirma Presença 2</p>
-      <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">Confirmar</button>
+      <button type="button" class="btn btn-secondary" (click)="Confirmtwo()">
+        Confirmar
+      </button>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onClose()">Fechar</button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-dismiss="modal"
+      (click)="onClose()"
+    >
+      Fechar
+    </button>
   </div>
 </div>
