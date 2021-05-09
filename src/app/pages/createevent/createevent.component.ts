@@ -24,7 +24,7 @@ export class CreateeventComponent implements OnInit {
       data_inicio: [null],
       inicio: [null],
       id_usuario:[null],
-      ativo: '0'
+      ativo: '0',
     })
   }
 
@@ -49,7 +49,7 @@ export class CreateeventComponent implements OnInit {
 
   search($event){
     let q= $event.target.value;
-    
+
   }
 
 }
