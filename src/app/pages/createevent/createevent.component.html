@@ -38,15 +38,24 @@
             required
             (keydown)="search($event)"
           />
-
-          <input type="number" placeholder="Carga horária" />
           <input
+            formControlName="carga_horaria"
+            type="number"
+            placeholder="Carga horária"
+          />
+          <label for="upload"
+            >Upload capa do evento
+            <img src="../../../assets/images/upload.svg" alt="Certfacil" />
+          </label>
+          <input
+            formControlName="img"
+            class="upload"
             type="file"
-            placeholder="Imagem do curso"
+            placeholder="Imagem do evento"
             id="upload"
             (change)="onChange($event)"
+            accept="image/*"
           />
-
           <button class="button" type="submit" (click)="onSubmit()">
             Criar evento
           </button>

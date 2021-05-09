@@ -6,50 +6,50 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'app-createevent',
   templateUrl: './createevent.component.html',
-  styleUrls: ['./createevent.component.css']
+  styleUrls: ['./createevent.component.css'],
 })
 export class CreateeventComponent implements OnInit {
-
-  constructor(private service: CreateeventService,
+  constructor(
+    private service: CreateeventService,
     private fb: FormBuilder,
     private alertservice: AlertModalService
-    ) { }
-    form: FormGroup;
-    files: Set<File>;
+  ) {}
+  form: FormGroup;
+  files: Set<File>;
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      descricao:[null],
-      nota:[null],
+      descricao: [null],
+      nota: [null],
       data_inicio: [null],
       inicio: [null],
-      id_usuario:[null],
-      ativo: '0'
-    })
+      id_usuario: [null],
+      ativo: '0',
+      carga_horaria: [null],
+      img: [null],
+    });
   }
 
-  onSubmit(){
-    this.service.createevent(this.form.value,'/api/eventos/store').subscribe(
-      dados =>{
-        this.alertservice.showAlertSuccess("Evento Cadastrado com Sucesso")
+  onSubmit() {
+    this.service.createevent(this.form.value, '/api/eventos/store').subscribe(
+      (dados) => {
+        this.alertservice.showAlertSuccess('Evento Cadastrado com Sucesso');
       },
-      error =>{
-        this.alertservice.showAlertDanger("Erro ao Cadastrar o Evento")
+      (error) => {
+        this.alertservice.showAlertDanger('Erro ao Cadastrar o Evento');
       }
-    )
+    );
   }
 
-  onChange(event){
-    console.log(event)
-    this.files = new Set()
+  onChange(event) {
+    console.log(event);
+    this.files = new Set();
     const SelectFiles = <FileList>event.srcElement.files;
-    document.getElementById('upload').innerHTML = SelectFiles[0].name
-    this.files.add(SelectFiles[0])
+    document.getElementById('upload').innerHTML = SelectFiles[0].name;
+    this.files.add(SelectFiles[0]);
   }
 
-  search($event){
-    let q= $event.target.value;
-    
+  search($event) {
+    let q = $event.target.value;
   }
-
 }
