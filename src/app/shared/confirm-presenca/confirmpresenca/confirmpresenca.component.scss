@@ -1,0 +1,27 @@
+.modal-content {
+  .modal-header {
+    justify-content: center;
+    .modal-title {
+      text-align: center;
+      font-family: "Nunito";
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 16px;
+      text-transform: capitalize;
+      color: var(--pink);
+      padding: 16px 0;
+    }
+  }
+}
+
+.modal-content {
+  .modal-body {
+    .modal-content {
+      border: none;
+      justify-content: space-between;
+      align-content: center;
+      margin: auto;
+      align-items: center;
+    }
+  }
+}

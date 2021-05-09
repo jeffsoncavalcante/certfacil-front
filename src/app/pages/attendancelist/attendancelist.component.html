@@ -3,19 +3,26 @@
   <div class="container">
     <app-headermenu></app-headermenu>
     <div class="content">
-      <ng-container class="conteudo" *ngFor=" let event of evento">
+      <ng-container class="conteudo" *ngFor="let event of evento">
         <div class="item">
-            <div class="conteudo-img">
-              <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
-            </div>
-            <div class="conteudo-textos">
-              <h3 class="titulo">{{ event.descricao }}</h3>
-              <h4 class="local">
-                Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
-              </h4>
-              <h5 class="descricao">{{event.nota}}</h5>
-              <input type="submit" class="button" value="Fazer Chamada" (click)="Chamada(event.id)"/>
-            </div>
+          <div class="conteudo-img">
+            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+          </div>
+          <div class="conteudo-textos">
+            <h3 class="titulo">{{ event.descricao }}</h3>
+            <h4 class="local">
+              Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
+            </h4>
+            <h5 class="descricao">{{ event.nota }}</h5>
+          </div>
+          <button
+            type="submit"
+            class="button"
+            value="Fazer Chamada"
+            (click)="Chamada(event.id)"
+          >
+            Fazer chamada
+          </button>
         </div>
       </ng-container>
     </div>
