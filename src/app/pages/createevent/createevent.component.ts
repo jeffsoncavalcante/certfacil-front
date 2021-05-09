@@ -50,6 +50,6 @@ export class CreateeventComponent implements OnInit {
   }
 
   search($event) {
-    let q = $event.target.value;
+    let q = $event.target.value
   }
 }

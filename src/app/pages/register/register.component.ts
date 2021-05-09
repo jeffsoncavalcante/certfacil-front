@@ -26,7 +26,8 @@ export class RegisterComponent implements OnInit {
     tipo_usuario:[null],
     documento: [null],
     campus: [null],
-    celular: [null]
+    celular: [null],
+    semestre: [null]
     })
   }
   onSubmit(){
