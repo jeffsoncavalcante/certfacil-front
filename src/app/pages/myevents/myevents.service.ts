@@ -17,7 +17,7 @@ export class MyeventsService {
       Authorization: 'Bearer ' + this.token,
     }),
   };
-  list(flag: string): Observable<Curso> {
-    return this.http.get<Curso>(this.API + flag, this.httpOptions);
+  list(flag: string) {
+    return this.http.get(this.API + flag, this.httpOptions);
   }
 }
