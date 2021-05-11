@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./myevents.component.css'],
 })
 export class MyeventsComponent implements OnInit {
-  evento: eventos[];
+  evento: any = [];
   id = window.localStorage.getItem('id');
   constructor(private service: MyeventsService) {}
 
@@ -16,7 +16,7 @@ export class MyeventsComponent implements OnInit {
     this.service
       .list('/api/inscricao/listfull/' + this.id)
       .subscribe((data) => {
-        this.evento = data.eventos;
+        this.evento = data;
         console.log(data);
       });
   }

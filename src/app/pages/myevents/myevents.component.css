@@ -1,5 +1,148 @@
+body {
+  height: 100%;
+}
+
 .container {
-  display: flex;
   margin: 0;
   padding: 0;
+  display: flex;
+}
+.content {
+  padding-left: 60px;
+  padding-top: 90px;
+  width: 100%;
+}
+
+.content .item .conteudo-textos {
+  width: 435px;
+}
+
+.content .item {
+  padding-bottom: 30px;
+}
+
+.content .item {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  position: relative;
+}
+
+.content .item .conteudo-img {
+  display: flex;
+  margin-right: 50px;
+  width: 256px;
+  height: 166px;
+  min-height: 166px;
+  min-width: 256px;
+}
+
+.content .item .conteudo-img img {
+  margin: auto 0;
+  display: block;
+  object-fit: cover;
+}
+
+.content .item .conteudo-textos {
+  min-width: 435px;
+  max-width: 435px;
+}
+
+.content .item .conteudo-textos .titulo {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  align-items: center;
+  letter-spacing: 0.002em;
+  text-transform: uppercase;
+  color: black;
+  margin: 0;
+}
+
+.content .item .conteudo-textos .local {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 16px;
+  align-items: center;
+  letter-spacing: 0.002em;
+  text-transform: capitalize;
+  color: black;
+}
+
+.content .item .conteudo-textos .descricao {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.002em;
+  text-transform: capitalize;
+  color: #777777;
+}
+
+.btn-sign-up {
+  border: none;
+  width: 185px;
+  height: 40px;
+  color: white;
+  background: linear-gradient(90deg, #f05198 -5.82%, #544e9e 100.09%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-left: 32px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.content .video {
+  background: transparent;
+  position: relative;
+  transition: linear 0.3s;
+  opacity: 0;
+  display: flex;
+  align-items: end;
+  height: 40px;
+}
+
+.content .video a {
+  top: -86px;
+  right: 0;
+  left: 0;
+  z-index: 12;
+  position: relative;
+  text-decoration: none;
+  width: 958px;
+  background: linear-gradient(90deg, #f05097 0%, #514d9e 100%);
+  align-content: center;
+}
+
+.content .video:hover {
+  opacity: 1;
+}
+
+.content .video h3 {
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+  width: 100%;
 }
