@@ -16,21 +16,29 @@ export class ConfirmSenhaComponent implements OnInit {
 
     ) {}
   form: FormGroup
+  dados: any=[]
+  token = window.localStorage.getItem('tokenrecover')
 
   ngOnInit() {
     this.form = this.fb.group({
       password: [null],
-      confirm: [null]
+      confirm: [null],
+      token_email: this.token
     })
   }
 
   valid(){
     this.service.newpass(this.form.value,"/api/user/resetPassword").subscribe(
       data =>{
-        console.log(data)
+        this.dados = data
+        if(this.dados.message === 'true'){
+          this.alertservice.showAlertSuccess("Senha Recuperada com Sucesso !")
+          window.location.href='/login'
+        }
+
       })
       error =>{
-        console.log(error)
+        this.alertservice.showAlertDanger("Erro ao recuperar a senha"+error)
       }
   }
 
