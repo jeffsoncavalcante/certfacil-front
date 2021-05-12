@@ -1,17 +1,25 @@
-<div class="modal-content">
-  <div class="modal-header">
+<div class="content">
+  <div class="header">
     <h2 class="modal-title">Lista de Presença</h2>
+    <button
+      type="button"
+      class="btn-close"
+      data-dismiss="modal"
+      (click)="onClose()"
+    >
+      X
+    </button>
   </div>
-  <div class="modal-body">
-    <div class="modal-content" *ngIf="buttonactivepresencaone">
-      <p>Ativar Presencça 1</p>
+  <div class="body">
+    <div class="presenca-container" *ngIf="buttonactivepresencaone">
+      <p>Liberar primeira lista de presença</p>
       <button type="button" class="btn btn-secondary" (click)="Ativeone()">
         Confirmar
       </button>
     </div>
 
-    <div *ngIf="buttonactivepresencatwo">
-      <p>Ativar Presença 2</p>
+    <div class="presenca-container" *ngIf="buttonactivepresencatwo">
+      <p>Liberar segunda lista de presença</p>
       <button type="button" class="btn btn-secondary" (click)="Ativetwo()">
         Confirmar
       </button>
@@ -30,15 +38,5 @@
         Confirmar
       </button>
     </div>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-secondary"
-      data-dismiss="modal"
-      (click)="onClose()"
-    >
-      Fechar
-    </button>
   </div>
 </div>
