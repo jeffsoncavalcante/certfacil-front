@@ -1,6 +1,10 @@
-.modal-content {
-  .modal-header {
-    justify-content: center;
+.content {
+  display: inline;
+  padding: 30px 0;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 20px 20px;
     .modal-title {
       text-align: center;
       font-family: "Nunito";
@@ -11,17 +15,44 @@
       color: var(--pink);
       padding: 16px 0;
     }
+    .btn-close {
+      border: none;
+      background-color: transparent;
+      color: var(--pink);
+      text-align: center;
+      font-family: "Nunito";
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 16px;
+      text-transform: capitalize;
+    }
   }
-}
-
-.modal-content {
-  .modal-body {
-    .modal-content {
+  .body {
+    margin-bottom: 50px;
+    .presenca-container {
+      width: 100%;
+      pointer-events: auto;
+      background-color: #fff;
       border: none;
       justify-content: space-between;
       align-content: center;
-      margin: auto;
+      padding: 20px;
       align-items: center;
+      display: flex;
+      p {
+        margin: 0;
+      }
+      .btn {
+        border: none;
+        padding: 5px 20px;
+        color: white;
+        border-radius: 15px;
+        transition: linear 0.2s;
+        background: linear-gradient(90deg, #f05198 -5.82%, #544e9e 100.09%);
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 }
