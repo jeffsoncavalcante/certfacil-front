@@ -16,12 +16,20 @@
             </h4>
             <h5 class="descricao">
               {{ event.nota }}
+
             </h5>
           </div>
-          <a class="btn-sign-up" (click)="createevente(event.id)"
-            >Confirmar Presença</a> <br>
-            <a class="btn-sign-up" (click)="createevente(event.id)"
-            >Download PDF</a>
+          <div class="butons">
+            <div *ngIf="buttonpresenca">
+              <a class="btn-sign-up" (click)="presenca()"
+              >Confirmar Presença</a> <br>
+            </div>
+            <div *ngIf="buttondown">
+              <a class="btn-sign-up" (click)="downloadpdf(event.descricao, event.carga_horaria)"
+              >Download PDF</a>
+            </div>
+          </div>
+
         </div>
       </ng-container>
     </div>

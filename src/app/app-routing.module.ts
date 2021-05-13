@@ -10,7 +10,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MyeventsComponent } from './pages/myevents/myevents.component';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
-import { PdfComponent } from './pages/pdf/pdf.component';
+import { PdfComponent } from './shared/pdf/pdf.component';
 import { RecoverComponent } from './pages/recover/recover.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
@@ -27,9 +27,9 @@ const routes: Routes = [
   { path: 'event', component: EventComponent },
   { path: 'myevents', component: MyeventsComponent },
   { path: 'myprofile', component: MyprofileComponent },
-  { path: 'pdf', component: PdfComponent },
   { path: 'validpassword', component: ValidaPasswordComponent },
   { path: 'newpassword', component: ConfirmSenhaComponent },
+  { path: 'pdf', component: PdfComponent },
   { path: '', redirectTo: '/index', pathMatch: 'full' },
 ];
 

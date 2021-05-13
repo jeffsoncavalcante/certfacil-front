@@ -86,7 +86,11 @@ body {
   color: #777777;
 }
 
-.btn-sign-up {
+.container .item .butons {
+  display: inline;
+}
+
+.container .item .butons .btn-sign-up {
   border: none;
   width: 185px;
   height: 40px;
