@@ -1,3 +1,4 @@
+import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 import { MyeventsService } from './myevents.service';
 import { Component, OnInit, EventEmitter } from '@angular/core';
@@ -12,14 +13,14 @@ export class MyeventsComponent implements OnInit {
   evento: any = [];
   id = window.localStorage.getItem('id');
   buttondown = false;
-  buttonpresenca = true;
+  buttonpresenca = false;
   typeuser = window.localStorage.getItem('usertype');
 
-  constructor(private service: MyeventsService) {}
+  constructor(private service: MyeventsService, private alert: AlertModalService) {}
 
   ngOnInit(): void {
     this.service
-      .list('/api/inscricao/listfull/' + this.id)
+      .list('/api/inscricao/listevent/' + this.id)
       .subscribe((data) => {
         this.evento = data;
         console.log(data);
@@ -33,7 +34,9 @@ export class MyeventsComponent implements OnInit {
         (this.buttondown = true)
       }
   }
-  presenca(){}
+  presenca(){
+    this.alert.showPresenca()
+  }
   downloadpdf(){
     this.service.emiterpdf.subscribe(
       data => console.log("oi")
