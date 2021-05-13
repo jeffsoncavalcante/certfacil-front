@@ -33,7 +33,7 @@ export class HeadermenuComponent implements OnInit {
         (this.profile = true);
     }
     if (this.typeuser === 'palestrante') {
-      (this.home = true), (this.certificate = true), (this.profile = true);
+      (this.home = true), (this.profile = true), (this.myevents = true);
     }
     if (this.typeuser === 'participante') {
       (this.home = true),

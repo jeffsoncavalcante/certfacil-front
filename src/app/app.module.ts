@@ -1,9 +1,9 @@
+import { PdfComponent } from './shared/pdf/pdf.component';
 import { HeadermenuComponent } from './shared/headermenu/headermenu.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -20,9 +20,9 @@ import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { MyeventsComponent } from './pages/myevents/myevents.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { PdfComponent } from './pages/pdf/pdf.component';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +40,9 @@ import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.compo
     CertificateComponent,
     HeaderComponent,
     HeadermenuComponent,
-    PdfComponent,
     ValidaPasswordComponent,
-    ConfirmSenhaComponent
+    ConfirmSenhaComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,

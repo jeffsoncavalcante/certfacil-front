@@ -1,3 +1,4 @@
+import { PdfComponent } from './pdf/pdf.component';
 import { ConfirmpresencaComponent } from './confirm-presenca/confirmpresenca/confirmpresenca.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

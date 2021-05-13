@@ -26,7 +26,8 @@ export class ValidaPasswordComponent implements OnInit {
   valid(){
     this.service.create(this.form.value,"/api/user/validatetoken").subscribe(
       data =>{
-        console.log(this.dados)
+        console.log(data)
+        this.dados = data
         if(this.dados.message === 'true'){
 
           this.tokenrecover = this.form.value

@@ -1,6 +1,8 @@
-import { eventos } from '../../shared/listcursos/eventos.model';
+import { AlertModalService } from 'src/app/shared/alert-modal.service';
+
 import { MyeventsService } from './myevents.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-myevents',
@@ -8,16 +10,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./myevents.component.css'],
 })
 export class MyeventsComponent implements OnInit {
-  evento: eventos[];
+  evento: any = [];
   id = window.localStorage.getItem('id');
-  constructor(private service: MyeventsService) {}
+  buttondown = false;
+  buttonpresenca = false;
+  typeuser = window.localStorage.getItem('usertype');
+
+  constructor(private service: MyeventsService, private alert: AlertModalService) {}
 
   ngOnInit(): void {
     this.service
-      .list('/api/inscricao/listfull/' + this.id)
+      .list('/api/inscricao/listevent/' + this.id)
       .subscribe((data) => {
-        this.evento = data.eventos;
+        this.evento = data;
         console.log(data);
       });
+
+      if (this.typeuser === 'palestrante') {
+        (this.buttondown = true)
+      }
+      if (this.typeuser === 'participante') {
+        (this.buttonpresenca = true),
+        (this.buttondown = true)
+      }
+  }
+  presenca(){
+    this.alert.showPresenca()
+  }
+  downloadpdf(){
+    this.service.emiterpdf.subscribe(
+      data => console.log("oi")
+    )
+    console.log("oi")
+
   }
 }

@@ -6,25 +6,30 @@
     <div class="content">
       <ng-container class="conteudo" *ngFor="let event of evento">
         <div class="item">
-          <a href="#">
-            <div class="conteudo-img">
-              <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+          <div class="conteudo-img">
+            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+          </div>
+          <div class="conteudo-textos">
+            <h3 class="titulo">{{ event.descricao }}</h3>
+            <h4 class="local">
+              Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
+            </h4>
+            <h5 class="descricao">
+              {{ event.nota }}
+
+            </h5>
+          </div>
+          <div class="butons">
+            <div *ngIf="buttonpresenca">
+              <a class="btn-sign-up" (click)="presenca()"
+              >Confirmar Presença</a> <br>
             </div>
-            <div class="conteudo-textos">
-              <h3 class="titulo">{{ event.descricao }}</h3>
-              <h4 class="local">
-                Cidade: ?? <br />
-                Local: ??<br />
-                Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
-              </h4>
-              <h5 class="descricao">?????</h5>
+            <div *ngIf="buttondown">
+              <a class="btn-sign-up" (click)="downloadpdf(event.descricao, event.carga_horaria)"
+              >Download PDF</a>
             </div>
-          </a>
-          <a href="#">
-            <div class="video">
-              <h3>Ver vídeo</h3>
-            </div>
-          </a>
+          </div>
+
         </div>
       </ng-container>
     </div>
