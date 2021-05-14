@@ -1,13 +1,13 @@
+
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { jsPDF } from "jspdf";
-
-
 
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
-  styleUrls: ['./pdf.component.css']
+  styleUrls: ['./pdf.component.css'],
 })
+
 export class PdfComponent  {
 
   premissa = true
@@ -35,4 +35,3 @@ export class PdfComponent  {
   }
 
 
-}

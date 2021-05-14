@@ -5,8 +5,6 @@ img {
   position: relative;
 }
 
-
-
 .content {
   position: absolute;
   top: 0;
@@ -60,12 +58,7 @@ img {
   padding-top: 35px;
 }
 
-.content .button {
 
-  background: transparent;
-  border: none !important;
-  font-size:0;
-}
 .content .nome-participante {
   font-family: "Nunito";
   font-style: normal;
@@ -73,8 +66,9 @@ img {
   font-size: 35px;
   margin: 0;
   padding: 30px 0;
-  color: black;
-}
+  color: white;
+
+
 
 .content .assinaturas {
   display: flex;
