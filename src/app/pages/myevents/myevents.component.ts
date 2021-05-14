@@ -9,6 +9,8 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
   templateUrl: './myevents.component.html',
   styleUrls: ['./myevents.component.css'],
 })
+
+
 export class MyeventsComponent implements OnInit {
   evento: any = [];
   id = window.localStorage.getItem('id');
@@ -38,9 +40,7 @@ export class MyeventsComponent implements OnInit {
     this.alert.showPresenca()
   }
   downloadpdf(){
-    this.service.emiterpdf.subscribe(
-      data => console.log("oi")
-    )
+    window.location.href='/pdf'
     console.log("oi")
 
   }
