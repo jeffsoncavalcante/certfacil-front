@@ -18,6 +18,7 @@ httpOptions = {
  })
 }
   list (flag: string): Observable<Curso>{
+    console.log(this.token)
     return this.http.get<Curso>(this.API+flag, this.httpOptions)
   }
 }
