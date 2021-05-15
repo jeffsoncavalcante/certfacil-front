@@ -24,7 +24,8 @@ export class MyprofileComponent implements OnInit {
     this.form = this.fb.group({
       id: this.id,
       campus: [null],
-      semestre: [null]
+      semestre: [null],
+      apelido: [null]
     })
     this.list()
   }
@@ -43,10 +44,20 @@ export class MyprofileComponent implements OnInit {
     )
   }
 
-  update(){
+  private delay(ms: number): Promise<boolean> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(true);
+      }, ms);
+    });
+  }
+
+ update(){
     this.serviceprofile.update(this.form.value,'/api/user/update').subscribe(
       data =>{
         this.alertservice.showAlertSuccess('Dados Alterados com Sucesso!')
+        this.delay(1000)
+        window.location.href="/myprofile"
       },
       error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
     )
