@@ -17,6 +17,7 @@ export class HeadermenuComponent implements OnInit {
   event = false;
   certificate = false;
   listpresent = false;
+  sair = false;
   form: any;
 
   constructor(private service: HeadermenuService, private fb: FormBuilder) {}
@@ -31,15 +32,17 @@ export class HeadermenuComponent implements OnInit {
         (this.createevent = true),
         (this.listpresent = true),
         (this.profile = true);
+        (this.sair = true);
     }
     if (this.typeuser === 'palestrante') {
-      (this.home = true), (this.profile = true), (this.myevents = true);
+      (this.home = true), (this.profile = true), (this.myevents = true); (this.sair = true);
     }
     if (this.typeuser === 'participante') {
       (this.home = true),
         (this.event = true),
         (this.myevents = true),
         (this.profile = true);
+        (this.sair = true);
     }
   }
 

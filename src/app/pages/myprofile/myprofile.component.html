@@ -11,7 +11,7 @@
 
 		  <form novalidate [formGroup]="form">
 			<label for="name"></label><br>
-       		 <input type="text" value={{apelido}} disabled>
+       		 <input type="text" formControlName="apelido" placeholder="ID: {{id}} | {{apelido}}">
 			<label for="email"></label>
         	<input type="email"value={{email}} disabled>
       <label for="campus"></label><br>

@@ -25,6 +25,7 @@
     "bootstrap": "^4.6.0",
     "firebase": "^7.0 || ^8.0",
     "g": "^2.0.1",
+    "html2canvas": "*",
     "jspdf": "^2.3.1",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "^6.6.7",
