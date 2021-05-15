@@ -20,9 +20,9 @@ export class AttendancelistComponent implements OnInit {
   ngOnInit(): void{
 
 
-    this.service.list('/api/eventos/').subscribe(
+    this.service.list('/api/eventos/index').subscribe(
       data =>{
-        this.evento = data.eventos;
+        this.evento = data.message;
       }
 
     )}

@@ -1,3 +1,3 @@
 export class Listpresenca{
-  eventos: any[]
+  message: any[]
 }

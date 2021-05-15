@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   objeto: any=[]
   dados: any=[]
   token
-
+  logado
 
   ngOnInit(): void {
 
@@ -50,14 +50,19 @@ export class LoginComponent implements OnInit {
          this.objeto = data
          if (this.objeto.token.length != null){
           this.token = this.objeto.token
+          this.logado = true;
+          window.localStorage.setItem("logado", this.logado)
           window.localStorage.setItem("token",this.objeto.token)
           window.localStorage.setItem("id",this.objeto.id_user)
+
           await this.delay(1000);
           this.getprofile()
          }
        },
        error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
      )
+   }else{
+    this.alertservice.showAlertDanger('Prencha os Campos')
    }
 
   }
@@ -71,6 +76,7 @@ export class LoginComponent implements OnInit {
           window.localStorage.setItem("usertype",this.dados.tipo_usuario)
           window.localStorage.setItem("campus",this.dados.campus)
           window.localStorage.setItem("semestre",this.dados.semestre)
+          window.localStorage.setItem("nome",this.dados.nome)
           window.location.href='/home'
         },
         error => {
