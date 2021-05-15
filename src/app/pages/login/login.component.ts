@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit {
           window.localStorage.setItem("usertype",this.dados.tipo_usuario)
           window.localStorage.setItem("campus",this.dados.campus)
           window.localStorage.setItem("semestre",this.dados.semestre)
+          window.localStorage.setItem("nome",this.dados.nome)
           window.location.href='/home'
         },
         error => {

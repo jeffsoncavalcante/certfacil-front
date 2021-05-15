@@ -36,12 +36,22 @@ export class MyeventsComponent implements OnInit {
         (this.buttondown = true)
       }
   }
+  private delay(ms: number): Promise<boolean> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(true);
+      }, ms);
+    });
+  }
+
   presenca(){
     this.alert.showPresenca()
   }
-  downloadpdf(){
+  downloadpdf(descricao, carga_horaria){
+    window.localStorage.setItem("descricao", descricao)
+    window.localStorage.setItem("carga_horaria", carga_horaria)
+    this.delay(2000)
     window.location.href='/pdf'
-    console.log("oi")
 
   }
 }
