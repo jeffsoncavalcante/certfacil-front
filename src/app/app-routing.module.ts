@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AttendancelistComponent } from './pages/attendancelist/attendancelist.component';
@@ -17,19 +18,19 @@ import { ValidaPasswordComponent } from './pages/valida-password/valida-password
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'index', component: IndexComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent},
   { path: 'recover', component: RecoverComponent },
   { path: 'certifcate', component: CertificateComponent },
   { path: 'attendancelist', component: AttendancelistComponent },
   { path: 'createevent', component: CreateeventComponent },
-  { path: 'event', component: EventComponent },
-  { path: 'myevents', component: MyeventsComponent },
-  { path: 'myprofile', component: MyprofileComponent },
+  { path: 'event', component: EventComponent , canActivate: [AuthGuard]},
+  { path: 'myevents', component: MyeventsComponent, canActivate: [AuthGuard] },
+  { path: 'myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
   { path: 'validpassword', component: ValidaPasswordComponent },
   { path: 'newpassword', component: ConfirmSenhaComponent },
-  { path: 'pdf', component: PdfComponent },
+  { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/index', pathMatch: 'full' },
 ];
 

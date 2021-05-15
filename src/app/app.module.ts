@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/guard/auth.guard';
 import { PdfComponent } from './shared/pdf/pdf.component';
 import { HeadermenuComponent } from './shared/headermenu/headermenu.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -52,7 +53,7 @@ import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.compo
     ModalModule.forRoot(),
     SharedModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
