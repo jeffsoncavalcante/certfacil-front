@@ -15,8 +15,8 @@ export class EventComponent implements OnInit {
   constructor(private service: EventService, private alert:AlertModalService) {}
 
   ngOnInit(): void {
-    this.service.list('/api/eventos/').subscribe((data) => {
-      this.evento = data.eventos;
+    this.service.list('/api/eventos/index').subscribe((data) => {
+      this.evento = data.message;
     });
   }
 

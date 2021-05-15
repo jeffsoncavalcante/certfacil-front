@@ -14,11 +14,12 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void{
-    this.service.list('/api/eventos/').subscribe(
+    this.service.list('/api/eventos/index').subscribe(
       data =>{
-        this.evento = data.eventos;
-      }
-
+        console.log(data)
+        this.evento = data.message;
+      },
+      erro => console.log(erro)
     )}
 
 }

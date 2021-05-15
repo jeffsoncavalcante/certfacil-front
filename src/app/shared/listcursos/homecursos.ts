@@ -1,3 +1,3 @@
 export class Curso{
-  eventos: any[]
+  message: any[]
 }
