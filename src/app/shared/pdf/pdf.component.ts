@@ -15,6 +15,7 @@ export class PdfComponent  {
   nome = window.localStorage.getItem("nome")
   descricao = window.localStorage.getItem("descricao")
   carga_horaria = window.localStorage.getItem("carga_horaria")
+  data = window.localStorage.getItem("data_inicio")
 
 
   @ViewChild('content', {static:true}) el!: ElementRef<HTMLImageElement>;
