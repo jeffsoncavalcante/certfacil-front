@@ -22,7 +22,7 @@ export class MyeventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service
-      .list('/api/inscricao/listevent/' + this.id)
+      .list('/api/inscricao/listeventusers/' + this.id)
       .subscribe((data) => {
         this.evento = data;
         console.log(data);
@@ -32,9 +32,13 @@ export class MyeventsComponent implements OnInit {
         (this.buttondown = true)
       }
       if (this.typeuser === 'participante') {
-        (this.buttonpresenca = true),
-        (this.buttondown = true)
+        (this.buttonpresenca = true)
+        if (this.evento.certificado === '1'){
+          (this.buttondown = true)
+        }
+
       }
+
   }
   private delay(ms: number): Promise<boolean> {
     return new Promise(resolve => {
@@ -44,12 +48,16 @@ export class MyeventsComponent implements OnInit {
     });
   }
 
-  presenca(){
+  presenca(lib_presenca_1, lib_presenca_2){
+    window.localStorage.setItem("lib_presenca_1", lib_presenca_1)
+    window.localStorage.setItem("lib_presenca_2", lib_presenca_2)
+    this.delay(2000)
     this.alert.showPresenca()
   }
-  downloadpdf(descricao, carga_horaria){
+  downloadpdf(descricao, carga_horaria, data_inicio){
     window.localStorage.setItem("descricao", descricao)
     window.localStorage.setItem("carga_horaria", carga_horaria)
+    window.localStorage.setItem("data_inicio", data_inicio)
     this.delay(2000)
     window.location.href='/pdf'
 

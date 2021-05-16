@@ -20,7 +20,7 @@ export class ConfirmpresencaService {
   }
 
 create(flag: string,confirm){
-  return this.http.post(this.API+flag,confirm).pipe(take(1));
+  return this.http.post(this.API+flag,confirm,this.httpOptions).pipe(take(1));
 }
 
 }

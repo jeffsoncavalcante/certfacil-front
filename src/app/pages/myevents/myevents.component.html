@@ -21,11 +21,11 @@
           </div>
           <div class="butons">
             <div *ngIf="buttonpresenca">
-              <a class="btn-sign-up" (click)="presenca()"
+              <a class="btn-sign-up" (click)="presenca(lib_presenca_1, lib_presenca_2)"
               >Confirmar Presença</a> <br>
             </div>
             <div *ngIf="buttondown">
-              <a class="btn-sign-up" (click)="downloadpdf(event.descricao, event.carga_horaria)"
+              <a class="btn-sign-up" (click)="downloadpdf(event.descricao, event.carga_horaria, event.data_inicio)"
               >Download PDF</a>
             </div>
           </div>

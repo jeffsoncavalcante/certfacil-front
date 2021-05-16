@@ -52,7 +52,10 @@ export class HeadermenuComponent implements OnInit {
         window.location.href = '/index';
         window.localStorage.clear();
       },
-      (error) => console.log(error)
+      (error) =>  {
+        window.location.href = '/index';
+        window.localStorage.clear();
+      }
     );
   }
 }
