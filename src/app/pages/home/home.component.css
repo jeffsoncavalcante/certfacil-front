@@ -1,3 +1,7 @@
+body {
+  height: 100vh;
+  background-color: var(--grey);
+}
 .container {
   margin: 0;
   padding: 0;
@@ -11,16 +15,11 @@
 
 .content .item {
   padding-bottom: 30px;
-  position: relative;
-}
-
-.content .item a {
   display: flex;
-  text-decoration: none;
   align-items: center;
 }
 
-.content .item a .conteudo-img {
+.content .item .conteudo-img {
   display: flex;
   margin-right: 50px;
   width: 256px;
@@ -29,13 +28,17 @@
   min-width: 256px;
 }
 
-.content .item a .conteudo-img img {
+.content .item .conteudo-img img {
   margin: auto 0;
   display: block;
   object-fit: cover;
 }
+.content .item .conteudo-textos {
+  min-width: 435px;
+  max-width: 435px;
+}
 
-.content .item a .conteudo-textos .titulo {
+.content .item .conteudo-textos .titulo {
   font-family: "Nunito";
   font-style: normal;
   font-weight: bold;
@@ -48,7 +51,7 @@
   margin: 0;
 }
 
-.content .item a .conteudo-textos .local {
+.content .item .conteudo-textos .local {
   font-family: "Nunito";
   font-style: normal;
   font-weight: bold;
@@ -60,7 +63,7 @@
   color: black;
 }
 
-.content .item a .conteudo-textos .descricao {
+.content .item .conteudo-textos .descricao {
   font-family: "Nunito";
   font-style: normal;
   font-weight: 500;
@@ -73,25 +76,28 @@
   color: #777777;
 }
 
-.content .item a {
-  text-decoration: none;
+.container .item .butons {
+  display: inline;
+}
+
+.container .item .butons .btn-sign-up {
+  border: none;
+  width: 185px;
+  height: 40px;
   color: white;
-}
-
-.content .item a .video:hover {
-  opacity: 1;
-}
-
-.content .item a .video h3 {
+  background: linear-gradient(90deg, #f05198 -5.82%, #544e9e 100.09%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-left: 32px;
   font-family: "Nunito";
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 16px;
-  text-transform: capitalize;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #f05097 0%, #514d9e 100%);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }

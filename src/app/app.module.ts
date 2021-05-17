@@ -23,6 +23,7 @@ import { CertificateComponent } from './pages/certificate/certificate.component'
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.compo
     HeadermenuComponent,
     ValidaPasswordComponent,
     ConfirmSenhaComponent,
-    PdfComponent
+    PdfComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

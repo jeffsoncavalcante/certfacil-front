@@ -1,6 +1,6 @@
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { AttendancelistService } from './attendancelist.service';
-import { Listevent } from './../../shared/attendancelist/list.model';
+import { Listevent } from '../../shared/attendancelist/list.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -28,7 +28,6 @@ export class AttendancelistComponent implements OnInit {
     )}
 
     Chamada(i){
-      console.log(i)
       window.localStorage.setItem('id_eventos',i)
       this.AlertService.showPresenca()
     }

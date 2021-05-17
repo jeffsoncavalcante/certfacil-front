@@ -1,0 +1,46 @@
+<app-header></app-header>
+<body>
+  <div class="container">
+    <app-headermenu></app-headermenu>
+    <div class="form-box">
+      <div class="form-content">
+        <div>
+          <h1 class="name">Edite seu evento</h1>
+        </div>
+        <form novalidate [formGroup]="form">
+          <input
+            type="text"
+            formControlName="descricao"
+            placeholder="Nome: {{descricaoevent}}"
+            required
+          />
+          <input
+            type="text"
+            formControlName="nota"
+            placeholder="Descrição: {{notaevent}}"
+          />
+          <input
+            type="date"
+            formControlName="data_inicio"
+            id="especial"
+            value={{dataevent}}
+          />
+          <input
+            type="time"
+            formControlName="inicio"
+            id="especial"
+            value={{inicioevent}}
+          />
+          <input
+            formControlName="carga_horaria"
+            type="number"
+            placeholder="Carga Horaria: {{cargaevent}}"
+          />
+          <button class="button" type="submit" (click)="onSubmit()">
+            Editar evento
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
