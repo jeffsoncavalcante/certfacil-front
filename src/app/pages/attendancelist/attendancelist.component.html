@@ -15,14 +15,19 @@
             </h4>
             <h5 class="descricao">{{ event.nota }}</h5>
           </div>
-          <button
-            type="submit"
-            class="button"
-            value="Fazer Chamada"
+          <div class="butons">
+            <div >
+              <button
+              class="btn-sign-up"
+              type="submit"
+                value="Fazer Chamada"
             (click)="Chamada(event.id)"
-          >
-            Fazer chamada
-          </button>
+              >
+                Fazer chamada
+             </button><br>
+            </div>
+          </div>
+
         </div>
       </ng-container>
     </div>

@@ -5,18 +5,40 @@
     <div class="content">
       <ng-container class="conteudo" *ngFor="let event of evento">
         <div class="item">
-          <a href="#">
-            <div class="conteudo-img">
-              <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+          <div class="conteudo-img">
+            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+          </div>
+          <div class="conteudo-textos">
+            <h3 class="titulo">{{ event.descricao }}</h3>
+            <h4 class="local">
+              Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
+            </h4>
+            <h5 class="descricao">{{ event.nota }}</h5>
+          </div>
+          <div class="butons" *ngIf="buttons">
+            <div >
+              <button
+              class="btn-sign-up"
+              type="submit"
+              value="Fazer Chamada"
+            (click)="delete(event.id)"
+              >
+                Excluir Evento
+             </button><br>
             </div>
-            <div class="conteudo-textos">
-              <h3 class="titulo">{{ event.descricao }}</h3>
-              <h4 class="local">
-                Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
-              </h4>
-              <h5 class="descricao">{{event.nota}}</h5>
-            </div>
-          </a>
+           <div>
+            <button
+            class="btn-sign-up"
+            type="submit"
+            value="Fazer Chamada"
+            (click)="Edit(event.id)"
+             >
+            Editar Evento
+            </button>
+           </div>
+
+          </div>
+
         </div>
       </ng-container>
     </div>

@@ -87,12 +87,14 @@ export class ConfirmpresencaComponent implements OnInit {
         this.dados = data
         console.log(this.dados)
         if (this.dados.message === 'true'){
-          this.alert.showAlertSuccess("Primeira lista confirmada")
+          this.alert.showAlertSuccess("Primeira lista liberada")
         }else{
-          this.alert.showAlertDanger("Erro ao confirma a lista")
+          this.alert.showAlertDanger("Erro ao liberar lista")
         }
-      },
-      error => console.log(error)
+      }, error => {
+        this.alert.showAlertDanger("Erro ao confirma a lista")
+        console.log(error)
+      }
     )
   }
 
@@ -102,12 +104,15 @@ export class ConfirmpresencaComponent implements OnInit {
         this.dados = data
         console.log(this.dados)
         if (this.dados.message === 'true'){
-          this.alert.showAlertSuccess("Segunda lista confirmada")
+          this.alert.showAlertSuccess("Primeira lista confirmada")
         }else{
           this.alert.showAlertDanger("Erro ao confirma a lista")
         }
       },
-      error => console.log(error)
+      error => {
+        this.alert.showAlertDanger("Erro ao confirma a lista")
+        console.log(error)
+      }
     )
   }
 }
