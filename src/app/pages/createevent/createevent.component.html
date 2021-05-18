@@ -7,7 +7,18 @@
         <div>
           <h1 class="name">Vamos criar seu evento</h1>
         </div>
-        <form novalidate [formGroup]="form">
+        <form novalidate [formGroup]="form" >
+          <input
+            type="search"
+            placeholder="Palestrante"
+            list="list"
+            (change)="search($event)"
+          />
+
+          <datalist id="list">
+              <option *ngFor="let userid of user" data-value="{{userid.id}}" value="{{userid.nome}}"></option>
+          </datalist>
+
           <input
             type="text"
             formControlName="descricao"
@@ -31,13 +42,8 @@
             id="especial"
             placeholder="Horário"
           />
-          <input
-            type="text"
-            formControlName="id_usuario"
-            placeholder="Palestrante"
-            required
-            (keydown)="search($event)"
-          />
+
+
           <input
             formControlName="carga_horaria"
             type="number"
