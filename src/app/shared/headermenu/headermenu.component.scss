@@ -1,24 +1,8 @@
-body {
-  height: 100vh;
-  background-color: var(--grey);
-}
-
-.cabecalho {
-  height: 60px;
-  background: linear-gradient(90deg, #f05097 0%, #514d9e 100%);
-}
-
-.logo {
-  display: block;
-  height: 50px;
-  margin: 0 auto;
-  padding: 10px 0 0;
-}
-
 .container {
   display: flex;
   margin: 0;
   padding: 0;
+  position: fixed;
 }
 
 .container .menu {
@@ -72,7 +56,7 @@ body {
 }
 
 .content {
-  padding-left: 90px;
+  padding-left: 400px;
   padding-top: 90px;
   width: 100%;
 }
