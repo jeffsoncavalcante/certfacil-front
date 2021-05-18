@@ -28,21 +28,13 @@ const routes: Routes = [
   { path: 'createevent', component: CreateeventComponent },
   { path: 'event', component: EventComponent, canActivate: [AuthGuard] },
   { path: 'myevents', component: MyeventsComponent, canActivate: [AuthGuard] },
-  {
-    path: 'myprofile',
-    component: MyprofileComponent,
-    canActivate: [AuthGuard],
-  },
+  { path: 'myprofile', component: MyprofileComponent,canActivate: [AuthGuard] },
   { path: 'validpassword', component: ValidaPasswordComponent },
   { path: 'newpassword', component: ConfirmSenhaComponent },
-  { path: 'pdf', component: PdfComponent },
-  // { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
-  {
-    path: 'updateevent',
-    component: EditEventComponent,
-    canActivate: [AuthGuard],
-  },
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
+  { path: 'updateevent', component: EditEventComponent, canActivate: [AuthGuard]},
+  { path: '', redirectTo: '/index', pathMatch: 'full'},
+
 ];
 
 @NgModule({
