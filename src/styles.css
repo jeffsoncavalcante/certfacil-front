@@ -3,6 +3,17 @@ body {
   margin: 0;
   height: 100%;
   background-color: var(--grey);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  padding-left: 220px;
+  padding-top: 70px;
+  margin: auto;
+}
+
+.content {
+  margin-left: 50px;
 }
 
 :root {
