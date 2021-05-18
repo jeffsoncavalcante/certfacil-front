@@ -58,7 +58,13 @@ export class EditEventComponent implements OnInit {
         this.cargaevent = Array.of(this.listevent.carga_horaria)
         console.log(this.descricaoevent)
       },
-      error => console.log(error)
+      async error => {
+        console.log(error.status)
+        if(error.status === 401 ){
+          await this.alertservice.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
+      }
     )
   }
 

@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
           window.localStorage.setItem("logado", this.logado)
           window.localStorage.setItem("token",this.objeto.token)
           window.localStorage.setItem("id",this.objeto.id_user)
+          window.localStorage.setItem("expire", this.objeto.expires_in)
 
           await this.delay(1000);
           this.getprofile()

@@ -1,3 +1,4 @@
+import { async } from '@angular/core/testing';
 import { eventos } from '../../shared/listcursos/eventos.model';
 import { HomeService } from './home.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,8 +26,15 @@ export class HomeComponent implements OnInit {
       data =>{
         console.log(data)
         this.evento = data.message;
+
       },
-      erro => console.log(erro)
+      async error => {
+        console.log(error.status)
+        if(error.status === 401 ){
+          await this.alertservice.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
+      }
     )}
 
     delete(i){

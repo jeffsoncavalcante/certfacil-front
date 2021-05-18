@@ -20,7 +20,8 @@ export class CreateeventService {
   createevent(event,flag: string){
     return this.httpcliente.post(this.API+flag, event, this.httpOptions).pipe(take(1));
   }
-  getPalestrante(flag: string){
-    return this.httpcliente.get(this.API+flag, this.httpOptions).pipe(take(1));
+
+  listuser(){
+    return this.httpcliente.get(this.API+'/api/user', this.httpOptions).pipe(take(1));
   }
 }
