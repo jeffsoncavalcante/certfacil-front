@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'newpassword', component: ConfirmSenhaComponent },
   { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
   { path: 'updateevent', component: EditEventComponent, canActivate: [AuthGuard]},
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: '', redirectTo: '/index', pathMatch: 'full'},
 ];
 
 @NgModule({
