@@ -2,16 +2,6 @@ body {
   height: 100vh;
   background-color: var(--grey);
 }
-.container {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-.content {
-  padding-left: 400px;
-  padding-top: 90px;
-  width: 100%;
-}
 
 .content .item {
   padding-bottom: 30px;

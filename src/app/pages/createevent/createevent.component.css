@@ -1,10 +1,9 @@
-.container {
-  display: flex;
-  margin: 0;
-  padding: 0;
+.conteudo {
+  padding-left: 60px;
+  padding-top: 60px;
+  margin: auto;
 }
-
-.container .form-box .name {
+.conteudo .form-box .name {
   width: 283px;
   height: 20px;
   font-family: "Nunito";
@@ -29,11 +28,11 @@
 
 .form-box {
   padding-left: 50px;
-  padding-top: 50px;
+  padding-top: 70px;
   width: 100%;
 }
 
-.container .form-box form input {
+.conteudo .form-box form input {
   border: none;
   padding-left: 15px;
   width: 312px;
@@ -48,11 +47,11 @@
   margin: 0 auto 30px auto;
 }
 
-.container .form-box form .upload {
+.conteudo .form-box form .upload {
   display: none;
 }
 
-.container .form-box form label {
+.conteudo .form-box form label {
   border: none;
   padding-left: 15px;
   width: 312px;
@@ -70,7 +69,7 @@
   color: #767676;
 }
 
-.container .form-box form label img {
+.conteudo .form-box form label img {
   margin: 0 0 0 auto;
   padding-right: 20px;
 }
@@ -107,7 +106,7 @@ form input:focus {
 input:focus {
   outline: 0;
 }
-.container {
+.conteudo {
   display: flex;
   margin: 0;
   padding: 0;
