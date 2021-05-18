@@ -26,7 +26,14 @@ export class MyeventsComponent implements OnInit {
       .subscribe((data) => {
         this.evento = data;
         console.log(data);
-      });
+      },
+      async error => {
+          if(error.status === 401 ){
+          await this.alert.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
+      }
+      );
 
       if (this.typeuser === 'palestrante') {
         (this.buttondown = true)

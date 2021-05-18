@@ -23,6 +23,13 @@ export class AttendancelistComponent implements OnInit {
     this.service.list('/api/eventos/index').subscribe(
       data =>{
         this.evento = data.message;
+      },
+      async error => {
+        console.log(error.status)
+        if(error.status === 401 ){
+          await this.AlertService.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
       }
 
     )}

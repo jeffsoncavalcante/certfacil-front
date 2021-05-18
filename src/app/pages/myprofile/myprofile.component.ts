@@ -40,7 +40,12 @@ export class MyprofileComponent implements OnInit {
         this.campus = Array.of(this.users.campus)
         this.semestre = Array.of(this.users.semestre)
       },
-      error => console.log(error)
+      async error => {
+        if(error.status === 401 ){
+        await this.alertservice.showAlertDanger("Seção Expirou")
+        window.location.href='/login'
+      }
+    }
     )
   }
 

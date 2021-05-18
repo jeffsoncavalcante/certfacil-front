@@ -18,6 +18,18 @@ export class CreateeventComponent implements OnInit {
   files: Set<File>;
 
   ngOnInit(): void {
+
+    this.service.listuser().subscribe(
+      data => {console.log(data)
+      },
+      async error => {
+        console.log(error.status)
+        if(error.status === 401 ){
+          await this.alertservice.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
+      }
+    )
     this.form = this.fb.group({
       descricao: [null],
       nota: [null],
