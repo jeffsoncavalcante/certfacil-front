@@ -16,29 +16,27 @@
             <h5 class="descricao">{{ event.nota }}</h5>
           </div>
           <div class="butons" *ngIf="buttons">
-            <div >
+            <div>
               <button
-              class="btn-sign-up"
-              type="submit"
-              value="Fazer Chamada"
-            (click)="delete(event.id)"
+                class="btn-sign-up"
+                type="submit"
+                value="Fazer Chamada"
+                (click)="Edit(event.id)"
+              >
+                Editar Evento
+              </button>
+            </div>
+            <div>
+              <button
+                class="btn-delete"
+                type="submit"
+                value="Fazer Chamada"
+                (click)="delete(event.id)"
               >
                 Excluir Evento
-             </button><br>
+              </button>
             </div>
-           <div>
-            <button
-            class="btn-sign-up"
-            type="submit"
-            value="Fazer Chamada"
-            (click)="Edit(event.id)"
-             >
-            Editar Evento
-            </button>
-           </div>
-
           </div>
-
         </div>
       </ng-container>
     </div>
