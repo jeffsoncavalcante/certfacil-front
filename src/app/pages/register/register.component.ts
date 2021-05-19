@@ -31,19 +31,24 @@ export class RegisterComponent implements OnInit {
     semestre: [null, Number]
     })
   }
+  private delay(ms: number): Promise<boolean> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(true);
+      }, ms);
+    });
+  }
   onSubmit(){
-    console.log(this.form.value)
  //if(this.form.valid){
-    console.log(this.form.value)
       this.service.create(this.form.value).subscribe(
-        data => {
+        async  data => {
           this.sucess = data
-          console.log(this.sucess)
           if(this.sucess.message === "CREATED"){
-            this.alertservice.showAlertSuccess('Cadastro efetuado com Sucesso'),
+           await this.alertservice.showAlertSuccess('Cadastro efetuado com Sucesso'),
+           this.delay(4000)
             window.location.href='/login'
           }else{
-            this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
+            await this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
           }
 
         },

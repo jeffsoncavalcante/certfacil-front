@@ -1,59 +1,58 @@
+
 import { users } from './../../shared/listusers/listusers.model';
 import { CreateeventService } from './createevent.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
-
-
+import { AngularFireStorage,AngularFireUploadTask, AngularFireStorageReference} from '@angular/fire/storage'
+import { finalize } from 'rxjs/operators'
 @Component({
   selector: 'app-createevent',
   templateUrl: './createevent.component.html',
   styleUrls: ['./createevent.component.css'],
 })
 export class CreateeventComponent implements OnInit {
+  ref : AngularFireStorageReference
+  task: AngularFireUploadTask
   constructor(
     private service: CreateeventService,
     private fb: FormBuilder,
-    private alertservice: AlertModalService
+    private alertservice: AlertModalService,
+    private storage:AngularFireStorage
   ) {
-
-
   }
 
+
+
+
   form: FormGroup;
-  files: Set<File>;
+  path: String
   user: users[];
   id_palestrante
-  CLIENT_ID = '461904533979-qotu2j484qrk4j1jl74pf3d69ab42a45.apps.googleusercontent.com'
-  CLIENT_SECRET = 'MgRqUwyRQW2CTJJCyVc1mANq'
-  REDIRECT_URI = 'https://developers.google.com/oauthplayground'
-  REFRESH_TOKEN = '1//04CVN1kSsaYyPCgYIARAAGAQSNwF-L9IrTlGjLKpwIqfnKWnPZYixi-N-sm45Fd0fNjLB0Obgd_oRmP-fNVa_0Vo8FnhgNzn3WjA'
-  drive
-  filepath
+  image
+  downloadURL
   ngOnInit():void{
 
     this.list()
   }
+  upload(event){
+    const file = event.target.files[0]
+    const path = event.target.files[0].name
+    const task = this.storage.upload(path, file);
+    const ref = this.storage.ref(path);
+    console.log('Image uploaded!');
+    task.snapshotChanges().pipe(
+    finalize(() => {
+      this.downloadURL = ref.getDownloadURL()
+      this.downloadURL.subscribe(url => (this.image = url,
+        window.localStorage.setItem("url_img", this.image)
+        ));
+   })
+  )
+.subscribe();
 
-
-
-  async uploadgoogle(){
-    try {
-      const response = await this.drive.file.create({
-        requestBody:{
-          name: 'teste.jpg',
-          mimeType: 'image/jpg'
-        },
-        media:{
-          mimeType: 'image/jpg',
-         // body: fs.createReadStream(this.filepath)
-        }
-      });
-      console.log(response.data)
-    } catch (error) {
-      console.log(error.message)
-    }
   }
+
 
   list(){
     this.service.listuser().subscribe(
@@ -77,7 +76,7 @@ export class CreateeventComponent implements OnInit {
       inicio: [null],
       ativo: '0',
       carga_horaria: [null],
-      img: '123',
+      img: window.localStorage.getItem('url_img'),
       id_usuario: this.id_palestrante,
     });
   }
@@ -93,7 +92,6 @@ export class CreateeventComponent implements OnInit {
 
   onSubmit() {
 
-
     this.service.createevent(this.form.value, '/api/eventos/store').subscribe(
       (dados) => {
         this.alertservice.showAlertSuccess('Evento Cadastrado com Sucesso');
@@ -104,13 +102,7 @@ export class CreateeventComponent implements OnInit {
     );
   }
 
-  onChange(event) {
-    console.log(event);
-    this.files = new Set();
-    const SelectFiles = <FileList>event.srcElement.files;
-    document.getElementById('upload').innerHTML = SelectFiles[0].name;
-    this.files.add(SelectFiles[0]);
-  }
+
 
 
 }
