@@ -1,6 +1,7 @@
 body {
   background-image: linear-gradient(to bottom right, #f15097, #484c9e);
   height: 100vh;
+  overflow: hidden !important;
   margin: 0;
 }
 
@@ -92,6 +93,7 @@ body {
 
 .conteudo .content-img img {
   object-fit: cover;
+  max-height: 500px;
 }
 
 ::selection {
