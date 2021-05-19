@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
+
 @Component({
   selector: 'app-createevent',
   templateUrl: './createevent.component.html',
@@ -14,16 +15,44 @@ export class CreateeventComponent implements OnInit {
     private service: CreateeventService,
     private fb: FormBuilder,
     private alertservice: AlertModalService
-  ) {}
+  ) {
+
+
+  }
+
   form: FormGroup;
   files: Set<File>;
   user: users[];
   id_palestrante
-  pre
-
+  CLIENT_ID = '461904533979-qotu2j484qrk4j1jl74pf3d69ab42a45.apps.googleusercontent.com'
+  CLIENT_SECRET = 'MgRqUwyRQW2CTJJCyVc1mANq'
+  REDIRECT_URI = 'https://developers.google.com/oauthplayground'
+  REFRESH_TOKEN = '1//04CVN1kSsaYyPCgYIARAAGAQSNwF-L9IrTlGjLKpwIqfnKWnPZYixi-N-sm45Fd0fNjLB0Obgd_oRmP-fNVa_0Vo8FnhgNzn3WjA'
+  drive
+  filepath
   ngOnInit():void{
 
     this.list()
+  }
+
+
+
+  async uploadgoogle(){
+    try {
+      const response = await this.drive.file.create({
+        requestBody:{
+          name: 'teste.jpg',
+          mimeType: 'image/jpg'
+        },
+        media:{
+          mimeType: 'image/jpg',
+         // body: fs.createReadStream(this.filepath)
+        }
+      });
+      console.log(response.data)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   list(){
