@@ -21,19 +21,20 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'index', component: IndexComponent },
-  { path: 'register', component: RegisterComponent},
+  { path: 'register', component: RegisterComponent },
   { path: 'recover', component: RecoverComponent },
   { path: 'certifcate', component: CertificateComponent },
   { path: 'attendancelist', component: AttendancelistComponent },
   { path: 'createevent', component: CreateeventComponent },
-  { path: 'event', component: EventComponent , canActivate: [AuthGuard]},
+  { path: 'event', component: EventComponent, canActivate: [AuthGuard] },
   { path: 'myevents', component: MyeventsComponent, canActivate: [AuthGuard] },
-  { path: 'myprofile', component: MyprofileComponent, canActivate: [AuthGuard] },
+  { path: 'myprofile', component: MyprofileComponent,canActivate: [AuthGuard] },
   { path: 'validpassword', component: ValidaPasswordComponent },
   { path: 'newpassword', component: ConfirmSenhaComponent },
   { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
   { path: 'updateevent', component: EditEventComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: '/index', pathMatch: 'full'},
+
 ];
 
 @NgModule({

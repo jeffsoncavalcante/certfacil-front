@@ -1,8 +1,13 @@
 .cabecalho {
   height: 60px;
   background: linear-gradient(90deg, #f05097 0%, #514d9e 100%);
-  display: flex;
   justify-content: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }
 
 a {

@@ -1,17 +1,22 @@
 <div class="content" id="content" #content>
+  <img
+    class="logo-ftc"
+    src="../../../assets/images/logo-ftc.png"
+    alt="Ftc Logo"
+  />
   <h3>Certificado de Participação</h3>
-  <h1>
-    Ciclo de oficinas em <br />
-    Sistemas de Informação
-  </h1>
-  <h5>Certificamos que</h5>
-  <h5 class="nome-participante">{{nome}}</h5>
+  <h1>II ciclo de oficinas</h1>
+  <span
+    ><img src="../../../assets/images/game.png" alt="icon game" />2021.1</span
+  >
+  <h4>Certificamos que</h4>
+  <h5 class="nome-participante">{{ nome }}</h5>
   <h5>
-    participou do 1° Ciclo de Oficinas em Sistemas de Informação
-    <strong>{{descricao}}</strong>,
-    com carga horária de {{carga_horaria}}h.
+    participou do 2º Ciclo de Oficinas em Sistemas de Informação:
+    <strong>{{ descricao }}</strong
+    >, com carga horária de {{ carga_horaria }}h.
   </h5>
-  <h5 class="data">Feira de Santana, {{data}}.</h5>
+  <h5 class="data">Feira de Santana, {{ data }}.</h5>
   <div class="assinaturas">
     <div class="item">
       <hr />
@@ -25,4 +30,3 @@
     </div>
   </div>
 </div>
-

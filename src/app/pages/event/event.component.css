@@ -3,14 +3,7 @@ body {
 }
 
 .container {
-  margin: 0;
-  padding: 0;
   display: flex;
-}
-.content {
-  padding-left: 60px;
-  padding-top: 90px;
-  width: 100%;
 }
 
 .content .item .conteudo-textos {
