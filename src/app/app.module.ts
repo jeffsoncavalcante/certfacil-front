@@ -24,6 +24,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { AngularFireStorageModule} from '@angular/fire/storage'
+import { AngularFireModule } from '@angular/fire'
 
 
 @NgModule({
@@ -54,6 +56,15 @@ import { EditEventComponent } from './pages/edit-event/edit-event.component';
     ReactiveFormsModule,
     ModalModule.forRoot(),
     SharedModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyDh326TteE7nViH4hEXTXa_jmEtkEMTSRo",
+      authDomain: "certapi-3ef12.firebaseapp.com",
+      projectId: "certapi-3ef12",
+      storageBucket: "certapi-3ef12.appspot.com",
+      messagingSenderId: "789748669867",
+      appId: "1:789748669867:web:3429383c3ffca24a4bc6ee"
+    }),
+    AngularFireStorageModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
