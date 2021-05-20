@@ -6,77 +6,78 @@ import { AlertModalService } from 'src/app/shared/alert-modal.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  evento: eventos[]
-  constructor(private service:HomeService, private alertservice: AlertModalService) { }
+  evento: eventos[];
+  constructor(
+    private service: HomeService,
+    private alertservice: AlertModalService
+  ) {}
 
+  array = {};
 
-  array = {}
+  typeuser = localStorage.getItem('usertype');
+  buttons = false;
 
-  typeuser = localStorage.getItem("usertype")
-  buttons = false
+  elemento;
 
-  elemento
+  texto;
 
-  texto
-
-  inativo
-  clicked = false
-  ngOnInit(): void{
-    this.inativo = 0
-    this.texto = "Ativos"
-    if (this.typeuser === "master"){
-      this.buttons = true
+  inativo;
+  clicked = false;
+  ngOnInit(): void {
+    this.inativo = 0;
+    this.texto = 'Eventos Ativos';
+    if (this.typeuser === 'master') {
+      this.buttons = true;
     }
     this.service.list('/api/eventos/index').subscribe(
-      data =>{
-        console.log(data)
+      (data) => {
+        console.log(data);
         this.evento = data.message;
-
       },
-      async error => {
-        console.log(error.status)
-        if(error.status === 401 ){
-          await this.alertservice.showAlertDanger("Seção Expirou")
-          window.location.href='/login'
+      async (error) => {
+        console.log(error.status);
+        if (error.status === 401) {
+          await this.alertservice.showAlertDanger('Seção Expirou');
+          window.location.href = '/login';
         }
       }
-    )}
+    );
+  }
 
-    ativos(){
-      if(this.inativo===0){
-        this.inativo = 1
-        this.texto = "Inativos"
-      }else{
-        this.inativo = 0
-        this.texto = "Ativos"
+  ativos() {
+    if (this.inativo === 0) {
+      this.inativo = 1;
+      this.texto = 'Eventos passados';
+    } else {
+      this.inativo = 0;
+      this.texto = 'Eventos futuros';
+    }
+  }
+
+  delete(i) {
+    this.array = {
+      id: i,
+    };
+    this.service.delete(this.array, '/api/eventos/delete').subscribe(
+      (dados) => {
+        console.log(dados);
+        this.alertservice.showAlertSuccess('Evento Excluido com Sucesso');
+        window.location.href = '/home';
+      },
+      (error) => {
+        console.log(error);
+        this.alertservice.showAlertDanger(
+          'Evento não pode ser excluido, pois já contém inscritos'
+        );
       }
+    );
+  }
 
-    }
-
-    delete(i){
-      this.array  = {
-        id: i
-      }
-      this.service.delete(this.array, '/api/eventos/delete').subscribe(
-        (dados) => {
-          console.log(dados)
-          this.alertservice.showAlertSuccess('Evento Excluido com Sucesso');
-          window.location.href='/home'
-        },
-        (error) => {
-          console.log(error)
-          this.alertservice.showAlertDanger('Evento não pode ser excluido, pois já contém inscritos');
-        }
-      );
-
-    }
-
-    Edit(i){
-      window.localStorage.setItem('id_updateevent',i)
-      window.location.href='/updateevent'
-    }
-
+  Edit(i) {
+    window.localStorage.setItem('id_updateevent', i);
+    window.location.href = '/updateevent';
+  }
 }
