@@ -1,7 +1,6 @@
-import { async } from '@angular/core/testing';
 import { eventos } from '../../shared/listcursos/eventos.model';
 import { HomeService } from './home.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
@@ -18,7 +17,16 @@ export class HomeComponent implements OnInit {
 
   typeuser = localStorage.getItem("usertype")
   buttons = false
+
+  elemento
+
+  texto
+
+  inativo
+  clicked = false
   ngOnInit(): void{
+    this.inativo = 0
+    this.texto = "Ativos"
     if (this.typeuser === "master"){
       this.buttons = true
     }
@@ -37,6 +45,17 @@ export class HomeComponent implements OnInit {
       }
     )}
 
+    ativos(){
+      if(this.inativo===0){
+        this.inativo = 1
+        this.texto = "Inativos"
+      }else{
+        this.inativo = 0
+        this.texto = "Ativos"
+      }
+
+    }
+
     delete(i){
       this.array  = {
         id: i
@@ -49,7 +68,7 @@ export class HomeComponent implements OnInit {
         },
         (error) => {
           console.log(error)
-          this.alertservice.showAlertDanger('Erro ao Excuir o Evento');
+          this.alertservice.showAlertDanger('Evento não pode ser excluido, pois já contém inscritos');
         }
       );
 

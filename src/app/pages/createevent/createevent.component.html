@@ -19,6 +19,19 @@
               <option *ngFor="let userid of user" data-value="{{userid.id}}" value="{{userid.nome}}"></option>
           </datalist>
 
+          <label for="upload"
+            id="uploadlabel">Upload capa do evento
+            <img src="../../../assets/images/upload.svg" alt="Certfacil" />
+          </label>
+          <input
+            class="upload"
+            type="file"
+            placeholder="Imagem do evento"
+            id="upload"
+            (change)="upload($event)"
+            accept="image/*"
+          />
+
           <input
             type="text"
             formControlName="descricao"
@@ -42,25 +55,12 @@
             id="especial"
             placeholder="Horário"
           />
-
-
           <input
             formControlName="carga_horaria"
             type="number"
             placeholder="Carga horária"
           />
-          <label for="upload"
-            >Upload capa do evento
-            <img src="../../../assets/images/upload.svg" alt="Certfacil" />
-          </label>
-          <input
-            class="upload"
-            type="file"
-            placeholder="Imagem do evento"
-            id="upload"
-            (change)="upload($event)"
-            accept="image/*"
-          />
+
           <button class="button" type="submit" (click)="onSubmit()">
             Criar evento
           </button>
