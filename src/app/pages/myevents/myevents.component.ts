@@ -21,7 +21,11 @@ export class MyeventsComponent implements OnInit {
   constructor(private service: MyeventsService, private alert: AlertModalService) {}
 
   ngOnInit(): void {
-    this.service
+    if (this.typeuser === 'participante'){
+      (this.buttonpresenca = true),
+      (this.buttondown = true)
+
+      this.service
       .list('/api/inscricao/listeventusers/' + this.id)
       .subscribe((data) => {
         this.evento = data;
@@ -35,15 +39,26 @@ export class MyeventsComponent implements OnInit {
         }
       }
       );
-
-      if (this.typeuser === 'palestrante') {
-        (this.buttondown = true)
+    }
+    if(this.typeuser === 'palestrante'){
+      (this.buttondown = true)
+      this.service
+      .list('/api/inscricao/listeventteacher/' + this.id)
+      .subscribe((data) => {
+        this.evento = data;
+        console.log(data);
+      },
+      async error => {
+          if(error.status === 401  ){
+          await this.alert.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
       }
-      if (this.typeuser === 'participante') {
-        (this.buttonpresenca = true),
-          (this.buttondown = true)
+      );
+    }
 
-      }
+
+
 
   }
   private delay(ms: number): Promise<boolean> {
@@ -61,6 +76,7 @@ export class MyeventsComponent implements OnInit {
     this.alert.showPresenca()
   }
   downloadpdf(descricao, carga_horaria, data_inicio, presenca_2, presenca_1){
+    if (this.typeuser === 'participante') {
     if (presenca_2==='1' && presenca_1==='1'){
       window.localStorage.setItem("descricao", descricao)
       window.localStorage.setItem("carga_horaria", carga_horaria)
@@ -71,6 +87,14 @@ export class MyeventsComponent implements OnInit {
     else{
       this.alert.showAlertDanger("Certificado não liberado")
     }
+
+  }if(this.typeuser === 'palestrante'){
+    window.localStorage.setItem("descricao", descricao)
+      window.localStorage.setItem("carga_horaria", carga_horaria)
+      window.localStorage.setItem("data_inicio", data_inicio)
+      this.delay(2000)
+      window.location.href='/pdf'
+  }
 
 
   }

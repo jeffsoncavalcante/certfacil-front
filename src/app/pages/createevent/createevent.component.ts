@@ -1,7 +1,7 @@
 
 import { users } from './../../shared/listusers/listusers.model';
 import { CreateeventService } from './createevent.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { AngularFireStorage,AngularFireUploadTask, AngularFireStorageReference} from '@angular/fire/storage'
@@ -34,9 +34,10 @@ export class CreateeventComponent implements OnInit {
   id_palestrante
   image
   downloadURL
-  uploadPercentage: Observable<number>
-  ngOnInit():void{
 
+  uploadPercentage: Observable<number>
+
+  ngOnInit():void{
     this.list()
   }
   upload(event){
@@ -82,7 +83,7 @@ export class CreateeventComponent implements OnInit {
       nota: [null],
       data_inicio: [null],
       inicio: [null],
-      ativo: '0',
+      ativo: '1',
       carga_horaria: [null],
       img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,

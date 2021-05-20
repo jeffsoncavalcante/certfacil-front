@@ -3,17 +3,23 @@
   <div class="container">
     <app-headermenu></app-headermenu>
     <div class="content">
+      <div class="custom-control custom-checkbox">
+        <button id="ativa" name="ativa" (click)="ativos()">Inativo/Ativo</button>
+        <p center>{{texto}}</p>
+      </div>
       <ng-container class="conteudo" *ngFor="let event of evento">
-        <div class="item">
+
+        <div class="item" *ngIf="event.ativo===inativo">
           <div class="conteudo-img">
             <img src="{{event.img}}" alt="Certfacil" />
           </div>
           <div class="conteudo-textos">
             <h3 class="titulo">{{ event.descricao }}</h3>
-            <h4 class="local">
+            <h5 class="descricao">{{ event.nota }} </h5>
+            <h4 class="descricao">
               Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
             </h4>
-            <h5 class="descricao">{{ event.nota }}</h5>
+
           </div>
           <div class="butons" *ngIf="buttons">
             <div>

@@ -17,6 +17,7 @@ export class EventComponent implements OnInit {
   ngOnInit(): void {
     this.service.list('/api/eventos/index').subscribe((data) => {
       this.evento = data.message;
+      console.log(this.evento)
     },
     async error => {
       console.log(error.status)
