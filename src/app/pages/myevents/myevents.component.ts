@@ -25,10 +25,11 @@ export class MyeventsComponent implements OnInit {
       .list('/api/inscricao/listeventusers/' + this.id)
       .subscribe((data) => {
         this.evento = data;
+
         console.log(data);
       },
       async error => {
-          if(error.status === 401 ){
+          if(error.status === 401  ){
           await this.alert.showAlertDanger("Seção Expirou")
           window.location.href='/login'
         }
@@ -39,10 +40,8 @@ export class MyeventsComponent implements OnInit {
         (this.buttondown = true)
       }
       if (this.typeuser === 'participante') {
-        (this.buttonpresenca = true)
-        if (this.evento.certificado === '1'){
+        (this.buttonpresenca = true),
           (this.buttondown = true)
-        }
 
       }
 
@@ -61,12 +60,18 @@ export class MyeventsComponent implements OnInit {
     this.delay(2000)
     this.alert.showPresenca()
   }
-  downloadpdf(descricao, carga_horaria, data_inicio){
-    window.localStorage.setItem("descricao", descricao)
-    window.localStorage.setItem("carga_horaria", carga_horaria)
-    window.localStorage.setItem("data_inicio", data_inicio)
-    this.delay(2000)
-    window.location.href='/pdf'
+  downloadpdf(descricao, carga_horaria, data_inicio, presenca_2, presenca_1){
+    if (presenca_2==='1' && presenca_1==='1'){
+      window.localStorage.setItem("descricao", descricao)
+      window.localStorage.setItem("carga_horaria", carga_horaria)
+      window.localStorage.setItem("data_inicio", data_inicio)
+      this.delay(2000)
+      window.location.href='/pdf'
+    }
+    else{
+      this.alert.showAlertDanger("Certificado não liberado")
+    }
+
 
   }
 }

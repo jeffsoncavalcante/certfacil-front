@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
         },
         (error) => {
           console.log(error)
-          this.alertservice.showAlertDanger('Erro ao Excuir o Evento');
+          this.alertservice.showAlertDanger('Evento não pode ser excluido, pois já contém inscritos');
         }
       );
 

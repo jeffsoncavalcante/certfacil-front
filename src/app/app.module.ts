@@ -25,7 +25,8 @@ import { ValidaPasswordComponent } from './pages/valida-password/valida-password
 import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
 import { AngularFireStorageModule} from '@angular/fire/storage'
-import { AngularFireModule } from '@angular/fire'
+import { AngularFireModule } from '@angular/fire';
+
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { AngularFireModule } from '@angular/fire'
     ValidaPasswordComponent,
     ConfirmSenhaComponent,
     PdfComponent,
-    EditEventComponent
+    EditEventComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +65,7 @@ import { AngularFireModule } from '@angular/fire'
       messagingSenderId: "789748669867",
       appId: "1:789748669867:web:3429383c3ffca24a4bc6ee"
     }),
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],

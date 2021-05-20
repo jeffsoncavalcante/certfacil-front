@@ -6,6 +6,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { AngularFireStorage,AngularFireUploadTask, AngularFireStorageReference} from '@angular/fire/storage'
 import { finalize } from 'rxjs/operators'
+import { Observable } from 'rxjs';
+
+
 @Component({
   selector: 'app-createevent',
   templateUrl: './createevent.component.html',
@@ -31,6 +34,7 @@ export class CreateeventComponent implements OnInit {
   id_palestrante
   image
   downloadURL
+  uploadPercentage: Observable<number>
   ngOnInit():void{
 
     this.list()
@@ -40,12 +44,15 @@ export class CreateeventComponent implements OnInit {
     const path = event.target.files[0].name
     const task = this.storage.upload(path, file);
     const ref = this.storage.ref(path);
+    document.getElementById("uploadlabel").innerHTML = path
+    this.uploadPercentage = task.percentageChanges()
     console.log('Image uploaded!');
     task.snapshotChanges().pipe(
     finalize(() => {
       this.downloadURL = ref.getDownloadURL()
       this.downloadURL.subscribe(url => (this.image = url,
-        window.localStorage.setItem("url_img", this.image)
+        window.localStorage.setItem("url_img", this.image),
+        this.list()
         ));
    })
   )
@@ -64,11 +71,12 @@ export class CreateeventComponent implements OnInit {
         console.log(error.status);
         if (error.status === 401) {
           await this.alertservice.showAlertDanger('Seção Expirou');
+          window.localStorage.clear()
           window.location.href = '/login';
         }
       }
     );
-
+      console.log(window.localStorage.getItem("url_img"))
     this.form = this.fb.group({
       descricao: [null],
       nota: [null],
@@ -76,7 +84,7 @@ export class CreateeventComponent implements OnInit {
       inicio: [null],
       ativo: '0',
       carga_horaria: [null],
-      img: window.localStorage.getItem('url_img'),
+      img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,
     });
   }
@@ -95,9 +103,13 @@ export class CreateeventComponent implements OnInit {
     this.service.createevent(this.form.value, '/api/eventos/store').subscribe(
       (dados) => {
         this.alertservice.showAlertSuccess('Evento Cadastrado com Sucesso');
+        window.localStorage.removeItem('url_img')
+        this.form.reset()
       },
       (error) => {
         this.alertservice.showAlertDanger('Erro ao Cadastrar o Evento');
+        window.localStorage.removeItem('url_img')
+        this.form.reset()
       }
     );
   }

@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
         }
       )
  // }else{
-    this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
+   // this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
   //}
   }
 }

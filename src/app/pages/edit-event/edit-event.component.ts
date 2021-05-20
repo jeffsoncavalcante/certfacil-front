@@ -69,6 +69,7 @@ export class EditEventComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.form.value)
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
       (dados) => {
         console.log(dados)
