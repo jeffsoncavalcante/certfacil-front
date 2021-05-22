@@ -41,7 +41,7 @@ export class EditEventComponent implements OnInit {
       data_inicio: [null],
       inicio: [null],
       ativo: [null, Validators.required],
-      carga_horaria: [null, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+      carga_horaria: [null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     });
     this.list()
   }
@@ -71,7 +71,7 @@ export class EditEventComponent implements OnInit {
 
 
   onSubmit() {
-    if(this.form.valid){
+   // if(this.form.valid){
     console.log(this.form.value)
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
       (dados) => {
@@ -82,9 +82,9 @@ export class EditEventComponent implements OnInit {
         this.alertservice.showAlertDanger('Erro ao Editar o Evento, Campo invalido');
       }
     );
-  }else{
-     this.alertservice.showAlertDanger('Falha ao atualziar o Cadastro!')
-  }
+  //}else{
+   //  this.alertservice.showAlertDanger('Falha ao atualziar o Cadastro!')
+ // }
   }
   verificaValidTouched(campo){
     return !this.form.get(campo).valid && this.form.get(campo).touched

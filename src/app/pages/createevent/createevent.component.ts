@@ -80,7 +80,7 @@ export class CreateeventComponent implements OnInit {
       data_inicio: [null, Validators.required],
       inicio: [null, Validators.required],
       ativo: '0',
-      carga_horaria: [null, Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+      carga_horaria: [null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
       img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,
     });
