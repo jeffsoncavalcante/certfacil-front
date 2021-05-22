@@ -14,6 +14,7 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  hide = true;
 
 
   constructor(private fb: FormBuilder, private service: LoginService,private alertservice: AlertModalService
