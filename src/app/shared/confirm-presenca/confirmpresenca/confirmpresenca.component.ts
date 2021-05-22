@@ -11,6 +11,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class ConfirmpresencaComponent implements OnInit {
 
   id_presenca = window.localStorage.getItem('id_eventos')
+  id_inscrito = window.localStorage.getItem('id_inscrito')
   constructor(public bsModalRef: BsModalRef, private service: ConfirmpresencaService,
     private alert: AlertModalService
     ) { }
@@ -18,7 +19,10 @@ export class ConfirmpresencaComponent implements OnInit {
   idjson = {"id": this.id_presenca}
   id = JSON.stringify(this.idjson)
   dados: any=[]
-
+  idjsoniscrtio = {
+    "id": this.id_inscrito
+  }
+  idinscrito = JSON.stringify (this.idjsoniscrtio)
   typeuser = window.localStorage.getItem('usertype');
   buttonpresencaone = false
   buttonpresncatwo = false
@@ -28,14 +32,15 @@ export class ConfirmpresencaComponent implements OnInit {
   lib_presenca_2 = window.localStorage.getItem("lib_presenca_2")
 
 
+
   ngOnInit() {
     if (this.typeuser === 'master') {
       (this.buttonactivepresencaone = true), (this.buttonactivepresencatwo = true)
     }
     if (this.typeuser === 'participante' && this.lib_presenca_1 === '1') {
-      (this.buttonpresncatwo = true)
+      (this.buttonpresencaone = true)
     }
-    if (this.typeuser === 'participante' && this.lib_presenca_1 === '1') {
+    if (this.typeuser === 'participante' && this.lib_presenca_2 === '1') {
       (this.buttonpresncatwo = true)
     }
   }
@@ -82,7 +87,7 @@ export class ConfirmpresencaComponent implements OnInit {
 
   Confirmone(){
 
-    this.service.create('/api/inscricao/attendanceone',this.id).subscribe(
+    this.service.create('/api/inscricao/attendanceone',this.idinscrito).subscribe(
       data =>{
         this.dados = data
         console.log(this.dados)
@@ -99,7 +104,7 @@ export class ConfirmpresencaComponent implements OnInit {
   }
 
   Confirmtwo(){
-    this.service.create('/api/inscricao/attendancetwo',this.id).subscribe(
+    this.service.create('/api/inscricao/attendancetwo',this.idinscrito).subscribe(
       data =>{
         this.dados = data
         console.log(this.dados)

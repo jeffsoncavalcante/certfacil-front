@@ -1,6 +1,9 @@
 .container {
   display: flex;
   margin: 0 auto !important;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0;
   padding: 0;
 }
 
@@ -109,6 +112,22 @@ input:focus {
 }
 .container {
   display: flex;
+  justify-content: space-between;
+  width: 90%;
   margin: 0;
   padding: 0;
+}
+.form-box form .checkbox input {
+  margin: 0 3px 2px 0;
+}
+.form-box form .checkbox label {
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 13px;
+  color: #666666;
+  margin: 0;
+}
+
+.form-box .form-content form .checkbox input {
+  margin: 0 3px 2px 0;
 }
