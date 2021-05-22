@@ -27,7 +27,7 @@ export class PdfComponent {
       const pdfh = pdf.internal.pageSize.getHeight();
       pdf.addImage(imgData, 'PNG', 0, 0, pdfw, pdfh);
       pdf.save('certificado.pdf');
-      // window.location.href='/myevents'
+      window.location.href='/myevents'
     });
   }
 

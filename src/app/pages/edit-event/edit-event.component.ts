@@ -40,7 +40,7 @@ export class EditEventComponent implements OnInit {
       nota: [null],
       data_inicio: [null],
       inicio: [null],
-      ativo: '0',
+      ativo: [null],
       carga_horaria: [null],
     });
     this.list()
