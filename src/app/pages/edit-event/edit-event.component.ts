@@ -1,7 +1,7 @@
 import { eventos } from './../../shared/listcursos/eventos.model';
 import { EditeventService } from './editevent.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
@@ -15,12 +15,12 @@ export class EditEventComponent implements OnInit {
     private service: EditeventService,
     private fb: FormBuilder,
     private alertservice: AlertModalService
-  ) {}
+  ) { }
   form: FormGroup;
 
   event_id = window.localStorage.getItem("id_updateevent")
-  dados: any=[]
-  listevent: any=[]
+  dados: any = []
+  listevent: any = []
   descricaoevent
   notaevent
   dataevent
@@ -28,7 +28,7 @@ export class EditEventComponent implements OnInit {
   ativoevent
   cargaevent
 
-  array  = {
+  array = {
     id: this.event_id
   }
 
@@ -40,21 +40,21 @@ export class EditEventComponent implements OnInit {
       nota: [null],
       data_inicio: [null],
       inicio: [null],
-      ativo: [null],
+      ativo: [null, Validators.required],
       carga_horaria: [null],
     });
     this.list()
   }
 
-  list():void {
-    this.service.list('/api/eventos/'+this.event_id).subscribe(
+  list(): void {
+    this.service.list('/api/eventos/' + this.event_id).subscribe(
       data => {
         this.dados = data
         this.listevent = this.dados.evento
         this.descricaoevent = Array.of(this.listevent.descricao)
         this.notaevent = Array.of(this.listevent.nota)
-        this.dataevent = Array.of (this.listevent.data_inicio)
-        this.inicioevent = Array.of (this.listevent.inicio)
+        this.dataevent = Array.of(this.listevent.data_inicio)
+        this.inicioevent = Array.of(this.listevent.inicio)
         this.cargaevent = Array.of(this.listevent.carga_horaria)
         console.log(this.descricaoevent)
       },
@@ -71,6 +71,7 @@ export class EditEventComponent implements OnInit {
 
 
   onSubmit() {
+    if(this.form.valid){
     console.log(this.form.value)
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
       (dados) => {
@@ -81,6 +82,18 @@ export class EditEventComponent implements OnInit {
         this.alertservice.showAlertDanger('Erro ao Editar o Evento, Campo invalido');
       }
     );
+  }else{
+     this.alertservice.showAlertDanger('Falha ao atualziar o Cadastro!')
   }
-
+  }
+  verificaValidTouched(campo){
+    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !campo.valid && campo.touched;
+  }
+  aplicaCssErro(campo){
+    return{
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
+  }
 }

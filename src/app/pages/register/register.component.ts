@@ -1,6 +1,6 @@
 import { AlertModalService } from './../../shared/alert-modal.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from './register.service';
 
 @Component({
@@ -18,17 +18,18 @@ export class RegisterComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    
     this.form = this.fb.group({
-    email:[null],
-    password: [null],
-    confirm: [null],
-    nome:[null],
-    apelido: [null],
-    tipo_usuario:[null],
-    documento: [null, Number],
-    campus: [null],
-    celular: [null, Number],
-    semestre: [null, Number]
+    email:[null,[Validators.email,Validators.required]],
+    password: [null, Validators.required],
+    confirm: [null, Validators.required],
+    nome:[null, Validators.required],
+    apelido: [null, Validators.required],
+    tipo_usuario:[null, Validators.required],
+    documento: [null, Validators.required],
+    campus: [null, Validators.required],
+    celular: [null, Validators.required],
+    semestre: [null, Validators.required]
     })
   }
   private delay(ms: number): Promise<boolean> {
@@ -39,7 +40,7 @@ export class RegisterComponent implements OnInit {
     });
   }
   onSubmit(){
- //if(this.form.valid){
+ if(this.form.valid){
       this.service.create(this.form.value).subscribe(
         async  data => {
           this.sucess = data
@@ -57,8 +58,18 @@ export class RegisterComponent implements OnInit {
           this.alertservice.showAlertDanger('Falha ao realizar o Cadastro! Status: '+this.err.status)
         }
       )
- // }else{
-   // this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
-  //}
+ }else{
+   this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
+  }
+  }
+  verificaValidTouched(campo){
+    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !campo.valid && campo.touched;
+  }
+  aplicaCssErro(campo){
+    return{
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
   }
 }

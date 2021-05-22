@@ -1,6 +1,6 @@
 import { AlertModalService } from './../../shared/alert-modal.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 
 
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      email: [null],
-      password: [null]
+      email: [null, Validators.required],
+      password: [null,Validators.required]
     })
   }
 
@@ -84,5 +84,15 @@ export class LoginComponent implements OnInit {
           this.alertservice.showAlertDanger('Usuario e Senha Invalido')
         }
       )
+    }
+    verificaValidTouched(campo){
+      return !this.form.get(campo).valid && this.form.get(campo).touched 
+      return !campo.valid && campo.touched;
+    }
+    aplicaCssErro(campo){
+      return{
+        'has-error': this.verificaValidTouched(campo),
+        'has-feedback': this.verificaValidTouched(campo)
+      }
     }
 }

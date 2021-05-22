@@ -15,14 +15,22 @@
     </div>
 
     <form novalidate [formGroup]="form">
+      <div [ngClass]="aplicaCssErro('email')">
       <input
         id="email"
-        type="text"
+        type="email"
         formControlName="email"
         placeholder="Usuário"
         formControlName="email"
         required
       />
+      <app-campo-control-erro    
+      [mostrarErro]="verificaValidTouched('email')"
+      msgErro="Email inválido!">
+      </app-campo-control-erro>
+      </div>
+
+      <div [ngClass]="aplicaCssErro('password')">
       <input
         id="password"
         type="password"
@@ -31,6 +39,12 @@
         formControlName="password"
         required
       />
+      <app-campo-control-erro    
+      [mostrarErro]="verificaValidTouched('password')"
+      msgErro="Campo obrigatório!">
+      </app-campo-control-erro>
+      </div>
+
       <button class="button" type="submit" (click)="onSubmit()">Entrar</button>
     </form>
     <div class="recover">
