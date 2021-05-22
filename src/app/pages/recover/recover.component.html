@@ -10,9 +10,8 @@
 
     <div [ngClass]="aplicaCssErro('email')">
 
-      <input id="email" type="email" formControlName="email" placeholder="Email">
-    <app-campo-control-erro
-    
+    <input id="email" type="email" formControlName="email" placeholder="Email">
+    <app-campo-control-erro    
     [mostrarErro]="verificaValidTouched('email')"
     msgErro="Email inválido!">
 

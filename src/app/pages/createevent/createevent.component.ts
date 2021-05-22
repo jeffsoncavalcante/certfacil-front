@@ -2,7 +2,7 @@
 import { users } from './../../shared/listusers/listusers.model';
 import { CreateeventService } from './createevent.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { AngularFireStorage,AngularFireUploadTask, AngularFireStorageReference} from '@angular/fire/storage'
 import { finalize } from 'rxjs/operators'
@@ -79,12 +79,12 @@ export class CreateeventComponent implements OnInit {
     );
       console.log(window.localStorage.getItem("url_img"))
     this.form = this.fb.group({
-      descricao: [null],
-      nota: [null],
-      data_inicio: [null],
-      inicio: [null],
+      descricao: [null, Validators.required],
+      nota: [null, Validators.required],
+      data_inicio: [null, Validators.required],
+      inicio: [null, Validators.required],
       ativo: '0',
-      carga_horaria: [null],
+      carga_horaria: [null, Validators.required],
       img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,
     });
@@ -100,6 +100,7 @@ export class CreateeventComponent implements OnInit {
 
 
   onSubmit() {
+    if(this.form.valid){
     this.service.createevent(this.form.value, '/api/eventos/store').subscribe(
       (dados) => {
         this.alertservice.showAlertSuccess('Evento Cadastrado com Sucesso');
@@ -112,6 +113,21 @@ export class CreateeventComponent implements OnInit {
         this.form.reset()
       }
     );
- // }
+  }else{
+    this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
+   }
   }
+
+
+  verificaValidTouched(campo){
+    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !campo.valid && campo.touched;
+  }
+  aplicaCssErro(campo){
+    return{
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
+  }
+
 }

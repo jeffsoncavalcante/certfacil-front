@@ -36,12 +36,12 @@
             type="number"
             placeholder="Carga Horaria: {{cargaevent}}"
           />
-          <div class="checkbox">
+          <div class="checkbox" [ngClass]="aplicaCssErro('ativo')">
             <div>
               <input
                 type="radio"
-                id="tipo_usuario"
-                name="tipo_usuario"
+                id="ativo"
+                name="ativo"
                 formControlName="ativo"
                 value="0"
               />
@@ -50,13 +50,18 @@
             <div>
               <input
                 type="radio"
-                id="tipo_usuario1"
-                name="tipo_usuario"
+                id="ativo"
+                name="ativo"
                 formControlName="ativo"
-                value="palestrante"
+                value="1"
               />
               <label>Inativo</label>
             </div>
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('ativo')"
+            msgErro="Defina um status!">
+        
+            </app-campo-control-erro>
           </div>
           <button class="button" type="submit" (click)="onSubmit()">
             Editar evento

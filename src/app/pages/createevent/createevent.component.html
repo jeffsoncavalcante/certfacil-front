@@ -31,34 +31,74 @@
             (change)="upload($event)"
             accept="image/*"
           />
+          <div [ngClass]="aplicaCssErro('descricao')">
           <input
             type="text"
             formControlName="descricao"
             placeholder="Nome do Evento"
+            required
           />
+          <app-campo-control-erro    
+          [mostrarErro]="verificaValidTouched('descricao')"
+          msgErro="Campo obrigatório!">
+      
+          </app-campo-control-erro>
           </div>
+
+          <div [ngClass]="aplicaCssErro('nota')">
           <input
             type="text"
             formControlName="nota"
             placeholder="Descrição do evento"
           />
+          <app-campo-control-erro    
+          [mostrarErro]="verificaValidTouched('nota')"
+          msgErro="Campo obrigatório!">
+      
+          </app-campo-control-erro>
+          </div>
+
+          <div [ngClass]="aplicaCssErro('data_inicio')"> 
           <input
             type="date"
             formControlName="data_inicio"
             id="especial"
             placeholder="Data"
           />
+          <app-campo-control-erro    
+          [mostrarErro]="verificaValidTouched('data_inicio')"
+          msgErro="Campo obrigatório!">
+      
+          </app-campo-control-erro>
+        </div>
+
+        <div [ngClass]="aplicaCssErro('inicio')">
           <input
             type="time"
             formControlName="inicio"
             id="especial"
             placeholder="Horário"
           />
+          <app-campo-control-erro    
+          [mostrarErro]="verificaValidTouched('inicio')"
+          msgErro="Campo obrigatório!">
+      
+          </app-campo-control-erro>
+        </div>
+
+        <div [ngClass]="aplicaCssErro('carga_horaria')">
           <input
             formControlName="carga_horaria"
             type="number"
             placeholder="Carga horária"
           />
+          <app-campo-control-erro    
+          [mostrarErro]="verificaValidTouched('carga_horaria')"
+          msgErro="Campo obrigatório!">
+      
+          </app-campo-control-erro>
+        </div>
+
           <button class="button" type="submit" (click)="onSubmit()">
             Criar evento
           </button>

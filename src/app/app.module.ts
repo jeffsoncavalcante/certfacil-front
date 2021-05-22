@@ -26,7 +26,7 @@ import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.compo
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
 import { AngularFireStorageModule} from '@angular/fire/storage'
 import { AngularFireModule } from '@angular/fire';
-
+import { CampoControlErroComponent } from './shared/campo-control-erro/campo-control-erro.component';
 
 
 
@@ -50,6 +50,7 @@ import { AngularFireModule } from '@angular/fire';
     ConfirmSenhaComponent,
     PdfComponent,
     EditEventComponent,
+    CampoControlErroComponent
   ],
   imports: [
     BrowserModule,
