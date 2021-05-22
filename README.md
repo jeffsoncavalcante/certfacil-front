@@ -73,7 +73,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 
 ```sh
   # Execute o comando abaixo para instalar as dependencias do projeto
-  $ npm
+  $ npm install
 
   # Inciciar o servidor de desenvolvimento
   $ ng serve
