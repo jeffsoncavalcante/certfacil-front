@@ -25,14 +25,12 @@ export class CreateeventComponent implements OnInit {
   ) {
   }
 
-
   form: FormGroup;
   path: String
   user: users[];
   id_palestrante
   image
   downloadURL
-
 
   uploadPercentage: Observable<number>
 
@@ -98,9 +96,7 @@ export class CreateeventComponent implements OnInit {
 
 
   onSubmit() {
-
     if(this.form.valid){
-
     this.service.createevent(this.form.value, '/api/eventos/store').subscribe(
       (dados) => {
         this.alertservice.showAlertSuccess('Evento Cadastrado com Sucesso');
@@ -117,8 +113,6 @@ export class CreateeventComponent implements OnInit {
     this.alertservice.showAlertDanger('Falha ao realizar o Cadastro!')
    }
   }
-
-
   verificaValidTouched(campo){
     return !this.form.get(campo).valid && this.form.get(campo).touched 
     return !campo.valid && campo.touched;
@@ -129,6 +123,4 @@ export class CreateeventComponent implements OnInit {
       'has-feedback': this.verificaValidTouched(campo)
     }
   }
-
-
 }
