@@ -60,16 +60,19 @@ export class EditEventComponent implements OnInit {
       },
       async error => {
         console.log(error.status)
-        if (error.status === 401) {
+        if(error.status === 401 ){
           await this.alertservice.showAlertDanger("Seção Expirou")
-          window.location.href = '/login'
+          window.location.href='/login'
         }
       }
     )
   }
 
+
+
   onSubmit() {
     if(this.form.valid){
+
     console.log(this.form.value)
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
       (dados) => {
@@ -77,7 +80,7 @@ export class EditEventComponent implements OnInit {
         this.alertservice.showAlertSuccess('Evento Editado com Sucesso');
       },
       (error) => {
-        this.alertservice.showAlertDanger('Erro ao Editar o Evento');
+        this.alertservice.showAlertDanger('Erro ao Editar o Evento, Campo invalido');
       }
     );
   }else{

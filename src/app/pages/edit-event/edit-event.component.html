@@ -46,6 +46,7 @@
                 value="0"
               />
               <label>Ativar</label>
+          
             </div>
             <div>
               <input
@@ -60,7 +61,6 @@
             <app-campo-control-erro    
             [mostrarErro]="verificaValidTouched('ativo')"
             msgErro="Defina um status!">
-        
             </app-campo-control-erro>
           </div>
           <button class="button" type="submit" (click)="onSubmit()">

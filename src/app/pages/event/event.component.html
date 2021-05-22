@@ -4,6 +4,7 @@
   <div class="container">
     <app-headermenu></app-headermenu>
     <div class="content">
+
       <ng-container class="conteudo" *ngFor="let event of evento">
         <div class="item" *ngIf="event.ativo === 0">
           <div class="conteudo-img" >
@@ -22,6 +23,7 @@
             >Inscreva-se</a
           >
         </div>
+
         <div class="video">
           <a href="#">
             <h3>Ver vídeo</h3>
