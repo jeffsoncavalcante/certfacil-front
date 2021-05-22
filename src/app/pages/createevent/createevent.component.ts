@@ -83,7 +83,7 @@ export class CreateeventComponent implements OnInit {
       nota: [null],
       data_inicio: [null],
       inicio: [null],
-      ativo: '1',
+      ativo: '0',
       carga_horaria: [null],
       img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="conteudo">
       <ng-container class="conteudo" *ngFor="let event of evento">
-        <div class="item">
+        <div class="item" *ngIf="event.ativo === 0">
           <div class="conteudo-img">
             <img src="{{event.img}}" alt="Certfacil" />
           </div>

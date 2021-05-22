@@ -3,7 +3,7 @@
   <div class="container">
     <app-headermenu></app-headermenu>
     <div class="content">
-      <div class="custom-control custom-checkbox">
+      <div class="custom-control custom-checkbox" *ngIf="typeuser === 'master'">
         <p class="text" center>{{ texto }}</p>
 
         <div class="onoffswitch">

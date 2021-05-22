@@ -69,7 +69,9 @@ export class MyeventsComponent implements OnInit {
     });
   }
 
-  presenca(lib_presenca_1, lib_presenca_2){
+  presenca(lib_presenca_1, lib_presenca_2, id){
+    console.log(lib_presenca_1)
+    window.localStorage.setItem("id_inscrito", id)
     window.localStorage.setItem("lib_presenca_1", lib_presenca_1)
     window.localStorage.setItem("lib_presenca_2", lib_presenca_2)
     this.delay(2000)
