@@ -31,11 +31,16 @@
             id="especial"
             placeholder={{inicioevent}}
           />
-          <input
+          <div [ngClass]="aplicaCssErro('carga_horaria')">
+            <input
             formControlName="carga_horaria"
             type="number"
             placeholder="Carga Horaria: {{cargaevent}}"
           />
+          <app-campo-control-erro [mostrarErro]="verificaValidTouched('carga_horaria')" msgErro="Caracteres Invalidos!">
+          </app-campo-control-erro>
+          </div>
+
           <div class="checkbox" [ngClass]="aplicaCssErro('ativo')">
             <div>
               <input
@@ -57,7 +62,7 @@
               />
               <label>Inativo</label>
             </div>
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('ativo')"
             msgErro="Defina um status!">
             </app-campo-control-erro>

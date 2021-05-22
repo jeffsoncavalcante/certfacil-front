@@ -10,14 +10,27 @@
 		  </div>
 
 		  <form novalidate [formGroup]="form">
-			<label for="name"></label><br>
-       		 <input type="text" formControlName="apelido" placeholder="ID: {{id}} | {{apelido}}">
-			<label for="email"></label>
+       <div [ngClass]="aplicaCssErro('apelido')">
+        <label for="name"></label><br>
+       		<input type="text" formControlName="apelido" placeholder="ID: {{id}} | {{apelido}}">
+           <app-campo-control-erro [mostrarErro]="verificaValidTouched('apelido')" msgErro="Caracteres Invalidos!">
+          </app-campo-control-erro>
+       </div>
+          <label for="email"></label>
         	<input type="email"value={{email}} disabled>
-      <label for="campus"></label><br>
+      <div [ngClass]="aplicaCssErro('campus')">
+        <label for="campus"></label><br>
         	<input type="text"formControlName="campus" placeholder="Unidade: {{campus}}">
-			<label for="semestre"></label>
+          <app-campo-control-erro [mostrarErro]="verificaValidTouched('campus')" msgErro="Caracteres Invalidos!">
+          </app-campo-control-erro>
+      </div>
+      <div [ngClass]="aplicaCssErro('semestre')">
+        <label for="semestre"></label>
         	<input type="text" formControlName="semestre" placeholder="Semestre: {{semestre}}">
+          <app-campo-control-erro [mostrarErro]="verificaValidTouched('semestre')" msgErro="Caracteres Invalidos!">
+          </app-campo-control-erro>
+      </div>
+
 			<button class="button" type="submit" (click)='update()' >Atualizar perfil</button>
 
 		  </form>

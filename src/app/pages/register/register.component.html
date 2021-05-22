@@ -34,10 +34,10 @@
               placeholder="Nome completo*"
               required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('nome')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -50,10 +50,10 @@
               placeholder="Apelido*"
               required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('apelido')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -64,13 +64,11 @@
               type="text"
               formControlName="documento"
               placeholder="CPF*"
-              maxlength="12"
-              required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('documento')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -83,7 +81,7 @@
               placeholder="Email*"
               required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('email')"
             msgErro="Email inválido!">
             </app-campo-control-erro>
@@ -93,16 +91,15 @@
             <input
               class="input"
               id="celular"
-              pattern="^\d{4}-\d{3}-\d{4}$"
               type="tel"
               formControlName="celular"
               placeholder="Telefone*"
               required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('celular')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -115,10 +112,10 @@
               placeholder="Unidade*"
               required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('campus')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -131,10 +128,10 @@
               placeholder="Semestre*"
               required
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('semestre')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -146,10 +143,10 @@
               formControlName="password"
               placeholder="Senha*"
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('password')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -161,10 +158,10 @@
               formControlName="confirm"
               placeholder="Confirme a Senha*"
             />
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('confirm')"
             msgErro="Campo obrigatório!">
-        
+
             </app-campo-control-erro>
           </div>
 
@@ -189,16 +186,18 @@
               />
               <label>Palestrante</label>
             </div>
-            <app-campo-control-erro    
+            <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('tipo_usuario')"
             msgErro="Selecione um perfil!">
-        
+
             </app-campo-control-erro>
           </div>
 
           <div class="checkbox-termo">
+
             <input type="checkbox" id="scales" name="scales" class="checkbox" />
             <label for="scales"
+              requerid
               >Concordo com os
               <a
                 href="https://s3-sa-east-1.amazonaws.com/raizen-prod/items-files/item-189-tcg.pdf"

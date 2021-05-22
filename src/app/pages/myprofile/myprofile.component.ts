@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MyprofileService } from './myprofile.service';
 import { AlertModalService } from './../../shared/alert-modal.service';
 
@@ -23,9 +23,9 @@ export class MyprofileComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       id: this.id,
-      campus: [null],
-      semestre: [null],
-      apelido: [null]
+      campus: [null, Validators.pattern('^[a-zA-Z]+$')],
+      semestre: [null, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+      apelido: [null, Validators.pattern('^[a-zA-Z]+$')]
     })
     this.list()
   }
@@ -66,6 +66,17 @@ export class MyprofileComponent implements OnInit {
       },
       error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
     )
+
   }
 
+  verificaValidTouched(campo){
+    return !this.form.get(campo).valid && this.form.get(campo).touched
+    return !campo.valid && campo.touched;
+  }
+  aplicaCssErro(campo){
+    return{
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
+  }
 }

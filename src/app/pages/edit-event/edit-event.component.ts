@@ -41,7 +41,7 @@ export class EditEventComponent implements OnInit {
       data_inicio: [null],
       inicio: [null],
       ativo: [null, Validators.required],
-      carga_horaria: [null],
+      carga_horaria: [null, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
     });
     this.list()
   }
@@ -87,7 +87,7 @@ export class EditEventComponent implements OnInit {
   }
   }
   verificaValidTouched(campo){
-    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !this.form.get(campo).valid && this.form.get(campo).touched
     return !campo.valid && campo.touched;
   }
   aplicaCssErro(campo){

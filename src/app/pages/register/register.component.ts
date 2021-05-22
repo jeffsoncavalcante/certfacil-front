@@ -18,18 +18,18 @@ export class RegisterComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    
+
     this.form = this.fb.group({
     email:[null,[Validators.email,Validators.required]],
-    password: [null, Validators.required],
-    confirm: [null, Validators.required],
-    nome:[null, Validators.required],
-    apelido: [null, Validators.required],
+    password: [null, Validators.required, Validators.minLength(6)],
+    confirm: [null, Validators.required, Validators.minLength(6)],
+    nome:[null, [Validators.required, Validators.pattern('^[a-zA-Z]+$'), Validators.minLength(10)]],
+    apelido: [null,[Validators.required, Validators.pattern('^[a-zA-Z]+$'), Validators.minLength(3)]],
     tipo_usuario:[null, Validators.required],
-    documento: [null, Validators.required],
-    campus: [null, Validators.required],
-    celular: [null, Validators.required],
-    semestre: [null, Validators.required]
+    documento: [null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+    campus: [null, [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
+    celular: [null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.minLength(10)]],
+    semestre: [null, [Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)] ]
     })
   }
   private delay(ms: number): Promise<boolean> {
@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
   }
   }
   verificaValidTouched(campo){
-    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !this.form.get(campo).valid && this.form.get(campo).touched
     return !campo.valid && campo.touched;
   }
   aplicaCssErro(campo){
