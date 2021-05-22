@@ -74,13 +74,13 @@ export class CreateeventComponent implements OnInit {
       }
     );
       console.log(window.localStorage.getItem("url_img"))
-    this.form = this.fb.group({
+      this.form = this.fb.group({
       descricao: [null, Validators.required],
       nota: [null, Validators.required],
       data_inicio: [null, Validators.required],
       inicio: [null, Validators.required],
       ativo: '0',
-      carga_horaria: [null, Validators.required],
+      carga_horaria: [null, Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
       img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,
     });
@@ -114,7 +114,7 @@ export class CreateeventComponent implements OnInit {
    }
   }
   verificaValidTouched(campo){
-    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !this.form.get(campo).valid && this.form.get(campo).touched
     return !campo.valid && campo.touched;
   }
   aplicaCssErro(campo){
