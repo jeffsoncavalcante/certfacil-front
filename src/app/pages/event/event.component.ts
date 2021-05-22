@@ -30,6 +30,7 @@ export class EventComponent implements OnInit {
   }
 
   createevente(id_events){
+    console.log("oi")
     this.dados = {
       "id_usuario": window.localStorage.getItem("id"),
       "id_evento": id_events,
