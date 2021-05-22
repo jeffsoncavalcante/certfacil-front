@@ -14,6 +14,7 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  hide = true;
 
 
   constructor(private fb: FormBuilder, private service: LoginService,private alertservice: AlertModalService
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      email: [null, Validators.required],
+      email: [null,[ Validators.required, Validators.email]],
       password: [null,Validators.required]
     })
   }
@@ -86,7 +87,7 @@ export class LoginComponent implements OnInit {
       )
     }
     verificaValidTouched(campo){
-      return !this.form.get(campo).valid && this.form.get(campo).touched 
+      return !this.form.get(campo).valid && this.form.get(campo).touched
       return !campo.valid && campo.touched;
     }
     aplicaCssErro(campo){
