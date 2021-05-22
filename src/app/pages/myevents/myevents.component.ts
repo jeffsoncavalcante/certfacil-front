@@ -79,7 +79,7 @@ export class MyeventsComponent implements OnInit {
   }
   downloadpdf(descricao, carga_horaria, data_inicio, presenca_2, presenca_1){
     if (this.typeuser === 'participante') {
-    if (presenca_2==='1' && presenca_1==='1'){
+    if (presenca_2===1 && presenca_1===1){
       window.localStorage.setItem("descricao", descricao)
       window.localStorage.setItem("carga_horaria", carga_horaria)
       window.localStorage.setItem("data_inicio", data_inicio)
