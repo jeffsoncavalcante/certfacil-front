@@ -24,6 +24,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { CampoControlErroComponent } from './shared/campo-control-erro/campo-control-erro.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { EditEventComponent } from './pages/edit-event/edit-event.component';
     ValidaPasswordComponent,
     ConfirmSenhaComponent,
     PdfComponent,
-    EditEventComponent
+    EditEventComponent,
+    CampoControlErroComponent,
   ],
   imports: [
     BrowserModule,

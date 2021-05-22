@@ -1,6 +1,6 @@
 import { CreateeventService } from './createevent.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
@@ -31,6 +31,7 @@ export class CreateeventComponent implements OnInit {
   }
 
   onSubmit() {
+   // if(this.form.valid){
     this.service.createevent(this.form.value, '/api/eventos/store').subscribe(
       (dados) => {
         this.alertservice.showAlertSuccess('Evento Cadastrado com Sucesso');
@@ -39,8 +40,8 @@ export class CreateeventComponent implements OnInit {
         this.alertservice.showAlertDanger('Erro ao Cadastrar o Evento');
       }
     );
+ // }
   }
-
   onChange(event) {
     console.log(event);
     this.files = new Set();
@@ -51,5 +52,15 @@ export class CreateeventComponent implements OnInit {
 
   search($event) {
     let q = $event.target.value;
+  }
+  verificaValidTouched(campo){
+    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !campo.valid && campo.touched;
+  }
+  aplicaCssErro(campo){
+    return{
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
   }
 }

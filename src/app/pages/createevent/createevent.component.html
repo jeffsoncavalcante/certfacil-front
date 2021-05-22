@@ -8,12 +8,13 @@
           <h1 class="name">Vamos criar seu evento</h1>
         </div>
         <form novalidate [formGroup]="form">
+          <div>
           <input
             type="text"
             formControlName="descricao"
             placeholder="Nome do Evento"
-            required
           />
+          </div>
           <input
             type="text"
             formControlName="nota"
