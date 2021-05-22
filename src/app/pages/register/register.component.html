@@ -25,7 +25,7 @@
       <div class="cadastro-content">
         <h1>Cadastre-se</h1>
         <form novalidate [formGroup]="form">
-          <div>
+          <div [ngClass]="aplicaCssErro('nome')">
             <input
               class="input"
               id="nome"
@@ -34,9 +34,14 @@
               placeholder="Nome completo*"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('nome')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('apelido')">
             <input
               class="input"
               id="apelido"
@@ -45,20 +50,31 @@
               placeholder="Apelido*"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('apelido')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('documento')">
             <input
               class="input"
               id="documento"
               type="text"
               formControlName="documento"
               placeholder="CPF*"
+              maxlength="12"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('documento')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('email')">
             <input
               class="input"
               id="email"
@@ -67,9 +83,13 @@
               placeholder="Email*"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('email')"
+            msgErro="Email inválido!">
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('celular')">
             <input
               class="input"
               id="celular"
@@ -79,9 +99,14 @@
               placeholder="Telefone*"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('celular')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('campus')">
             <input
               class="input"
               id="campus"
@@ -90,9 +115,14 @@
               placeholder="Unidade*"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('campus')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('semestre')">
             <input
               class="input"
               id="semestre"
@@ -101,9 +131,14 @@
               placeholder="Semestre*"
               required
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('semestre')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('password')">
             <input
               class="input"
               id="password"
@@ -111,9 +146,14 @@
               formControlName="password"
               placeholder="Senha*"
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('password')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div>
+          <div [ngClass]="aplicaCssErro('confirm')">
             <input
               class="input"
               id="confirm"
@@ -121,9 +161,14 @@
               formControlName="confirm"
               placeholder="Confirme a Senha*"
             />
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('confirm')"
+            msgErro="Campo obrigatório!">
+        
+            </app-campo-control-erro>
           </div>
 
-          <div class="checkbox">
+          <div class="checkbox" [ngClass]="aplicaCssErro('tipo_usuario')">
             <div>
               <input
                 type="radio"
@@ -144,6 +189,11 @@
               />
               <label>Palestrante</label>
             </div>
+            <app-campo-control-erro    
+            [mostrarErro]="verificaValidTouched('tipo_usuario')"
+            msgErro="Selecione um perfil!">
+        
+            </app-campo-control-erro>
           </div>
 
           <div class="checkbox-termo">

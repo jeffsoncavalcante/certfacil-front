@@ -26,7 +26,7 @@ body {
   display: block;
   overflow: hidden;
   cursor: pointer;
-  border: 2px solid black;
+  border: none;
   border-radius: 20px;
 }
 .onoffswitch-inner {
@@ -40,7 +40,7 @@ body {
   display: block;
   float: left;
   width: 50%;
-  height: 30px;
+  height: 34px;
   padding: 0;
   line-height: 30px;
   font-size: 14px;
@@ -57,7 +57,7 @@ body {
 .onoffswitch-inner:after {
   content: "";
   padding-right: 10px;
-  background-color: #f05198;
+  background: linear-gradient(90deg, #f05198 -5.82%, #544e9e 100.09%);
   text-align: right;
 }
 .onoffswitch-switch {
@@ -68,11 +68,17 @@ body {
   top: 0;
   bottom: 0;
   right: 56px;
-  border: 2px solid black;
-  background: rgba(240, 81, 152, 0.5);
+  border: none;
+  background: #ffc8e1;
   border-radius: 20px;
   transition: all 0.3s ease-in 0s;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
+
+.onoffswitch-label {
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;
 }
@@ -109,6 +115,10 @@ body {
   margin: auto 0;
   display: block;
   object-fit: cover;
+  min-width: 255px;
+  max-width: 255px;
+  min-height: 170px;
+  max-height: 170px;
 }
 .content .item .conteudo-textos {
   min-width: 435px;
