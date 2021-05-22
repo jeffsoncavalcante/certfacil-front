@@ -27,6 +27,10 @@ body {
   margin: auto 0;
   display: block;
   object-fit: cover;
+  min-width: 255px;
+  max-width: 255px;
+  min-height: 170px;
+  max-height: 170px;
 }
 .conteudo .item .conteudo-textos {
   min-width: 435px;

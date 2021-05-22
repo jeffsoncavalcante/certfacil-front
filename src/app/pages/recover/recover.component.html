@@ -8,9 +8,14 @@
 
 <form novalidate [formGroup]="form">
 
-    <div>
+    <div [ngClass]="aplicaCssErro('email')">
 
-      <input id="email" type="text" formControlName="email" placeholder="Email">
+    <input id="email" type="email" formControlName="email" placeholder="Email">
+    <app-campo-control-erro    
+    [mostrarErro]="verificaValidTouched('email')"
+    msgErro="Email inválido!">
+
+    </app-campo-control-erro>
     </div>
 
     <button class="button" type="submit" (click)="onSubmit()">Enviar</button>
