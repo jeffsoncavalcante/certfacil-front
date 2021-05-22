@@ -68,6 +68,8 @@ export class EditEventComponent implements OnInit {
     )
   }
 
+
+
   onSubmit() {
     console.log(this.form.value)
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
@@ -76,7 +78,7 @@ export class EditEventComponent implements OnInit {
         this.alertservice.showAlertSuccess('Evento Editado com Sucesso');
       },
       (error) => {
-        this.alertservice.showAlertDanger('Erro ao Editar o Evento');
+        this.alertservice.showAlertDanger('Erro ao Editar o Evento, Campo invalido');
       }
     );
   }

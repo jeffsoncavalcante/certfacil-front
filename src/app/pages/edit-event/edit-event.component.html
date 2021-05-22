@@ -36,17 +36,29 @@
             type="number"
             placeholder="Carga Horaria: {{cargaevent}}"
           />
-          <input
-          type="text"
-          placeholder="Status"
-          formControlName="ativo"
-          list="ativos"
-          />
-
-          <datalist id="ativos">
-            <option value=0>Ativo</option>
-            <option value="1">Inativo</option>
-        </datalist>
+          <div class="checkbox">
+            <div>
+              <input
+                type="radio"
+                id="tipo_usuario"
+                name="tipo_usuario"
+                formControlName="ativo"
+                value="0"
+                [checked]="true"
+              />
+              <label>Ativo</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="tipo_usuario1"
+                name="tipo_usuario"
+                formControlName="ativo"
+                value="1"
+              />
+              <label>Inativo</label>
+            </div>
+          </div>
           <button class="button" type="submit" (click)="onSubmit()">
             Editar evento
           </button>
