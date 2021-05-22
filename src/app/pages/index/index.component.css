@@ -2,6 +2,7 @@ body {
   background-image: linear-gradient(to bottom right, #f15097, #484c9e);
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 .top-bar {
@@ -40,7 +41,7 @@ body {
   color: black;
 }
 
-.container {
+.conteudo {
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -48,11 +49,11 @@ body {
   align-items: center;
 }
 
-.container .content {
+.conteudo .content {
   width: 50%;
 }
 
-.container .content h1 {
+.conteudo .content h1 {
   color: white;
   font-family: "Nunito";
   font-weight: bold;
@@ -61,7 +62,7 @@ body {
   padding-bottom: 15px;
 }
 
-.container .content h5 {
+.conteudo .content h5 {
   color: white;
   font-family: "Nunito";
   font-weight: 600;
@@ -70,7 +71,7 @@ body {
   padding-bottom: 60px;
 }
 
-.container .content a {
+.conteudo .content a {
   background-color: black;
   color: white;
   font-family: "Nunito";
@@ -85,13 +86,14 @@ body {
   transition: linear 0.3s;
 }
 
-.container .content a:hover {
+.conteudo .content a:hover {
   background-color: white;
   color: black;
 }
 
-.container .content-img img {
+.conteudo .content-img img {
   object-fit: cover;
+  max-width: 500px;
 }
 
 ::selection {

@@ -1,12 +1,12 @@
 <app-header></app-header>
 <body>
+  <app-headermenu></app-headermenu>
   <div class="container">
-    <app-headermenu></app-headermenu>
-    <div class="content">
+    <div class="conteudo">
       <ng-container class="conteudo" *ngFor="let event of evento">
-        <div class="item">
+        <div class="item" *ngIf="event.ativo === 0">
           <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+            <img src="{{event.img}}" alt="Certfacil" />
           </div>
           <div class="conteudo-textos">
             <h3 class="titulo">{{ event.descricao }}</h3>
@@ -16,18 +16,17 @@
             <h5 class="descricao">{{ event.nota }}</h5>
           </div>
           <div class="butons">
-            <div >
+            <div>
               <button
-              class="btn-sign-up"
-              type="submit"
+                class="btn-sign-up"
+                type="submit"
                 value="Fazer Chamada"
-            (click)="Chamada(event.id)"
+                (click)="Chamada(event.id)"
               >
-                Fazer chamada
-             </button><br>
+                Fazer chamada</button
+              ><br />
             </div>
           </div>
-
         </div>
       </ng-container>
     </div>

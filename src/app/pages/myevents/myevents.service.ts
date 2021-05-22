@@ -23,6 +23,10 @@ export class MyeventsService {
     return this.http.get(this.API + flag, this.httpOptions);
   }
 
+  certicado(flag: string, data){
+    return this.http.post(this.API+flag,data, this.httpOptions )
+  }
+
   buttonpdf(descricao: String){
       this.emiterpdf.emit(descricao)
   }

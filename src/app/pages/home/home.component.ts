@@ -1,55 +1,83 @@
 import { eventos } from '../../shared/listcursos/eventos.model';
 import { HomeService } from './home.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  evento: eventos[]
-  constructor(private service:HomeService, private alertservice: AlertModalService) { }
+  evento: eventos[];
+  constructor(
+    private service: HomeService,
+    private alertservice: AlertModalService
+  ) {}
 
+  array = {};
 
-  array = {}
+  typeuser = localStorage.getItem('usertype');
+  buttons = false;
 
-  typeuser = localStorage.getItem("usertype")
-  buttons = false
-  ngOnInit(): void{
-    if (this.typeuser === "master"){
-      this.buttons = true
+  elemento;
+
+  texto;
+
+  inativo;
+  clicked = false;
+  ngOnInit(): void {
+    this.inativo = 0;
+    this.texto = 'Eventos Ativos';
+    if (this.typeuser === 'master') {
+      this.buttons = true;
     }
     this.service.list('/api/eventos/index').subscribe(
-      data =>{
-        console.log(data)
+      (data) => {
+        console.log(data);
         this.evento = data.message;
       },
-      erro => console.log(erro)
-    )}
-
-    delete(i){
-      this.array  = {
-        id: i
-      }
-      this.service.delete(this.array, '/api/eventos/delete').subscribe(
-        (dados) => {
-          console.log(dados)
-          this.alertservice.showAlertSuccess('Evento Excluido com Sucesso');
-          window.location.href='/home'
-        },
-        (error) => {
-          console.log(error)
-          this.alertservice.showAlertDanger('Erro ao Excuir o Evento');
+      async (error) => {
+        console.log(error.status);
+        if (error.status === 401) {
+          await this.alertservice.showAlertDanger('Seção Expirou');
+          window.location.href = '/login';
         }
-      );
+      }
+    );
+  }
 
+  ativos() {
+    if (this.inativo === 0) {
+      this.inativo = 1;
+      this.texto = 'Eventos passados';
+    } else {
+      this.inativo = 0;
+      this.texto = 'Eventos futuros';
     }
+  }
 
-    Edit(i){
-      window.localStorage.setItem('id_updateevent',i)
-      window.location.href='/updateevent'
-    }
+  delete(i) {
+    this.array = {
+      id: i,
+    };
+    this.service.delete(this.array, '/api/eventos/delete').subscribe(
+      (dados) => {
+        console.log(dados);
+        this.alertservice.showAlertSuccess('Evento Excluido com Sucesso');
+        window.location.href = '/home';
+      },
+      (error) => {
+        console.log(error);
+        this.alertservice.showAlertDanger(
+          'Evento não pode ser excluido, pois já contém inscritos'
+        );
+      }
+    );
+  }
 
+  Edit(i) {
+    window.localStorage.setItem('id_updateevent', i);
+    window.location.href = '/updateevent';
+  }
 }

@@ -21,23 +21,44 @@ export class MyeventsComponent implements OnInit {
   constructor(private service: MyeventsService, private alert: AlertModalService) {}
 
   ngOnInit(): void {
-    this.service
+    if (this.typeuser === 'participante'){
+      (this.buttonpresenca = true),
+      (this.buttondown = true)
+
+      this.service
       .list('/api/inscricao/listeventusers/' + this.id)
       .subscribe((data) => {
         this.evento = data;
+
         console.log(data);
-      });
-
-      if (this.typeuser === 'palestrante') {
-        (this.buttondown = true)
-      }
-      if (this.typeuser === 'participante') {
-        (this.buttonpresenca = true)
-        if (this.evento.certificado === '1'){
-          (this.buttondown = true)
+      },
+      async error => {
+          if(error.status === 401  ){
+          await this.alert.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
         }
-
       }
+      );
+    }
+    if(this.typeuser === 'palestrante'){
+      (this.buttondown = true)
+      this.service
+      .list('/api/inscricao/listeventteacher/' + this.id)
+      .subscribe((data) => {
+        this.evento = data;
+        console.log(data);
+      },
+      async error => {
+          if(error.status === 401  ){
+          await this.alert.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
+      }
+      );
+    }
+
+
+
 
   }
   private delay(ms: number): Promise<boolean> {
@@ -48,18 +69,35 @@ export class MyeventsComponent implements OnInit {
     });
   }
 
-  presenca(lib_presenca_1, lib_presenca_2){
+  presenca(lib_presenca_1, lib_presenca_2, id){
+    console.log(lib_presenca_1)
+    window.localStorage.setItem("id_inscrito", id)
     window.localStorage.setItem("lib_presenca_1", lib_presenca_1)
     window.localStorage.setItem("lib_presenca_2", lib_presenca_2)
     this.delay(2000)
     this.alert.showPresenca()
   }
-  downloadpdf(descricao, carga_horaria, data_inicio){
+  downloadpdf(descricao, carga_horaria, data_inicio, presenca_2, presenca_1){
+    if (this.typeuser === 'participante') {
+    if (presenca_2==='1' && presenca_1==='1'){
+      window.localStorage.setItem("descricao", descricao)
+      window.localStorage.setItem("carga_horaria", carga_horaria)
+      window.localStorage.setItem("data_inicio", data_inicio)
+      this.delay(2000)
+      window.location.href='/pdf'
+    }
+    else{
+      this.alert.showAlertDanger("Certificado não liberado")
+    }
+
+  }if(this.typeuser === 'palestrante'){
     window.localStorage.setItem("descricao", descricao)
-    window.localStorage.setItem("carga_horaria", carga_horaria)
-    window.localStorage.setItem("data_inicio", data_inicio)
-    this.delay(2000)
-    window.location.href='/pdf'
+      window.localStorage.setItem("carga_horaria", carga_horaria)
+      window.localStorage.setItem("data_inicio", data_inicio)
+      this.delay(2000)
+      window.location.href='/pdf'
+  }
+
 
   }
 }

@@ -13,6 +13,7 @@ constructor(private router: Router) { }
     state: RouterStateSnapshot
   ): Observable<boolean> | boolean{
     let logado = window.localStorage.getItem("logado")
+    let expire = window.localStorage.getItem("expire")
     if (logado === 'true'){
       return true
     }

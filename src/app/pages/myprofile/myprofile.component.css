@@ -82,8 +82,3 @@ form input:focus {
 input:focus {
   outline: 0;
 }
-.container {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}

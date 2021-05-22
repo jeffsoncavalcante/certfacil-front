@@ -5,9 +5,9 @@
     <app-headermenu></app-headermenu>
     <div class="content">
       <ng-container class="conteudo" *ngFor="let event of evento">
-        <div class="item">
-          <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+        <div class="item" *ngIf="event.ativo === 0">
+          <div class="conteudo-img" >
+            <img src="{{event.img}}" alt="Certfacil" />
           </div>
           <div class="conteudo-textos">
             <h3 class="titulo">{{ event.descricao }}</h3>

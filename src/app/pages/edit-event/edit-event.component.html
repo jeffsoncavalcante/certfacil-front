@@ -23,19 +23,41 @@
             type="date"
             formControlName="data_inicio"
             id="especial"
-            value={{dataevent}}
+            placeholder={{dataevent}}
           />
           <input
             type="time"
             formControlName="inicio"
             id="especial"
-            value={{inicioevent}}
+            placeholder={{inicioevent}}
           />
           <input
             formControlName="carga_horaria"
             type="number"
             placeholder="Carga Horaria: {{cargaevent}}"
           />
+          <div class="checkbox">
+            <div>
+              <input
+                type="radio"
+                id="tipo_usuario"
+                name="tipo_usuario"
+                formControlName="ativo"
+                value="0"
+              />
+              <label>Ativar</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="tipo_usuario1"
+                name="tipo_usuario"
+                formControlName="ativo"
+                value="palestrante"
+              />
+              <label>Inativo</label>
+            </div>
+          </div>
           <button class="button" type="submit" (click)="onSubmit()">
             Editar evento
           </button>

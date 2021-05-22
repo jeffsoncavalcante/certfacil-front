@@ -3,6 +3,17 @@ body {
   margin: 0;
   height: 100%;
   background-color: var(--grey);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  padding-left: 220px;
+  padding-top: 70px;
+  margin: auto;
+}
+
+.content {
+  margin-left: 50px;
 }
 
 :root {
@@ -11,3 +22,6 @@ body {
   --grey: #e2e2e2;
   --light-pink: #ffd1e5;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

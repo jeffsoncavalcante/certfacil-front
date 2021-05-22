@@ -3,17 +3,41 @@
   <div class="container">
     <app-headermenu></app-headermenu>
     <div class="content">
+      <div class="custom-control custom-checkbox" *ngIf="typeuser === 'master'">
+        <p class="text" center>{{ texto }}</p>
+
+        <div class="onoffswitch">
+          <input
+            type="checkbox"
+            name="onoffswitch"
+            class="onoffswitch-checkbox"
+            id="myonoffswitch"
+            tabindex="0"
+            verificado
+          />
+          <label
+            class="onoffswitch-label"
+            for="myonoffswitch"
+            id="ativa"
+            name="ativa"
+            (click)="ativos()"
+          >
+            <span class="onoffswitch-inner"> </span>
+            <span class="onoffswitch-switch"> </span>
+          </label>
+        </div>
+      </div>
       <ng-container class="conteudo" *ngFor="let event of evento">
-        <div class="item">
+        <div class="item" *ngIf="event.ativo === inativo">
           <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+            <img src="{{ event.img }}" alt="Certfacil" />
           </div>
           <div class="conteudo-textos">
             <h3 class="titulo">{{ event.descricao }}</h3>
-            <h4 class="local">
+            <h5 class="descricao">{{ event.nota }}</h5>
+            <h4 class="descricao">
               Data: {{ event.data_inicio }}, Horario: {{ event.inicio }}
             </h4>
-            <h5 class="descricao">{{ event.nota }}</h5>
           </div>
           <div class="butons" *ngIf="buttons">
             <div>

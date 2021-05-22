@@ -1,6 +1,8 @@
+import { Users } from './../../shared/listusers/listusers';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,8 @@ export class CreateeventService {
   createevent(event,flag: string){
     return this.httpcliente.post(this.API+flag, event, this.httpOptions).pipe(take(1));
   }
-  getPalestrante(flag: string){
-    return this.httpcliente.get(this.API+flag, this.httpOptions).pipe(take(1));
+
+  listuser(): Observable<Users>{
+    return this.httpcliente.get<Users>(this.API+'/api/user', this.httpOptions).pipe(take(1));
   }
 }

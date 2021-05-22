@@ -40,7 +40,7 @@ export class EditEventComponent implements OnInit {
       nota: [null],
       data_inicio: [null],
       inicio: [null],
-      ativo: '0',
+      ativo: [null],
       carga_horaria: [null],
     });
     this.list()
@@ -58,11 +58,18 @@ export class EditEventComponent implements OnInit {
         this.cargaevent = Array.of(this.listevent.carga_horaria)
         console.log(this.descricaoevent)
       },
-      error => console.log(error)
+      async error => {
+        console.log(error.status)
+        if(error.status === 401 ){
+          await this.alertservice.showAlertDanger("Seção Expirou")
+          window.location.href='/login'
+        }
+      }
     )
   }
 
   onSubmit() {
+    console.log(this.form.value)
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
       (dados) => {
         console.log(dados)

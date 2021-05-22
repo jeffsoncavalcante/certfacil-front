@@ -7,7 +7,7 @@
       <ng-container class="conteudo" *ngFor="let event of evento">
         <div class="item">
           <div class="conteudo-img">
-            <img src="../../../assets/images/teckweek.jpg" alt="Certfacil" />
+            <img src="{{event.img}}" alt="Certfacil" />
           </div>
           <div class="conteudo-textos">
             <h3 class="titulo">{{ event.descricao }}</h3>
@@ -21,11 +21,11 @@
           </div>
           <div class="butons">
             <div *ngIf="buttonpresenca">
-              <a class="btn-sign-up" (click)="presenca(lib_presenca_1, lib_presenca_2)"
+              <a class="btn-sign-up" (click)="presenca(event.lib_presenca_1, event.lib_presenca_2, event.id)"
               >Confirmar Presença</a> <br>
             </div>
             <div *ngIf="buttondown">
-              <a class="btn-sign-up" (click)="downloadpdf(event.descricao, event.carga_horaria, event.data_inicio)"
+              <a class="btn-sign-up" (click)="downloadpdf(event.descricao, event.carga_horaria, event.data_inicio, event.presenca_2, event.presenca_1)"
               >Download PDF</a>
             </div>
           </div>

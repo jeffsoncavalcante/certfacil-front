@@ -2,15 +2,92 @@ body {
   height: 100vh;
   background-color: var(--grey);
 }
-.container {
-  margin: 0;
-  padding: 0;
+.content .custom-control {
   display: flex;
+  justify-content: space-between;
+  padding: 0;
+  align-items: center;
 }
-.content {
-  padding-left: 400px;
-  padding-top: 90px;
-  width: 100%;
+
+.onoffswitch {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  height: 34px;
+}
+.onoffswitch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "";
+  background-color: #fdbfdb;
+  padding-left: 10px;
+}
+.onoffswitch-inner:after {
+  content: "";
+  padding-right: 10px;
+  background-color: #f05198;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 20px;
+  margin: 5px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid black;
+  background: rgba(240, 81, 152, 0.5);
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+.content .text {
+  margin: 50px 0;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--pink);
 }
 
 .content .item {
