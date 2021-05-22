@@ -19,7 +19,7 @@ Web application for event management.
 
 ## :bookmark:  Sobre
 
-O <strong>[CertFacil]📲</strong> é uma aplicação Web, onde é possível realizar todo o gerenciamento de eventos, online ou presencial.
+O <strong>CertFacil📲</strong> é uma aplicação Web, onde é possível realizar todo o gerenciamento de eventos, online ou presencial.
 
 </details>
 
