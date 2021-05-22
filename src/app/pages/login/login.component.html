@@ -26,6 +26,7 @@
         required
       />
 
+
         <input
          id="password"
          type="password"
@@ -42,7 +43,10 @@
 
 
 
+
       <app-campo-control-erro
+
+
       [mostrarErro]="verificaValidTouched('email')"
       msgErro="Email inválido!">
       </app-campo-control-erro>
@@ -63,6 +67,8 @@
       </app-campo-control-erro>
       </div>
     </form>
+
+
 
 
       <button class="button" type="submit" (click)="onSubmit()">Entrar</button>
