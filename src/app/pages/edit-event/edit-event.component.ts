@@ -41,7 +41,7 @@ export class EditEventComponent implements OnInit {
       data_inicio: [null],
       inicio: [null],
       ativo: [null, Validators.required],
-      carga_horaria: [null, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+      carga_horaria: [null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     });
     this.list()
   }
@@ -56,10 +56,8 @@ export class EditEventComponent implements OnInit {
         this.dataevent = Array.of(this.listevent.data_inicio)
         this.inicioevent = Array.of(this.listevent.inicio)
         this.cargaevent = Array.of(this.listevent.carga_horaria)
-        console.log(this.descricaoevent)
       },
       async error => {
-        console.log(error.status)
         if(error.status === 401 ){
           await this.alertservice.showAlertDanger("Seção Expirou")
           window.location.href='/login'
@@ -71,20 +69,18 @@ export class EditEventComponent implements OnInit {
 
 
   onSubmit() {
-    if(this.form.valid){
-    console.log(this.form.value)
+   // if(this.form.valid){
     this.service.update(this.form.value, '/api/eventos/update').subscribe(
       (dados) => {
-        console.log(dados)
         this.alertservice.showAlertSuccess('Evento Editado com Sucesso');
       },
       (error) => {
         this.alertservice.showAlertDanger('Erro ao Editar o Evento, Campo invalido');
       }
     );
-  }else{
-     this.alertservice.showAlertDanger('Falha ao atualziar o Cadastro!')
-  }
+  //}else{
+   //  this.alertservice.showAlertDanger('Falha ao atualziar o Cadastro!')
+ // }
   }
   verificaValidTouched(campo){
     return !this.form.get(campo).valid && this.form.get(campo).touched

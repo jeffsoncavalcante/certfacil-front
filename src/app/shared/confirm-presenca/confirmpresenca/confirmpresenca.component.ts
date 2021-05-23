@@ -28,6 +28,7 @@ export class ConfirmpresencaComponent implements OnInit {
   buttonpresncatwo = false
   buttonactivepresencaone = false
   buttonactivepresencatwo = false
+  erro : any=[]
   lib_presenca_1=  window.localStorage.getItem("lib_presenca_1")
   lib_presenca_2 = window.localStorage.getItem("lib_presenca_2")
 
@@ -47,25 +48,36 @@ export class ConfirmpresencaComponent implements OnInit {
 
   onClose() {
     this.confirmAndClose(false);
+    if (this.typeuser === 'master') {
+      window.location.href='/attendancelist'
+    }
 
 
   }
 
   private confirmAndClose(value: boolean) {
     this.bsModalRef.hide();
+    if (this.typeuser === 'master') {
+      window.location.href='/attendancelist'
+    }
+    else{
+      window.location.href='/myevents'
+    }
   }
 
   Ativeone(){
 
     this.service.create('/api/inscricao/activeattendanceone',this.id).subscribe(
       data =>{
-        console.log(this.dados)
         this.dados = data
         if (this.dados.message === 'true'){
           this.alert.showAlertSuccess("Primeira lista liberada")
         }else{
           this.alert.showAlertDanger("Erro ao liberar lista")
         }
+      },
+      error =>{
+        this.alert.showAlertDanger("Erro ao liberar lista, Não possui participantes inscritos")
       }
     )
   }
@@ -74,14 +86,15 @@ export class ConfirmpresencaComponent implements OnInit {
     this.service.create('/api/inscricao/activeattendancethow',this.id).subscribe(
       data =>{
         this.dados = data
-        console.log(this.dados)
         if (this.dados.message === 'true'){
           this.alert.showAlertSuccess("Primeira lista liberada")
         }else{
           this.alert.showAlertDanger("Erro ao liberar lista")
         }
       },
-      error => console.log(error)
+      error => {
+        this.alert.showAlertDanger("Erro ao liberar lista, Não possui participantes inscritos")
+      }
     )
   }
 
@@ -90,15 +103,14 @@ export class ConfirmpresencaComponent implements OnInit {
     this.service.create('/api/inscricao/attendanceone',this.idinscrito).subscribe(
       data =>{
         this.dados = data
-        console.log(this.dados)
         if (this.dados.message === 'true'){
-          this.alert.showAlertSuccess("Primeira lista liberada")
+          this.alert.showAlertSuccess("Primeira presença confirmada")
         }else{
-          this.alert.showAlertDanger("Erro ao liberar lista")
+          this.alert.showAlertDanger("Erro ao confirma a presença")
         }
       }, error => {
-        this.alert.showAlertDanger("Erro ao confirma a lista")
-        console.log(error)
+        this.erro = error.error
+        this.alert.showAlertDanger(this.erro.message)
       }
     )
   }
@@ -107,16 +119,15 @@ export class ConfirmpresencaComponent implements OnInit {
     this.service.create('/api/inscricao/attendancetwo',this.idinscrito).subscribe(
       data =>{
         this.dados = data
-        console.log(this.dados)
         if (this.dados.message === 'true'){
-          this.alert.showAlertSuccess("Primeira lista confirmada")
+          this.alert.showAlertSuccess("Segunda presença confirmada")
         }else{
-          this.alert.showAlertDanger("Erro ao confirma a lista")
+          this.alert.showAlertDanger("Erro ao confirma a presença")
         }
       },
       error => {
-        this.alert.showAlertDanger("Erro ao confirma a lista")
-        console.log(error)
+        this.erro = error.error
+        this.alert.showAlertDanger(this.erro.message)
       }
     )
   }

@@ -21,8 +21,6 @@ export class RecoverComponent implements OnInit {
 
   onSubmit(){
     if(this.form.valid){
-      console.log('submit')
-
       this.service.recover(this.form.value).subscribe(
         data => {
           this.alertservice.showAlertSuccess('Senha enviada para o E-mail')
@@ -31,15 +29,13 @@ export class RecoverComponent implements OnInit {
         },
         error => {
           this.alertservice.showAlertDanger('Falha ao Recuperar senha')
-        console.log(error)
-
         }
       )
     }
 
   }
   verificaValidTouched(campo){
-    return !this.form.get(campo).valid && this.form.get(campo).touched 
+    return !this.form.get(campo).valid && this.form.get(campo).touched
     return !campo.valid && campo.touched;
   }
   aplicaCssErro(campo){

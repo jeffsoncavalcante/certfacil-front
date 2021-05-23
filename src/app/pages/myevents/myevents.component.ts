@@ -29,8 +29,6 @@ export class MyeventsComponent implements OnInit {
       .list('/api/inscricao/listeventusers/' + this.id)
       .subscribe((data) => {
         this.evento = data;
-
-        console.log(data);
       },
       async error => {
           if(error.status === 401  ){
@@ -46,7 +44,6 @@ export class MyeventsComponent implements OnInit {
       .list('/api/inscricao/listeventteacher/' + this.id)
       .subscribe((data) => {
         this.evento = data;
-        console.log(data);
       },
       async error => {
           if(error.status === 401  ){
@@ -70,7 +67,6 @@ export class MyeventsComponent implements OnInit {
   }
 
   presenca(lib_presenca_1, lib_presenca_2, id){
-    console.log(lib_presenca_1)
     window.localStorage.setItem("id_inscrito", id)
     window.localStorage.setItem("lib_presenca_1", lib_presenca_1)
     window.localStorage.setItem("lib_presenca_2", lib_presenca_2)

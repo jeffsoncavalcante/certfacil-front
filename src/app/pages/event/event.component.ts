@@ -17,10 +17,8 @@ export class EventComponent implements OnInit {
   ngOnInit(): void {
     this.service.list('/api/eventos/index').subscribe((data) => {
       this.evento = data.message;
-      console.log(this.evento)
     },
     async error => {
-      console.log(error.status)
       if(error.status === 401 ){
         await this.alert.showAlertDanger("Seção Expirou")
         window.location.href='/login'
@@ -30,7 +28,6 @@ export class EventComponent implements OnInit {
   }
 
   createevente(id_events){
-    console.log("oi")
     this.dados = {
       "id_usuario": window.localStorage.getItem("id"),
       "id_evento": id_events,
@@ -45,7 +42,6 @@ export class EventComponent implements OnInit {
     this.service.crete("/api/inscricao/store", this.dados).subscribe(
       data =>{
         this.erro =data
-        console.log(this.erro.message)
         if(this.erro.message === 'Usuário Já inscrito no Evento'){
           this.alert.showAlertDanger("Usuário Já inscrito no Evento")
         }else{
