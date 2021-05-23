@@ -23,9 +23,9 @@ export class MyprofileComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       id: this.id,
-      campus: [null, Validators.pattern('^[a-zA-Z]+$')],
+      campus: [null, Validators.pattern('^[a-zA-Z ]+$')],
       semestre: [null, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
-      apelido: [null, Validators.pattern('^[a-zA-Z]+$')]
+      apelido: [null, Validators.pattern('^[a-zA-Z ]+$')]
     })
     this.list()
   }
@@ -58,14 +58,20 @@ export class MyprofileComponent implements OnInit {
   }
 
  update(){
+   if(this.form.valid){
     this.serviceprofile.update(this.form.value,'/api/user/update').subscribe(
       data =>{
         this.alertservice.showAlertSuccess('Dados Alterados com Sucesso!')
         this.delay(1000)
         window.location.href="/myprofile"
       },
-      error => this.alertservice.showAlertDanger('Usuario e Senha Invalido')
+      error => this.alertservice.showAlertDanger('Erros ao realizar a alterações')
     )
+   }
+   else{
+    this.alertservice.showAlertDanger('Erros ao realizar a alterações')
+   }
+
 
   }
 
