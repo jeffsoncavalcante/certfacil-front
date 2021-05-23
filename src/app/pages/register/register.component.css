@@ -147,6 +147,15 @@ body {
   transform: scale(1.1);
 }
 
+form  i {
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  top: 2px;
+  left:-25px;
+  color: #666666;
+
+  }
 .recover h5 {
   text-align: center;
   display: block;
