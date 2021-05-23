@@ -7,6 +7,7 @@
           src="../../../assets/images/logo-certfacil.png"
           alt="Logo Certfacil"
         />
+        <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       </a>
       <h2>
         “Investir em <br />
@@ -142,7 +143,11 @@
               type="password"
               formControlName="password"
               placeholder="Senha*"
+              [type]= "hide ? 'password': 'text' "
             />
+            <i class="material-icons" matSuffix (click) = "hide = !hide">
+              {{  hide ? 'visibility' : 'visibility_off'}}
+            </i>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('password')"
             msgErro="Campo obrigatório!">
@@ -157,7 +162,11 @@
               type="password"
               formControlName="confirm"
               placeholder="Confirme a Senha*"
+              [type]= "hide2 ? 'password': 'text' "
             />
+            <i class="material-icons" matSuffix (click) = "hide2 = !hide2">
+              {{  hide2 ? 'visibility' : 'visibility_off'}}
+            </i>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('confirm')"
             msgErro="Campo obrigatório!">
