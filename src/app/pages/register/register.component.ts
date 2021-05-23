@@ -10,6 +10,8 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
+  hide = true;
+  hide2 = true;
   err: any=[]
   sucess: any=[]
   constructor(private fb: FormBuilder,
