@@ -44,7 +44,6 @@ export class CreateeventComponent implements OnInit {
     const ref = this.storage.ref(path);
     document.getElementById("uploadlabel").innerHTML = path
     this.uploadPercentage = task.percentageChanges()
-    console.log('Image uploaded!');
     task.snapshotChanges().pipe(
     finalize(() => {
       this.downloadURL = ref.getDownloadURL()
@@ -62,10 +61,8 @@ export class CreateeventComponent implements OnInit {
     this.service.listuser().subscribe(
       (data) => {
         this.user = data.users;
-        console.log(this.user);
       },
       async (error) => {
-        console.log(error.status);
         if (error.status === 401) {
           await this.alertservice.showAlertDanger('Seção Expirou');
           window.localStorage.clear()
@@ -73,7 +70,6 @@ export class CreateeventComponent implements OnInit {
         }
       }
     );
-      console.log(window.localStorage.getItem("url_img"))
       this.form = this.fb.group({
       descricao: [null, Validators.required],
       nota: [null, Validators.required],

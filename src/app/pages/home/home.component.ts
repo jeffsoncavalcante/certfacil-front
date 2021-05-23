@@ -34,11 +34,9 @@ export class HomeComponent implements OnInit {
     }
     this.service.list('/api/eventos/index').subscribe(
       (data) => {
-        console.log(data);
         this.evento = data.message;
       },
       async (error) => {
-        console.log(error.status);
         if (error.status === 401) {
           await this.alertservice.showAlertDanger('Seção Expirou');
           window.location.href = '/login';
@@ -63,12 +61,10 @@ export class HomeComponent implements OnInit {
     };
     this.service.delete(this.array, '/api/eventos/delete').subscribe(
       (dados) => {
-        console.log(dados);
         this.alertservice.showAlertSuccess('Evento Excluido com Sucesso');
         window.location.href = '/home';
       },
       (error) => {
-        console.log(error);
         this.alertservice.showAlertDanger(
           'Evento não pode ser excluido, pois já contém inscritos'
         );

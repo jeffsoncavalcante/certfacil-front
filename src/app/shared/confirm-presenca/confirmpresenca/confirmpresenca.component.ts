@@ -69,7 +69,6 @@ export class ConfirmpresencaComponent implements OnInit {
 
     this.service.create('/api/inscricao/activeattendanceone',this.id).subscribe(
       data =>{
-        console.log(this.dados)
         this.dados = data
         if (this.dados.message === 'true'){
           this.alert.showAlertSuccess("Primeira lista liberada")
@@ -87,7 +86,6 @@ export class ConfirmpresencaComponent implements OnInit {
     this.service.create('/api/inscricao/activeattendancethow',this.id).subscribe(
       data =>{
         this.dados = data
-        console.log(this.dados)
         if (this.dados.message === 'true'){
           this.alert.showAlertSuccess("Primeira lista liberada")
         }else{
@@ -105,7 +103,6 @@ export class ConfirmpresencaComponent implements OnInit {
     this.service.create('/api/inscricao/attendanceone',this.idinscrito).subscribe(
       data =>{
         this.dados = data
-        console.log(this.dados)
         if (this.dados.message === 'true'){
           this.alert.showAlertSuccess("Primeira presença confirmada")
         }else{
@@ -122,7 +119,6 @@ export class ConfirmpresencaComponent implements OnInit {
     this.service.create('/api/inscricao/attendancetwo',this.idinscrito).subscribe(
       data =>{
         this.dados = data
-        console.log(this.dados)
         if (this.dados.message === 'true'){
           this.alert.showAlertSuccess("Segunda presença confirmada")
         }else{
