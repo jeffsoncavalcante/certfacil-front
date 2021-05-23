@@ -87,7 +87,7 @@ export class ConfirmpresencaComponent implements OnInit {
       data =>{
         this.dados = data
         if (this.dados.message === 'true'){
-          this.alert.showAlertSuccess("Primeira lista liberada")
+          this.alert.showAlertSuccess("Segunda lista liberada")
         }else{
           this.alert.showAlertDanger("Erro ao liberar lista")
         }
