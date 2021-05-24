@@ -12,8 +12,26 @@ body {
   margin: auto;
 }
 
+.alert {
+  position: relative;
+  top: -5px;
+  display: flex;
+  justify-content: center;
+  color: #ff6371;
+  margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 2;
+}
+
 .content {
   margin-left: 50px;
+}
+
+::selection {
+  background-color: black;
+  color: white;
 }
 
 :root {
