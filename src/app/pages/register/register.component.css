@@ -156,6 +156,11 @@ form  i {
   color: #666666;
 
   }
+
+.app-campo-control-erro{
+  display: line;
+}
+
 .recover h5 {
   text-align: center;
   display: block;
