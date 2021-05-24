@@ -31,6 +31,7 @@ export class CreateeventComponent implements OnInit {
   id_palestrante
   image
   downloadURL
+  filterpalestrante
 
   uploadPercentage: Observable<number>
 
@@ -61,6 +62,8 @@ export class CreateeventComponent implements OnInit {
     this.service.listuser().subscribe(
       (data) => {
         this.user = data.users;
+        this.filterpalestrante = this.user.filter(x=> x.tipo_usuario === "palestrante")
+        console.log(this.filterpalestrante)
       },
       async (error) => {
         if (error.status === 401) {

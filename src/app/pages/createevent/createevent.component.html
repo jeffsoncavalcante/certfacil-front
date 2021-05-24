@@ -8,11 +8,11 @@
         <div>
           <h1 class="name">Vamos criar seu evento</h1>
         </div>
-        <form novalidate [formGroup]="form">
-          <input type="search" placeholder="Palestrante" list="list" (change)="search($event)" />
+        <form novalidate [formGroup]="form" >
+          <input type="search" placeholder="Palestrante" list="list" *ngIf="filterpalestrante"(change)="search($event)" />
 
           <datalist id="list">
-            <option *ngFor="let userid of user" data-value="{{userid.id}}" value="{{userid.nome}}"></option>
+            <option *ngFor="let userid of filterpalestrante" data-value="{{userid.id}}" value="{{userid.nome}}"></option>
           </datalist>
 
           <label for="upload" id="uploadlabel">Upload capa do evento
