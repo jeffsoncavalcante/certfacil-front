@@ -63,7 +63,6 @@ export class CreateeventComponent implements OnInit {
       (data) => {
         this.user = data.users;
         this.filterpalestrante = this.user.filter(x=> x.tipo_usuario === "palestrante")
-        console.log(this.filterpalestrante)
       },
       async (error) => {
         if (error.status === 401) {
