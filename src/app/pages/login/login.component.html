@@ -1,15 +1,7 @@
 <header class="cabecalho">
-  <a href="/">
-    <img
-      class="logo"
-      src="../../../assets/images/logo-certfacil.png"
-      alt="Logo Certfacil"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+  <a href="/home">
+    <img class="logo" src="../../../assets/images/logo-certfacil.png" alt="Logo Certfacil" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </a>
 </header>
 
@@ -20,40 +12,22 @@
     </div>
     <form novalidate [formGroup]="form">
       <div [ngClass]="aplicaCssErro('email')">
-        <input
-          id="email"
-          type="email"
-          formControlName="email"
-          placeholder="Usuário"
-          formControlName="email"
-          required
-        />
+        <input id="email" type="email" formControlName="email" placeholder="Usuário" formControlName="email" required />
+
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched('email')" msgErro="Campo Invalido!">
+        </app-campo-control-erro>
       </div>
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched('email')"
-        msgErro="Email inválido!"
-      >
-      </app-campo-control-erro>
 
       <div [ngClass]="aplicaCssErro('password')">
-        <input
-          id="password"
-          type="password"
-          formControlName="password"
-          placeholder="Senha"
-          formControlName="password"
-          required
-          [type]="hide ? 'password' : 'text'"
-        />
+        <input id="password" type="password" formControlName="password" placeholder="Senha" formControlName="password"
+          required [type]="hide ? 'password': 'text' " />
         <i class="material-icons" matSuffix (click)="hide = !hide">
-          {{ hide ? "visibility" : "visibility_off" }}
+          {{ hide ? 'visibility' : 'visibility_off'}}
         </i>
+
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched('password')" msgErro="Campo Invalido!">
+        </app-campo-control-erro>
       </div>
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched('password')"
-        msgErro="Campo obrigatório!"
-      >
-      </app-campo-control-erro>
     </form>
 
     <button class="button" type="submit" (click)="onSubmit()">Entrar</button>
@@ -62,7 +36,7 @@
         Esqueceu sua senha?
         <a class="button-register" href="/recover">Recuperar</a><br />
         Não tem uma conta?
-        <a class="button-register" href="/register">Cadastra-se</a>
+        <a class="button-register" href="/register">Cadastre-se</a>
       </h5>
     </div>
   </div>
