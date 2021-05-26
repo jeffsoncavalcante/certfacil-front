@@ -15,6 +15,7 @@ body {
   width: 33%;
   background-image: linear-gradient(to right, var(--pink), var(--purple));
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+  margin-left: 0;
 }
 
 .content .logo {
@@ -147,15 +148,14 @@ body {
   transform: scale(1.1);
 }
 
-form  i {
+form i {
   z-index: 2;
   position: relative;
   cursor: pointer;
   top: 2px;
-  left:-25px;
+  left: -25px;
   color: #666666;
-
-  }
+}
 .recover h5 {
   text-align: center;
   display: block;
@@ -174,10 +174,3 @@ form  i {
   text-decoration: underline;
   margin-left: 4px;
 }
-
-::selection {
-  background-color: black;
-  color: white;
-}
-
-

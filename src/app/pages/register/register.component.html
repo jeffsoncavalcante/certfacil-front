@@ -7,7 +7,10 @@
           src="../../../assets/images/logo-certfacil.png"
           alt="Logo Certfacil"
         />
-        <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
       </a>
       <h2>
         “Investir em <br />
@@ -36,10 +39,10 @@
               autocomplete="off"
               required
             />
+
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('nome')"
             msgErro="Campo Invalido!">
-
             </app-campo-control-erro>
           </div>
 
@@ -52,6 +55,7 @@
               placeholder="Apelido*"
               required
             />
+
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('apelido')"
             msgErro="Campo Invalido!">
@@ -67,12 +71,13 @@
               formControlName="documento"
               placeholder="CPF* | Ex: 16029992015"
             />
+
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('documento')"
             msgErro="Campo Invalido!">
-
             </app-campo-control-erro>
           </div>
+
 
           <div [ngClass]="aplicaCssErro('email')">
             <input
@@ -83,11 +88,13 @@
               placeholder="Email*"
               required
             />
+
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('email')"
             msgErro="Campo Invalido!">
             </app-campo-control-erro>
           </div>
+
 
           <div [ngClass]="aplicaCssErro('celular')">
             <input
@@ -99,12 +106,14 @@
               placeholder="Telefone* | Ex: 75900001111"
               required
             />
+
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('celular')"
             msgErro="Campo Invalido!">
-
             </app-campo-control-erro>
+
           </div>
+
 
           <div [ngClass]="aplicaCssErro('campus')">
             <input
@@ -116,6 +125,7 @@
               list="listcampus"
               required
             />
+
             <datalist id="listcampus">
               <option value="Salvador"></option>
               <option value="Comércio"></option>
@@ -144,6 +154,7 @@
               list="listsemes"
               required
             />
+
             <datalist id="listsemes">
               <option value="1"></option>
               <option value="2"></option>
@@ -161,7 +172,9 @@
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
+
           </div>
+
 
           <div [ngClass]="aplicaCssErro('password')">
             <input
@@ -170,11 +183,12 @@
               type="password"
               formControlName="password"
               placeholder="Senha*"
-              [type]= "hide ? 'password': 'text' "
+              [type]="hide ? 'password' : 'text'"
             />
-            <i class="material-icons" matSuffix (click) = "hide = !hide">
-              {{  hide ? 'visibility' : 'visibility_off'}}
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+              {{ hide ? "visibility" : "visibility_off" }}
             </i>
+
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('password')"
             msgErro="Campo Invalido!">
@@ -189,16 +203,17 @@
               type="password"
               formControlName="confirm"
               placeholder="Confirme a Senha*"
-              [type]= "hide2 ? 'password': 'text' "
+              [type]="hide2 ? 'password' : 'text'"
             />
-            <i class="material-icons" matSuffix (click) = "hide2 = !hide2">
-              {{  hide2 ? 'visibility' : 'visibility_off'}}
+            <i class="material-icons" matSuffix (click)="hide2 = !hide2">
+              {{ hide2 ? "visibility" : "visibility_off" }}
             </i>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('confirm')"
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
+
           </div>
 
           <div class="checkbox" [ngClass]="aplicaCssErro('tipo_usuario')">
@@ -225,15 +240,17 @@
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('tipo_usuario')"
             msgErro="Campo Invalido!">
-
             </app-campo-control-erro>
           </div>
 
           <div class="checkbox-termo">
-
-            <input type="checkbox" id="termo" class="checkbox" (click)="validtermo()"/>
+            <input
+              type="checkbox"
+              id="termo"
+              class="checkbox"
+              (click)="validtermo()"
+            />
             <label for="scales"
-
               >Concordo com os
               <a
                 href="https://s3-sa-east-1.amazonaws.com/raizen-prod/items-files/item-189-tcg.pdf"
