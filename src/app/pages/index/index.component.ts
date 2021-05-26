@@ -10,10 +10,6 @@ export class IndexComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let logado = window.localStorage.getItem("logado")
-    if(logado === 'true'){
-      window.location.href='/home'
-    }
   }
 
 }
