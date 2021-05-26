@@ -12,7 +12,7 @@
 		  <form novalidate [formGroup]="form">
        <div [ngClass]="aplicaCssErro('apelido')">
         <label for="name"></label><br>
-       		<input type="text" formControlName="apelido" placeholder="ID: {{id}} | {{apelido}}">
+       		<input type="text" formControlName="apelido" placeholder="{{apelido}}">
            <app-campo-control-erro [mostrarErro]="verificaValidTouched('apelido')" msgErro="Caracteres Invalidos!">
           </app-campo-control-erro>
        </div>

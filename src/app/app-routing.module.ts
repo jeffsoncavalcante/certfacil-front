@@ -1,6 +1,6 @@
 import { AuthGuard } from './shared/guard/auth.guard';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { AttendancelistComponent } from './pages/attendancelist/attendancelist.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
 import { ConfirmSenhaComponent } from './pages/confirm-senha/confirm-senha.component';
@@ -17,8 +17,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
+
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'index', component: IndexComponent },
   { path: 'register', component: RegisterComponent },

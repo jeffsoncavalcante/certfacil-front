@@ -28,7 +28,10 @@ export class LoginComponent implements OnInit {
   logado
 
   ngOnInit(): void {
-
+    let logado = window.localStorage.getItem("logado")
+    if(logado === 'true'){
+      window.location.href='/home'
+    }
     this.form = this.fb.group({
       email: [null,[ Validators.required, Validators.email]],
       password: [null,Validators.required]
