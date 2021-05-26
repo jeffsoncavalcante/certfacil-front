@@ -33,6 +33,7 @@ export class MyeventsComponent implements OnInit {
       async error => {
           if(error.status === 401  ){
           await this.alert.showAlertDanger("Seção Expirou")
+          window.localStorage.clear()
           window.location.href='/login'
         }
       }
