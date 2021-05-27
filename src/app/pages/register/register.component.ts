@@ -59,10 +59,10 @@ export class RegisterComponent implements OnInit {
         [
           Validators.required,
           Validators.pattern('^[0-9]+$'),
-          Validators.minLength(10),
+          Validators.minLength(11),
         ],
       ],
-      semestre: [null, [Validators.required, Validators.pattern('^[0-9]+$')]],
+      semestre: [null, [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(2)]],
     });
   }
   private delay(ms: number): Promise<boolean> {
