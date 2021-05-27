@@ -6,4 +6,5 @@ export class eventos{
   data_inicio: number
   inicio: number
   ativo: number
+  video: string
 }
