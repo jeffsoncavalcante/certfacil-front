@@ -34,17 +34,8 @@ export class EditEventComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      id: this.event_id,
-      descricao: [null],
-      nota: [null],
-      data_inicio: [null],
-      inicio: [null],
-      ativo: [null, Validators.required],
-      video: [null],
-      carga_horaria: [null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
-    });
     this.list()
+    this.forms('i')
   }
 
   list(): void {
@@ -58,6 +49,7 @@ export class EditEventComponent implements OnInit {
         this.inicioevent = Array.of(this.listevent.inicio)
         this.cargaevent = Array.of(this.listevent.carga_horaria)
         this.video = Array.of(this.listevent.video)
+        this.forms(this.cargaevent)
       },
       async error => {
         if(error.status === 401 ){
@@ -67,8 +59,22 @@ export class EditEventComponent implements OnInit {
         }
       }
     )
+
+
   }
 
+  forms(i){
+    this.form = this.fb.group({
+      id: this.event_id,
+      descricao: [null],
+      nota: [null],
+      data_inicio: [null],
+      inicio: [null],
+      ativo: [null, Validators.required],
+      video: [null],
+      carga_horaria: i,
+    });
+  }
 
 
   onSubmit() {
@@ -95,4 +101,6 @@ export class EditEventComponent implements OnInit {
       'has-feedback': this.verificaValidTouched(campo)
     }
   }
+
+
 }

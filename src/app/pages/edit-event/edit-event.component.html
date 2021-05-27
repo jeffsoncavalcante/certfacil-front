@@ -35,6 +35,7 @@
             <input
             formControlName="carga_horaria"
             type="number"
+            value="{{cargaevent}}"
             placeholder="Carga Horaria: {{cargaevent}}"
           />
           <app-campo-control-erro [mostrarErro]="verificaValidTouched('carga_horaria')" msgErro="Caracteres Invalidos!">
