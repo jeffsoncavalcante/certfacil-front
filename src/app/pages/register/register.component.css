@@ -73,6 +73,14 @@ body {
   display: flex;
   align-items: center;
 }
+
+.cadastro .cadastro-content form{
+
+  display: flex;
+  flex-direction: column;
+
+}
+
 .cadastro .cadastro-content form .input {
   width: 270px;
   height: 40px;

@@ -40,11 +40,11 @@
               required
             />
 
-            <app-campo-control-erro
+          </div>
+          <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('nome')"
             msgErro="Campo Invalido!">
             </app-campo-control-erro>
-          </div>
 
           <div [ngClass]="aplicaCssErro('apelido')">
             <input
@@ -54,14 +54,15 @@
               formControlName="apelido"
               placeholder="Apelido*"
               required
-            />
+              />
+            </div>
 
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('apelido')"
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
-          </div>
+
 
           <div [ngClass]="aplicaCssErro('documento')">
             <input
@@ -71,12 +72,12 @@
               formControlName="documento"
               placeholder="CPF* | Ex: 16029992015"
             />
+          </div>
 
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('documento')"
             msgErro="Campo Invalido!">
             </app-campo-control-erro>
-          </div>
 
 
           <div [ngClass]="aplicaCssErro('email')">
@@ -88,12 +89,12 @@
               placeholder="Email*"
               required
             />
+          </div>
 
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('email')"
             msgErro="Campo Invalido!">
             </app-campo-control-erro>
-          </div>
 
 
           <div [ngClass]="aplicaCssErro('celular')">
@@ -106,13 +107,13 @@
               placeholder="Telefone* | Ex: 75900001111"
               required
             />
+          </div>
 
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('celular')"
             msgErro="Campo Invalido!">
             </app-campo-control-erro>
 
-          </div>
 
 
           <div [ngClass]="aplicaCssErro('campus')">
@@ -138,12 +139,12 @@
               <option value="Vitória da Conquista"></option>
 
             </datalist>
+          </div>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('campus')"
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
-          </div>
 
           <div [ngClass]="aplicaCssErro('semestre')">
             <input
@@ -167,13 +168,13 @@
               <option value="9"></option>
               <option value="10"></option>
             </datalist>
+          </div>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('semestre')"
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
 
-          </div>
 
 
           <div [ngClass]="aplicaCssErro('password')">
@@ -188,13 +189,13 @@
             <i class="material-icons" matSuffix (click)="hide = !hide">
               {{ hide ? "visibility" : "visibility_off" }}
             </i>
+          </div>
 
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('password')"
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
-          </div>
 
           <div [ngClass]="aplicaCssErro('confirm')">
             <input
@@ -208,13 +209,13 @@
             <i class="material-icons" matSuffix (click)="hide2 = !hide2">
               {{ hide2 ? "visibility" : "visibility_off" }}
             </i>
+          </div>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('confirm')"
             msgErro="Campo Invalido!">
 
             </app-campo-control-erro>
 
-          </div>
 
           <div class="checkbox" [ngClass]="aplicaCssErro('tipo_usuario')">
             <div>
@@ -237,11 +238,11 @@
               />
               <label>Palestrante</label>
             </div>
+          </div>
             <app-campo-control-erro
             [mostrarErro]="verificaValidTouched('tipo_usuario')"
             msgErro="Campo Invalido!">
             </app-campo-control-erro>
-          </div>
 
           <div class="checkbox-termo">
             <input
