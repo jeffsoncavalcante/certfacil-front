@@ -12,7 +12,7 @@ body {
   margin: auto;
 }
 
-.alert {
+.alert-warning {
   position: relative;
   top: -5px;
   display: flex;
