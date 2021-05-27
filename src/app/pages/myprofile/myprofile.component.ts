@@ -24,7 +24,7 @@ export class MyprofileComponent implements OnInit {
     this.form = this.fb.group({
       id: this.id,
       campus: [null, Validators.pattern('^[a-zA-Z ]+$')],
-      semestre: [null, Validators.pattern('^[0-9]+$')],
+      semestre: [null, [Validators.pattern('^[0-9]+$'), Validators.maxLength(2)]],
       apelido: [null, Validators.pattern('^[a-zA-Z ]+$')]
     })
     this.list()
