@@ -27,7 +27,7 @@ export class EditEventComponent implements OnInit {
   inicioevent
   ativoevent
   cargaevent
-
+  video
   array = {
     id: this.event_id
   }
@@ -41,6 +41,7 @@ export class EditEventComponent implements OnInit {
       data_inicio: [null],
       inicio: [null],
       ativo: [null, Validators.required],
+      video: [null],
       carga_horaria: [null, [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     });
     this.list()
@@ -56,6 +57,7 @@ export class EditEventComponent implements OnInit {
         this.dataevent = Array.of(this.listevent.data_inicio)
         this.inicioevent = Array.of(this.listevent.inicio)
         this.cargaevent = Array.of(this.listevent.carga_horaria)
+        this.video = Array.of(this.listevent.video)
       },
       async error => {
         if(error.status === 401 ){
