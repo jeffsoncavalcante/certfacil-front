@@ -35,6 +35,9 @@ export class ConfirmpresencaComponent implements OnInit {
 
 
   ngOnInit() {
+    if (this.typeuser === 'operador') {
+      (this.buttonactivepresencaone = true), (this.buttonactivepresencatwo = true)
+    }
     if (this.typeuser === 'master') {
       (this.buttonactivepresencaone = true), (this.buttonactivepresencatwo = true)
     }
@@ -58,6 +61,9 @@ export class ConfirmpresencaComponent implements OnInit {
   private confirmAndClose(value: boolean) {
     this.bsModalRef.hide();
     if (this.typeuser === 'master') {
+      window.location.href='/attendancelist'
+    }
+    if (this.typeuser === 'operador') {
       window.location.href='/attendancelist'
     }
     else{

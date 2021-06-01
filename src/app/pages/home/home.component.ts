@@ -29,6 +29,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.inativo = 0;
     this.texto = 'Eventos Ativos';
+    if (this.typeuser === 'operador') {
+      this.buttons = true;
+    }
     if (this.typeuser === 'master') {
       this.buttons = true;
     }

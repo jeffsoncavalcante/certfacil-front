@@ -16,6 +16,7 @@ import { RecoverComponent } from './pages/recover/recover.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { UsersComponent } from './pages/users/users.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'newpassword', component: ConfirmSenhaComponent },
   { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
   { path: 'updateevent', component: EditEventComponent, canActivate: [AuthGuard]},
+  {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: '/index', pathMatch: 'full'},
 
 ];
