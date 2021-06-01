@@ -1,3 +1,4 @@
+import { users } from './../listusers/listusers.model';
 import { HeadermenuService } from './headermenu.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -18,6 +19,7 @@ export class HeadermenuComponent implements OnInit {
   certificate = false;
   listpresent = false;
   sair = false;
+  users = false;
   form: any;
 
   constructor(private service: HeadermenuService, private fb: FormBuilder) {}
@@ -28,11 +30,19 @@ export class HeadermenuComponent implements OnInit {
     });
 
     if (this.typeuser === 'master') {
-      (this.home = true),
+        (this.home = true),
         (this.createevent = true),
         (this.listpresent = true),
-        (this.profile = true);
-        (this.sair = true);
+        (this.profile = true),
+        (this.sair = true),
+        (this.users = true)
+    }
+    if (this.typeuser === 'operador') {
+      (this.home = true),
+      (this.createevent = true),
+      (this.listpresent = true),
+      (this.profile = true),
+      (this.sair = true)
     }
     if (this.typeuser === 'palestrante') {
       (this.home = true), (this.profile = true), (this.myevents = true); (this.sair = true);

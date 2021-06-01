@@ -1,0 +1,176 @@
+<app-header></app-header>
+
+<body>
+  <app-headermenu></app-headermenu>
+  <div class="conteudo">
+    <div class="form-box">
+      <div class="form-content">
+        <div>
+          <h1 class="name">Criar Usuarios</h1>
+        </div>
+        <form novalidate [formGroup]="form">
+
+          <div [ngClass]="aplicaCssErro('nome')">
+            <input
+              class="input"
+              id="nome"
+              type="text"
+              formControlName="nome"
+              placeholder="Nome completo*"
+              autocomplete="off"
+              required
+            />
+
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('nome')"
+            msgErro="Campo Invalido!">
+            </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('apelido')">
+            <input
+              class="input"
+              id="apelido"
+              type="text"
+              formControlName="apelido"
+              placeholder="Apelido*"
+              required
+              />
+            </div>
+
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('apelido')"
+            msgErro="Campo Invalido!">
+
+            </app-campo-control-erro>
+
+
+          <div [ngClass]="aplicaCssErro('documento')">
+            <input
+              class="input"
+              id="documento"
+              type="text"
+              formControlName="documento"
+              placeholder="CPF* | Ex: 16029992015"
+            />
+          </div>
+
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('documento')"
+            msgErro="Campo Invalido!">
+            </app-campo-control-erro>
+
+
+          <div [ngClass]="aplicaCssErro('email')">
+            <input
+              class="input"
+              id="user"
+              type="email"
+              formControlName="email"
+              placeholder="Email*"
+              required
+            />
+          </div>
+
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('email')"
+            msgErro="Campo Invalido!">
+            </app-campo-control-erro>
+
+
+          <div [ngClass]="aplicaCssErro('celular')">
+            <input
+              class="input"
+              id="Telefone"
+              type="tel"
+              autocomplete="off"
+              formControlName="celular"
+              placeholder="Telefone* | Ex: 75900001111"
+              required
+            />
+          </div>
+
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('celular')"
+            msgErro="Campo Invalido!">
+            </app-campo-control-erro>
+
+
+
+          <div [ngClass]="aplicaCssErro('campus')">
+            <input
+              class="input"
+              id="campus"
+              type="search"
+              formControlName="campus"
+              placeholder="Unidade*"
+              list="listcampus"
+              required
+            />
+
+            <datalist id="listcampus">
+              <option value="Salvador"></option>
+              <option value="Comércio"></option>
+              <option value="Feira de Santana"></option>
+              <option value="Itabuna"></option>
+              <option value="Jequié"></option>
+              <option value="Petrolina"></option>
+              <option value="Juazeiro"></option>
+              <option value="Camaçari"></option>
+              <option value="Vitória da Conquista"></option>
+
+            </datalist>
+          </div>
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('campus')"
+            msgErro="Campo Invalido!">
+
+            </app-campo-control-erro>
+
+
+          <div [ngClass]="aplicaCssErro('password')">
+            <input
+              class="input"
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="Senha*"
+              [type]="hide ? 'password' : 'text'"
+            />
+            <i class="material-icons" matSuffix (click)="hide = !hide">
+              {{ hide ? "visibility" : "visibility_off" }}
+            </i>
+          </div>
+
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('password')"
+            msgErro="Campo Invalido!">
+
+            </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('confirm')">
+            <input
+              class="input"
+              id="confirm"
+              type="password"
+              formControlName="confirm"
+              placeholder="Confirme a Senha*"
+              [type]="hide2 ? 'password' : 'text'"
+            />
+            <i class="material-icons" matSuffix (click)="hide2 = !hide2">
+              {{ hide2 ? "visibility" : "visibility_off" }}
+            </i>
+          </div>
+            <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('confirm')"
+            msgErro="Campo Invalido!">
+
+            </app-campo-control-erro>
+          <button class="button" type="submit" (click)="onSubmit()">
+            Criar evento
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -97,10 +97,12 @@ export class RegisterComponent implements OnInit {
               await this.alertservice.showAlertDanger(
                 'Falha ao realizar o Cadastro!' + this.sucess.message
               );
+
             }
           },
           (error) => {
             this.err = error.error;
+            console.log(this.err)
             this.alertservice.showAlertDanger(this.err.message);
           }
         );
