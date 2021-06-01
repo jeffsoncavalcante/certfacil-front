@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   typeuser = localStorage.getItem('usertype');
   buttons = false;
-
+  view = false
   elemento;
 
   texto;
@@ -30,9 +30,11 @@ export class HomeComponent implements OnInit {
     this.inativo = 0;
     this.texto = 'Eventos Ativos';
     if (this.typeuser === 'operador') {
+      this.view = true;
       this.buttons = true;
     }
     if (this.typeuser === 'master') {
+      this.view = true;
       this.buttons = true;
     }
     this.service.list('/api/eventos/index').subscribe(
