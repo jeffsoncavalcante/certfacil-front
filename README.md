@@ -61,7 +61,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
   $ git clone https://github.com/jeffsoncavalcante/certfacil-front.git
 ```
 
-2. iNstalando o Angular:
+2. Instalando o Angular:
 
 ```sh
   # Execute o comando abaixo para instalar o Angular globalmente
