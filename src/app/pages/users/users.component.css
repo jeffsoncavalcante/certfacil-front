@@ -17,6 +17,16 @@
   color: #000000;
 }
 
+form  i {
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  top: -62px;
+  left: 355px;
+  color: #666666;
+
+  }
+
 .form-content {
   margin: 35px auto;
   width: 468px;
