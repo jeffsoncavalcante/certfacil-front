@@ -1,5 +1,5 @@
 #content {
-  background-image: url(../../../assets/images/bg-pdf.png);
+ 
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -45,7 +45,7 @@
   text-align: center;
   text-transform: uppercase;
   margin: auto;
-  color: #d3ff4e;
+  
 }
 
 .content span {
@@ -74,8 +74,7 @@
   font-size: 40px;
   margin: 0;
   padding-top: 10px;
-  color: white;
-}
+} 
 
 .content h5 {
   font-family: "Nunito";
@@ -84,7 +83,6 @@
   font-size: 30px;
   margin: 0;
   padding-top: 10px;
-  color: white;
 }
 
 .content .data {
@@ -93,7 +91,6 @@
   font-weight: normal;
   font-size: 25px;
   margin: 0;
-  color: white;
   padding-top: 60px;
 }
 
@@ -104,7 +101,7 @@
   font-size: 45px;
   margin: 0;
   padding: 30px 0;
-  color: #d3ff4e;
+  
 }
 
 .content .assinaturas {

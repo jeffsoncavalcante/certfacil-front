@@ -17,6 +17,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ValidaPasswordComponent } from './pages/valida-password/valida-password.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
 import { UsersComponent } from './pages/users/users.component';
+import { GroupeventesComponent } from './pages/groupeventes/groupeventes.component'
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'pdf', component: PdfComponent, canActivate: [AuthGuard] },
   { path: 'updateevent', component: EditEventComponent, canActivate: [AuthGuard]},
   {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
+  {path: 'layoutevent', component: GroupeventesComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: '/index', pathMatch: 'full'},
 
 ];

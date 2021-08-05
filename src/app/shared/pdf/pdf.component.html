@@ -1,32 +1,13 @@
-<div class="content" id="content" #content>
-  <img
-    class="logo-ftc"
-    src="../../../assets/images/logo-ftc.png"
-    alt="Ftc Logo"
-  />
-  <h3>Certificado de Participação</h3><br>
-  <h1>II ciclo de oficinas</h1><br>
-  <span
-    ><img src="../../../assets/images/game.png" alt="icon game" />2021.1</span
-  >
-  <h4>Certificamos que</h4>
-  <h5 class="nome-participante">{{ nome }}</h5>
-  <h5>
-    participou do 2º Ciclo de Oficinas em Sistemas de Informação:<br><br>
+<div class="content" id="content" #content [ngStyle]="{'background-image': 'url(' + url_back + ')'}">
+  <br><br><br><br>
+  <h3 [ngStyle]="{'color': cor_texto}">Certificado de Participação</h3><br>
+  <h1 [ngStyle]="{'color': cor_titulo}">{{titulo}}</h1><br>
+  <h4 [ngStyle]="{'color': cor_texto}">Certificamos que</h4>
+  <h5 class="nome-participante" [ngStyle]="{'color': cor_nome}">{{ nome }}</h5>
+  <h5 [ngStyle]="{'color': cor_texto}">
+    {{descricacao_layout}}<br><br>
     <strong>{{ descricao }}</strong
     >, com carga horária de {{ carga_horaria }}h.
   </h5>
-  <h5 class="data">Feira de Santana, {{ data }}.</h5>
-  <div class="assinaturas">
-    <div class="item">
-      <hr />
-      <strong>Naan Cardoso</strong>
-      <p>Organização do Ciclo de Oficinas</p>
-    </div>
-    <div class="item">
-      <hr />
-      <strong>Fabrício Oliveira</strong>
-      <p>Coordenação do curso de Sistemas de Informação</p>
-    </div>
-  </div>
+  <h5 class="data" [ngStyle]="{'color': cor_texto}">{{cidade_layout}}, {{ data }}.</h5>
 </div>

@@ -13,6 +13,13 @@ export class PdfComponent {
   descricao = window.localStorage.getItem('descricao');
   carga_horaria = window.localStorage.getItem('carga_horaria');
   data = window.localStorage.getItem('data_inicio');
+  url_back = '../../../assets/images/bg-pdf.png'
+  descricacao_layout = 'participou do 3º ciclo de oficinas do curso de sistemas de informação'
+  titulo = 'III ciclo de oficinas'
+  cidade_layout = 'Riachão do jacuipe'
+  cor_nome = '#d3ff4e'
+  cor_titulo = '#d3ff4e'
+  cor_texto = 'write'
 
   @ViewChild('content', { static: true }) el!: ElementRef<HTMLImageElement>;
 
@@ -30,7 +37,7 @@ export class PdfComponent {
       window.location.href='/myevents'
     });
   }
-
+  
   ngOnInit() {
     this.ppdf();
   }

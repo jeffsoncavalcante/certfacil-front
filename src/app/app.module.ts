@@ -27,7 +27,8 @@ import { EditEventComponent } from './pages/edit-event/edit-event.component';
 import { AngularFireStorageModule} from '@angular/fire/storage'
 import { AngularFireModule } from '@angular/fire';
 import { CampoControlErroComponent } from './shared/campo-control-erro/campo-control-erro.component';
-import {UsersComponent} from  './pages/users/users.component'
+import {UsersComponent} from  './pages/users/users.component';
+import { GroupeventesComponent } from './pages/groupeventes/groupeventes.component'
 
 
 
@@ -53,7 +54,8 @@ import {UsersComponent} from  './pages/users/users.component'
     PdfComponent,
     EditEventComponent,
     CampoControlErroComponent,
-    UsersComponent
+    UsersComponent,
+    GroupeventesComponent
   ],
   imports: [
     BrowserModule,
