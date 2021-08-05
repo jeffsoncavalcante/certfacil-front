@@ -20,6 +20,7 @@ export class HeadermenuComponent implements OnInit {
   listpresent = false;
   sair = false;
   users = false;
+  layoutevent = false
   form: any;
 
   constructor(private service: HeadermenuService, private fb: FormBuilder) {}
@@ -35,14 +36,16 @@ export class HeadermenuComponent implements OnInit {
         (this.listpresent = true),
         (this.profile = true),
         (this.sair = true),
-        (this.users = true)
+        (this.users = true),
+        (this.layoutevent = true)
     }
     if (this.typeuser === 'operador') {
       (this.home = true),
       (this.createevent = true),
       (this.listpresent = true),
       (this.profile = true),
-      (this.sair = true)
+      (this.sair = true),
+      (this.layoutevent = true)
     }
     if (this.typeuser === 'palestrante') {
       (this.home = true), (this.profile = true), (this.myevents = true); (this.sair = true);

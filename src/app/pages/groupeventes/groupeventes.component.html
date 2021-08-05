@@ -1,0 +1,115 @@
+<app-header></app-header>
+
+<body>
+  <app-headermenu></app-headermenu>
+  <div class="conteudo">
+    <div class="form-box">
+      <div class="form-content">
+        <div>
+          <h1 class="name">Layout de Eventos</h1>
+        </div>
+        <form novalidate [formGroup]="form">
+
+          <label for="upload" id="uploadlabel"
+            >Upload background do pdf
+            <img src="../../../assets/images/upload.svg" alt="Certfacil" />
+          </label>
+          <input
+            class="upload"
+            type="file"
+            placeholder="Imagem do evento"
+            id="upload"
+            (change)="upload($event)"
+            accept="image/*"
+          />
+          <div [ngClass]="aplicaCssErro('titulo')">
+            <input
+              type="text"
+              formControlName="titulo"
+              placeholder="Titulo do Grupo"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('titulo')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+          <div [ngClass]="aplicaCssErro('descricao')">
+            <input
+              type="text"
+              formControlName="descricao"
+              placeholder="Descrição do grupo de eventos"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('descricao')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('cidade')">
+            <input
+              type="text"
+              formControlName="cidade"
+              placeholder="Cidade do grupo de eventos"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('cidade')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('cor_texto')">
+            <input
+              type="text"
+              formControlName="cor_texto"
+              placeholder="Cor do texto"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('cor_texto')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('cor_nome')">
+            <input
+              type="text"
+              formControlName="cor_nome"
+              placeholder="Cor do nome do participante"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('cor_nome')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('cor_titulo')">
+            <input
+              type="text"
+              formControlName="cor_titulo"
+              placeholder="Cor do titulo do evento"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('cor_titulo')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+        </form>
+        <label><a href="https://www.redetuxnet.com.br/downloads/Contrato_SVA_TuxProvedor.pdf" target="_blank">Download do modelo</a></label>
+        <button class="button" type="submit" (click)="onSubmit()">
+          Criar Layout
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
