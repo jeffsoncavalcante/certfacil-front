@@ -35,47 +35,35 @@
             msgErro="Campo obrigatório!"
           >
           </app-campo-control-erro>
-          <div [ngClass]="aplicaCssErro('descricao')">
+          <div [ngClass]="aplicaCssErro('descricao_layout')">
             <input
               type="text"
-              formControlName="descricao"
+              formControlName="descricao_layout"
               placeholder="Descrição do grupo de eventos"
               required
             />
           </div>
           <app-campo-control-erro
-            [mostrarErro]="verificaValidTouched('descricao')"
+            [mostrarErro]="verificaValidTouched('descricao_layout')"
             msgErro="Campo obrigatório!"
           >
           </app-campo-control-erro>
 
-          <div [ngClass]="aplicaCssErro('cidade')">
+          <div [ngClass]="aplicaCssErro('cidade_layout')">
             <input
               type="text"
-              formControlName="cidade"
+              formControlName="cidade_layout"
               placeholder="Cidade do grupo de eventos"
               required
             />
           </div>
           <app-campo-control-erro
-            [mostrarErro]="verificaValidTouched('cidade')"
+            [mostrarErro]="verificaValidTouched('cidade_layout')"
             msgErro="Campo obrigatório!"
           >
           </app-campo-control-erro>
 
-          <div [ngClass]="aplicaCssErro('cor_texto')">
-            <input
-              type="text"
-              formControlName="cor_texto"
-              placeholder="Cor do texto"
-              required
-            />
-          </div>
-          <app-campo-control-erro
-            [mostrarErro]="verificaValidTouched('cor_texto')"
-            msgErro="Campo obrigatório!"
-          >
-          </app-campo-control-erro>
+          
 
           <div [ngClass]="aplicaCssErro('cor_nome')">
             <input
@@ -104,6 +92,21 @@
             msgErro="Campo obrigatório!"
           >
           </app-campo-control-erro>
+
+          <div [ngClass]="aplicaCssErro('cor_texto')">
+            <input
+              type="text"
+              formControlName="cor_texto"
+              placeholder="Cor do titulo do evento"
+              required
+            />
+          </div>
+          <app-campo-control-erro
+            [mostrarErro]="verificaValidTouched('cor_texto')"
+            msgErro="Campo obrigatório!"
+          >
+          </app-campo-control-erro>
+
         </form>
         <label><a href="https://www.redetuxnet.com.br/downloads/Contrato_SVA_TuxProvedor.pdf" target="_blank">Download do modelo</a></label>
         <button class="button" type="submit" (click)="onSubmit()">

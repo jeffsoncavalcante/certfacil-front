@@ -1,4 +1,5 @@
 import { Users } from './../../shared/listusers/listusers';
+import { Modelo } from './../../shared/listmodelo/listmodelo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
@@ -25,5 +26,9 @@ export class CreateeventService {
 
   listuser(): Observable<Users>{
     return this.httpcliente.get<Users>(this.API+'/api/user', this.httpOptions).pipe(take(1));
+  }
+
+  listmodelo(): Observable<Modelo>{
+    return this.httpcliente.get<Modelo>(this.API+'/api/modelo/index', this.httpOptions).pipe(take(1));
   }
 }

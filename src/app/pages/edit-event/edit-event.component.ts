@@ -31,6 +31,7 @@ export class EditEventComponent implements OnInit {
   array = {
     id: this.event_id
   }
+  id_modelo
 
 
   ngOnInit(): void {
@@ -49,6 +50,7 @@ export class EditEventComponent implements OnInit {
         this.inicioevent = Array.of(this.listevent.inicio)
         this.cargaevent = Array.of(this.listevent.carga_horaria)
         this.video = Array.of(this.listevent.video)
+        this.id_modelo = Array.of(this.listevent.id_modelo)
         this.forms(this.cargaevent)
       },
       async error => {
@@ -72,6 +74,7 @@ export class EditEventComponent implements OnInit {
       inicio: [null],
       ativo: [null, Validators.required],
       video: [null],
+      id_modelo: this.id_modelo,
       carga_horaria: i,
     });
   }
