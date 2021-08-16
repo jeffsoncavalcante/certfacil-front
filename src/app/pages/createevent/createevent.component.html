@@ -25,6 +25,21 @@
             ></option>
           </datalist>
 
+          <input
+            type="search"
+            placeholder="Modelo de Evento"
+            list="listmodelo"
+            (change)="searchmodelo($event)"
+          />
+
+          <datalist id="listmodelo">
+            <option
+              *ngFor="let modeloid of modelo"
+              data-value="{{ modeloid.id }}"
+              value="{{ modeloid.titulo }}"
+            ></option>
+          </datalist>
+
           <label for="upload" id="uploadlabel"
             >Upload capa do evento
             <img src="../../../assets/images/upload.svg" alt="Certfacil" />

@@ -7,6 +7,7 @@ import { AlertModalService } from 'src/app/shared/alert-modal.service';
 import { AngularFireStorage,AngularFireUploadTask, AngularFireStorageReference} from '@angular/fire/storage'
 import { finalize } from 'rxjs/operators'
 import { Observable } from 'rxjs';
+import { modelos } from 'src/app/shared/listmodelo/listmodelo.modelo';
 
 
 @Component({
@@ -28,7 +29,9 @@ export class CreateeventComponent implements OnInit {
   form: FormGroup;
   path: String
   user: users[];
+  modelo: modelos[];
   id_palestrante
+  id_modelo
   image
   downloadURL
   filterpalestrante
@@ -72,6 +75,17 @@ export class CreateeventComponent implements OnInit {
         }
       }
     );
+
+    this.service.listmodelo().subscribe(
+      (data) => {
+        this.modelo = data.message
+      console.log(this.modelo)
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
+      
       this.form = this.fb.group({
       descricao: [null, Validators.required],
       nota: [null, Validators.required],
@@ -82,6 +96,7 @@ export class CreateeventComponent implements OnInit {
       carga_horaria: [null, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
       img: window.localStorage.getItem("url_img"),
       id_usuario: this.id_palestrante,
+      id_modelo: this.id_modelo
     });
   }
 
@@ -89,6 +104,14 @@ export class CreateeventComponent implements OnInit {
     let name = $event.target.value;
     let list = this.user.filter( x=> x.nome === name)[0];
     this.id_palestrante = list.id
+    this.list()
+
+  }
+
+  searchmodelo($event) {
+    let titulo = $event.target.value;
+    let listmodelo = this.modelo.filter( x=> x.titulo === titulo)[0];
+    this.id_modelo = listmodelo.id
     this.list()
 
   }

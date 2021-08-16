@@ -41,13 +41,13 @@ export class GroupeventesComponent implements OnInit {
       }
     );
     this.form = this.fb.group({
-      descricao: [null, Validators.required],
+      descricao_layout: [null, Validators.required],
       titulo: [null, Validators.required],
-      cidade: [null, Validators.required],
+      cidade_layout: [null, Validators.required],
       cor_texto: [null, Validators.required],
       cor_titulo: [null, Validators.required],
       cor_nome: [null, Validators.required],
-      url_pdf: window.localStorage.getItem('url_pdf')
+      url_back: window.localStorage.getItem('url_pdf')
     });
   }
   upload(event){
@@ -66,10 +66,27 @@ export class GroupeventesComponent implements OnInit {
         this.list()
         ));
    })
-  )
+  ) 
 .subscribe();
   }
-  onSubmit(){}
+
+
+  onSubmit(){
+    if(this.form.valid){
+ 
+      this.service.crete('/api/modelo/store',this.form.value).subscribe(
+        data =>{
+    
+          this.alertservice.showAlertSuccess("Modelo Criado com sucesso")
+        },
+        error => this.alertservice.showAlertDanger(error)
+      )
+    }else{
+     this.alertservice.showAlertDanger('Prencha os Campos')
+    }
+ 
+   }
+ 
 
   verificaValidTouched(campo){
     return !this.form.get(campo).valid && this.form.get(campo).touched
