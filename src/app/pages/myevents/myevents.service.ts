@@ -4,12 +4,13 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Modelos } from 'src/app/shared/listmodelo/listmodelo';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MyeventsService {
-  private readonly API = 'http://certapi.redetuxnet.com.br:8000';
+  private readonly API = environment.API_BACKEND;
   private token = window.localStorage.getItem('token');
   emiterpdf = new EventEmitter()
 

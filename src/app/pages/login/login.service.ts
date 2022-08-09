@@ -5,13 +5,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, retry, take } from 'rxjs/operators';
 import { Observable } from 'rxjs'
 import { List } from 'src/app/shared/listprofile/list';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class LoginService {
-  private readonly API = 'http://certapi.redetuxnet.com.br:8000'
+  private readonly API = environment.API_BACKEND
   constructor(private http:HttpClient) {}
   usertype = new EventEmitter<boolean>()
 
