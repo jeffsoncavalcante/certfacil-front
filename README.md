@@ -122,7 +122,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
   # acima da linha /location, insira o seguinte codigo
   $  location /api { proxy_pass url_servidor_back-end; }
   # a url a ser inserida não deve conter os end-points, apenas o dominio/ip e a porta.
-  # exemplo: teste.com.br:8080
+  # exemplo: http://teste.com.br:8080
   
 
 ```
