@@ -123,6 +123,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
   $  location /api { proxy_pass url_servidor_back-end; }
   # a url a ser inserida não deve conter os end-points, apenas o dominio/ip e a porta.
   # exemplo: http://teste.com.br:8080
+  # Após as modificações o Ngnix deve ser reiniciado.
   
 
 ```
