@@ -54,6 +54,7 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 
   - É **necessário** possuir o **[Node.js](https://TheOnlyRealDevLanguage.org/en/)** instalado na máquina
   - Também, é **preciso** ter um gerenciador de pacotes, se você já tem o Node.js, então o **[NPM](https://www.npmjs.com/)** já vai estar disponível.
+  - URL do servidor back-end: https://github.com/alessandroasouza/api_certificado_backend.git
 
 1. Faça um clone :
 
@@ -79,9 +80,48 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
   $ ng serve
   
   # Digite em seu navegador
-  http://localhost:8082
+  http://localhost:4200
 
 ```
+
+4. Deploy da Aplicação:
+
+```sh
+  # Edite as variáveis de ambiente em src->app->environments->environments.prod.ts
+  $ API_BACKEND: 'http://localhost:8080' / altere a url do Back End.
+
+  # Deploy do sistema
+  $ ng build
+  
+  # Será Criado uma pasta automaticamente ao fim da execução, chamado dist. 
+  # Copie o contéudo e cole em servidor web, preferecialmente Ngnix.
+
+```
+
+5. Configuração Ngnix:
+  
+  O angular utiliza roteamento para acessar suas paginas e para funcionar perfeitamente
+  necessita a configuração no arquivio do Ngnix
+
+```sh
+  # Acesse o diretório Ngnix
+  $ cd /etc/nginx/sites-available/
+
+  # Edite o arquivo ngnix.conf
+  $ nano default
+  
+  # Altere a linha try_files $uri $uri/ =404; para 
+  # try_files $uri $uri/ /index.html;
+  
+  # Caso o servidor back-end não esteja rodando localmente deve usar o proxy
+  # do Ngnix para evitar politicas de CORS e para isso no mesmo arquivo acima da linha
+  # do /location, insira o seguinte codigo
+  $  location /api { proxy_pass url_servidor_back-end; }
+  # a url a ser inserida não deve conter os end-points apenas o dominio/ip e a porta exemplo: teste.com.br:8080
+  
+
+```
+
 
 <a id="como-contribuir"></a>
 
