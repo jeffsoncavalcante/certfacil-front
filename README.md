@@ -88,20 +88,22 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
 
 ```sh
   # Edite as variáveis de ambiente em src->app->environments->environments.prod.ts
-  $ API_BACKEND: 'http://localhost:8080' / altere a url do Back End.
+  # dentro do arquivo altere a variavel chamada API_BACKEND para a url e porta na qual
+  # o back-end estárá rodando
+  $ API_BACKEND: 'http://localhost:8080'
 
   # Deploy do sistema
   $ ng build
   
-  # Será Criado uma pasta automaticamente ao fim da execução, chamado dist. 
-  # Copie o contéudo e cole em servidor web, preferecialmente Ngnix.
+  # Será criado uma pasta automaticamente chamada de diste ao fim da execução, 
+  # copie o contéudo e cole em servidor web, preferecialmente Ngnix.
 
 ```
 
 5. Configuração Ngnix:
   
-  O angular utiliza roteamento para acessar suas paginas e para funcionar perfeitamente
-  necessita a configuração no arquivio do Ngnix
+  O angular utiliza roteamento para acessar suas paginas e para o seu funcionamento
+  necessita a configuração adicionais no Ngnix.
 
 ```sh
   # Acesse o diretório Ngnix
@@ -110,14 +112,17 @@ Esta aplicação foi desenolvida com as seguintes tecnologias:
   # Edite o arquivo ngnix.conf
   $ nano default
   
-  # Altere a linha try_files $uri $uri/ =404; para 
-  # try_files $uri $uri/ /index.html;
+  # Altere a linha
+  $try_files $uri $uri/ =404; 
+  #para 
+  $try_files $uri $uri/ /index.html;
   
   # Caso o servidor back-end não esteja rodando localmente deve usar o proxy
-  # do Ngnix para evitar politicas de CORS e para isso no mesmo arquivo acima da linha
-  # do /location, insira o seguinte codigo
+  # do Ngnix para evitar politicas de CORS, para isso no mesmo arquivo. 
+  # acima da linha /location, insira o seguinte codigo
   $  location /api { proxy_pass url_servidor_back-end; }
-  # a url a ser inserida não deve conter os end-points apenas o dominio/ip e a porta exemplo: teste.com.br:8080
+  # a url a ser inserida não deve conter os end-points, apenas o dominio/ip e a porta.
+  # exemplo: teste.com.br:8080
   
 
 ```
