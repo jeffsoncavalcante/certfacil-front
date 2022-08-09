@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'
 import { take } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
-  private readonly API = 'http://certapi.redetuxnet.com.br:8000'
+  private readonly API = environment.API_BACKEND
   private token = window.localStorage.getItem('token')
 
 constructor(private http: HttpClient) {}
